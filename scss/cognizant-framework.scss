@@ -62,7 +62,7 @@ $icomoon-font-path: "../fonts/Cognizant-Icons-1.2.9-FONT/fonts";
 @import "../bower_components/slick-carousel/slick/slick.scss";
 @import "../bower_components/css-hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "../bower_components/aos/src/sass/aos.scss";
-@import "../bower_components/rfs/scss/_rfs.scss";
+// @import "../bower_components/rfs/scss/_rfs.scss";
 
 // =============================================================================================
 // PLUGIN STYLE OVERRIDES
@@ -289,6 +289,14 @@ $heights: 20;
 
 .h100 {
     height: 100%;
+}
+
+.h500px {
+    height: 500px;
+}
+
+.h300px {
+    height: 300px;
 }
 /* ----  End of HEIGHT OVERRIDES  --------------------------------------------------------------------- */
 /* =============================================================================================
@@ -575,24 +583,24 @@ $gray-light2: #c4c4c4;
 $gray-light3: #f1f1f1;
 $purple: #c800a1;
 $red: #e1523d;
-$colors: (
+$colors-primary: (
     "blue"     : $blue,
     blue-light : $blue-light,
     blue-dark  : $blue-dark,
     "green"    : $green,
     green-dark : $green-dark,
-    "orange"   : $orange,
-    orange-dark: $orange-dark,
-    "purple"   : $purple,
-    "red"      : $red,
-    "white"    : $white,
-    "black"    : $black,
     gray-dark1 : $gray-dark1,
     gray-dark2 : $gray-dark2,
     gray-medium: $gray-medium,
     gray-light1: $gray-light1,
     gray-light2: $gray-light2,
     gray-light3: $gray-light3
+);
+$colors-secondary: (
+    "orange"   : $orange,
+    orange-dark: $orange-dark,
+    "purple"   : $purple,
+    "red"      : $red,
 );
 /* ----  End of COLORS  -------------------------------------------------------------------------- */
 /* ===========================================================================================================
@@ -619,7 +627,7 @@ $border-width: 5;
         }
         @for $i from 0 through $border-width {
             @each $side-name, $side in $border-side {
-                @each $color-name, $color in $colors {
+                @each $color-name, $color in $colors-primary {
                     .#{$size}-bd-#{$side-name}-#{$color-name}#{$i} {
                         border-#{$side}: $i + px $color solid !important;
                     }
@@ -634,13 +642,13 @@ $border-width: 5;
             }
         }
         @for $i from 0 through $border-width {
-            @each $color-name, $color in $colors {
+            @each $color-name, $color in $colors-primary {
                 .#{$size}-bd-#{$color-name}#{$i} {
                     border: $i + px solid $color !important;
                 }
             }
         }
-        @each $color-name, $color in $colors {
+        @each $color-name, $color in $colors-primary {
             .#{$size}-bd-#{$color-name} {
                 border: 2px solid $color !important;
             }
@@ -704,7 +712,7 @@ $rounded-gradient-border-width: 2px;
 ██      ██    ██ ██      ██    ██ ██   ██
  ██████  ██████  ███████  ██████  ██   ██
 ==================================================================================================== */
-@each $color-name, $color in $colors {
+@each $color-name, $color in $colors-primary {
     .bg-#{$color-name} {
         background-color: $color !important;
     }
@@ -741,7 +749,7 @@ $rounded-gradient-border-width: 2px;
 =============================================================================================*/
 $background-tints: 5;
 @for $i from 1 through $background-tints {
-    @each $color-name, $color in $colors {
+    @each $color-name, $color in $colors-primary {
         .bg-#{$color-name}-tint#{$i} {
             background-color: lighten($color, percentage($i / 10)) !important;
         }
@@ -764,7 +772,7 @@ $background-tints: 5;
 =============================================================================================*/
 $background-shades: 5;
 @for $i from 1 through $background-shades {
-    @each $color-name, $color in $colors {
+    @each $color-name, $color in $colors-primary {
         .bg-#{$color-name}-shade#{$i} {
             background-color: darken($color, percentage($i / 20));
         }
@@ -785,7 +793,7 @@ $background-shades: 5;
  ██████  ██   ██ ██   ██ ██████  ██ ███████ ██   ████    ██    ███████
 
 ============================================================================================= */
-@each $color-name, $color in $colors {
+@each $color-name, $color in $colors-primary {
     .bg-grd-tb-#{$color-name} {
         background: linear-gradient(180deg, $color, darken($color, 15%));
     }
@@ -1128,7 +1136,7 @@ $bg-pos: (
 ██      ██    ██ ██      ██    ██ ██   ██      ██
  ██████  ██████  ███████  ██████  ██   ██ ███████
 ============================================================================================= */
-@each $color-name, $color in $colors {
+@each $color-name, $color in $colors-primary {
     .fill-#{$color-name} {
         fill: $color !important;
     }
@@ -1288,7 +1296,7 @@ hr.gradient {
     border    : none;
     height    : 2px;
 }
-@each $color-name, $color in $colors {
+@each $color-name, $color in $colors-primary {
     hr.#{$color-name} {
         border-bottom-color: $color;
     }
@@ -1324,7 +1332,22 @@ hr.gradient {
 // Automated font-resizing.
 //
 // See https://github.com/MartijnCuppens/rfs.
-// See configuration for options.
+// See configuration for options
+// Minimum fontsize.
+$rfs-minimum-font-size: 15px;
+$rfs-font-size-unit: px;
+
+// Breakpoint at where font-size starts decreasing if screen width is smaller.
+$rfs-breakpoint: 1024px;
+$rfs-breakpoint-unit: px;
+
+// Resize font-size based on screen height and width.
+$rfs-two-dimensional: false;
+
+// Generate disable classes
+$rfs-generate-disable-classes: false;
+
+@import "../bower_components/rfs/scss/_rfs.scss";
 
 * {
     // hyphens               : auto;
@@ -1482,7 +1505,7 @@ strong {
 %text-center {
     text-align: center;
 }
-@each $color-name, $color in $colors {
+@each $color-name, $color in $colors-primary {
     .text-#{$color-name} {
         color: $color !important;
     }
@@ -2784,7 +2807,7 @@ $sidelines-double-line-spacing: 0.5em !default;
 .callout > :last-child {
     // margin-bottom: auto;
 }
-@each $color-name, $color in $colors {
+@each $color-name, $color in $colors-primary {
     .callout-#{$color-name} {
         background-color: lighten($color, 20%) !important;
     }
@@ -3773,17 +3796,17 @@ $plyr-font-size-base: 20px; // -----  End of PLYR  -----------------------------
 
 =============================================================================================*/
 .video-background {
-    // position: relative;
+    position: relative;
     overflow: hidden;
     // z-index: -1;
     video {
-        position  : relative;
+        position  : absolute;
         left      : 50%;
         top       : 50%;
         width     : 100%;
         min-width : 100%;
         min-height: 100%;
-        transform : translate(-50%,-100%);
+        transform : translate(-50%,-50%);
         z-index   : -1;
     }
 }
