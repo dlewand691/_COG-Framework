@@ -1,6 +1,6 @@
 {
   "name": "css-hamburgers",
-  "version": "0.9.1",
+  "version": "0.9.3",
   "description": "Collection of tasty CSS-animated hamburger icons. Includes Sass files (modular and customizable), so cook up your own hamburger.",
   "homepage": "https://jonsuh.com/hamburgers",
   "license": "MIT",
@@ -41,13 +41,13 @@
     "hamburgers.gemspec",
     "lib"
   ],
-  "_release": "0.9.1",
+  "_release": "0.9.3",
   "_resolution": {
     "type": "version",
-    "tag": "v0.9.1",
-    "commit": "180efcb1ee02c8b3e40079dc75f2611fd33648ba"
+    "tag": "v0.9.3",
+    "commit": "0aedeec91c0ffc14b3c6e31b2e8fb700ea0fb3d3"
   },
   "_source": "https://github.com/jonsuh/hamburgers.git",
-  "_target": "0.9.1",
+  "_target": "0.9.3",
   "_originalSource": "css-hamburgers"
 }
