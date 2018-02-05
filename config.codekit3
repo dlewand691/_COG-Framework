@@ -7,7 +7,7 @@
 		"uuidString": "15ECD8B4-057E-422B-9F2C-F133E7A2BAF1"
 		}
 	],
-"creatorBuild": "26148",
+"creatorBuild": "26261",
 "files": {
 	"\/_IMPORTED-ASSETS\/animsition.scss": {
 		"aP": 0,
@@ -8219,12 +8219,12 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/js\/cognizant-framework.js": {
+	"\/js\/app.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/js\/cognizant-framework-min.js",
+		"oAP": "\/js\/app-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -8835,6 +8835,10 @@
 		"id-match": {
 			"active": 0,
 			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"indent": {
 			"active": 0,
