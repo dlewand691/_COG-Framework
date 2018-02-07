@@ -27,7 +27,7 @@
 @include foundation-media-object;
 @include foundation-off-canvas;
 // @include foundation-orbit;
-@include foundation-pagination;
+// @include foundation-pagination;
 // @include foundation-progress-bar;
 // @include foundation-progress-element;
 // @include foundation-meter-element;
@@ -38,9 +38,9 @@
 @include foundation-table;
 @include foundation-tabs;
 // @include foundation-thumbnail;
-@include foundation-title-bar;
-@include foundation-tooltip;
-// @include foundation-top-bar;
+// @include foundation-title-bar;
+// @include foundation-tooltip;
+@include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 @include foundation-flex-classes;
@@ -247,16 +247,16 @@ $widths: 20;
     }
 }
 
-.w66 {
-    width: 66%;
-    // min-width: 66%;
-    // max-width: 66%;
-}
+@each $size in $breakpoint-classes {
+    @include breakpoint($size) {
+        .#{$size}-w66 {
+            width: 66%;
+        }
 
-.w33 {
-    width: 33%;
-    // min-width: 33%;
-    // max-width: 33%;
+        .#{$size}-w33 {
+            width: 33%;
+        }
+    }
 }
 
 .w100px {
@@ -288,7 +288,8 @@ $heights: 20;
 }
 
 .h100 {
-    height: 100%;
+    height    : 100%;
+    min-height: 100%;
 }
 
 .h500px {
@@ -348,17 +349,6 @@ $zindexes: 11;
 ██   ██ ██   ██ ██   ██ ██    ██    ██ ██    ██ ██  ██ ██      ██
 ██   ██ ██████  ██████  ██    ██    ██  ██████  ██   ████ ███████
 ============================================================================================= */
-@include breakpoint(small only) {
-    .small-align-top {
-        align-items: flex-start;
-    }
-}
-@include breakpoint(medium only) {
-    .medium-align-top {
-        align-items: flex-start;
-    }
-}
-
 .flex-wrap {
     flex-wrap: wrap !important;
 }
@@ -366,22 +356,36 @@ $zindexes: 11;
 .flex-grow {
     flex-grow: 1 !important;
 }
-@each $size in $breakpoint-classes {
-    @include breakpoint($size) {
-        @if $size != $-zf-zero-breakpoint {
-            .flex-container-#{$size} {
-                display: flex !important;
-            }
-        }
-    }
+
+.flex-dir-row {
+    flex-direction: row;
 }
+
+.flex-child-auto {
+    flex: 1 1 auto;
+}
+
 @each $size in $breakpoint-classes {
     @include breakpoint($size) {
-        @if $size != $-zf-zero-breakpoint {
-            .#{$size}-shrink {
-                flex     : 0 0 auto;
-                max-width: 100%;
-            }
+        .#{$size}-flex-container {
+            display: flex !important;
+        }
+
+        .#{$size}-shrink {
+            flex     : 0 0 auto;
+            max-width: 100%;
+        }
+
+        .#{$size}-flex-dir-row {
+            flex-direction: row;
+        }
+
+        .#{$size}-flex-child-auto {
+            flex: 1 1 auto;
+        }
+
+        .#{$size}-align-top {
+            align-items: flex-start;
         }
     }
 }
@@ -584,6 +588,8 @@ $gray-light3: #f1f1f1;
 $purple: #c800a1;
 $red: #e1523d;
 $colors-primary: (
+    "black"    : $black,
+    "white"    : $white,
     "blue"     : $blue,
     blue-light : $blue-light,
     blue-dark  : $blue-dark,
@@ -600,7 +606,7 @@ $colors-secondary: (
     "orange"   : $orange,
     orange-dark: $orange-dark,
     "purple"   : $purple,
-    "red"      : $red,
+    "red"      : $red
 );
 /* ----  End of COLORS  -------------------------------------------------------------------------- */
 /* ===========================================================================================================
@@ -909,38 +915,22 @@ $background-shades: 5;
 
 ============================================================================================= */
 $bg-pos: (
-    l: "left",
-    r: "right",
-    t: "top",
-    b: "bottom",
-    c: "center"
+    "left"  : "left",
+    "right" : "right",
+    "top"   : "top",
+    "bottom": "bottom",
+    "center": "center"
 );
-@each $side, $side-name in $bg-pos {
-    .bg-pos-#{$side} {
-        background-position: #{$side-name} !important;
-    }
-}
-@include breakpoint(small only) {
-    @each $side, $side-name in $bg-pos {
-        .sm-bg-pos-#{$side} {
-            background-position: #{$side-name} !important;
+@each $size in $breakpoint-classes {
+    @include breakpoint($size) {
+        @each $side, $side-name in $bg-pos {
+            .#{$size}-bg-pos-#{$side} {
+                background-position: #{$side-name} !important;
+            }
         }
     }
 }
-@include breakpoint(medium only) {
-    @each $side, $side-name in $bg-pos {
-        .md-bg-pos-#{$side} {
-            background-position: #{$side-name} !important;
-        }
-    }
-}
-@include breakpoint(large) {
-    @each $side, $side-name in $bg-pos {
-        .lg-bg-pos-#{$side} {
-            background-position: #{$side-name} !important;
-        }
-    }
-}
+
 // -----  End of BACKGROUND POSITIONS  ---------------------------------------------
 /* =============================================================================================
 
@@ -969,6 +959,7 @@ $bg-pos: (
     width          : 100%;
     content        : "";
     bottom         : 0;
+
 }
 @mixin gradient-overlay-image-full {
     display        : block;
@@ -978,6 +969,7 @@ $bg-pos: (
     width          : 100%;
     content        : "";
     bottom         : 0;
+
 }
 @mixin gradient-overlay-image-angled {
     display        : block;
@@ -987,6 +979,7 @@ $bg-pos: (
     width          : 100%;
     content        : "";
     bottom         : 0;
+
 }
 
 .gradient-overlay-white {
@@ -1875,6 +1868,7 @@ dl dt {
     text-transform : uppercase;
     // margin-left    : 0.5rem;
     margin-right   : 0.5rem;
+    @include responsive-font-size(20);
 
     & i {
         // line-height: 0;
@@ -1895,15 +1889,15 @@ dl dt {
     }
 
     &.small {
-        @include responsive-font-size(16);
+        @include responsive-font-size(15);
     }
 
     &.large {
-        @include responsive-font-size(25);
+        @include responsive-font-size(27);
     }
 
     &.xlarge {
-        @include responsive-font-size(30);
+        @include responsive-font-size(36);
     }
 
     &.back:after {
@@ -2857,7 +2851,7 @@ $sidelines-double-line-spacing: 0.5em !default;
 
 ============================================================================================= */
 .label {
-    // font-weight   : bold;
+    font-weight: bold;
     // text-transform: uppercase;
     @extend %small;
     line-height: inherit;
