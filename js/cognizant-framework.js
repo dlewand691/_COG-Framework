@@ -84,10 +84,8 @@ $('#navBar-blue .sticky').on('sticky.zf.stuckto:top', function() {
 // AOS- ANIMATE ON SCROLL
 // =============================================================================================
 
-$(document).ready(function() {
-    AOS.init({
-        startEvent: 'load'
-    });
+AOS.init({
+    // startEvent: 'load'
 });
 
 // -----  End of AOS- ANIMATE ON SCROLL  ---------------------------------------------
