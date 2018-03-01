@@ -1,6 +1,58 @@
 // @codekit-prepend '../bower_components/jquery/dist/jquery.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/foundation.js'
+
+
+// =============================================================================================
+// ███████  ██████  ██    ██ ███    ██ ██████   █████  ████████ ██  ██████  ███    ██
+// ██      ██    ██ ██    ██ ████   ██ ██   ██ ██   ██    ██    ██ ██    ██ ████   ██
+// █████   ██    ██ ██    ██ ██ ██  ██ ██   ██ ███████    ██    ██ ██    ██ ██ ██  ██
+// ██      ██    ██ ██    ██ ██  ██ ██ ██   ██ ██   ██    ██    ██ ██    ██ ██  ██ ██
+// ██       ██████   ██████  ██   ████ ██████  ██   ██    ██    ██  ██████  ██   ████
+// ███████  ██████ ██████  ██ ██████  ████████ ███████
+// ██      ██      ██   ██ ██ ██   ██    ██    ██
+// ███████ ██      ██████  ██ ██████     ██    ███████
+//      ██ ██      ██   ██ ██ ██         ██         ██
+// ███████  ██████ ██   ██ ██ ██         ██    ███████
+// =============================================================================================
+
+
+// =============================================================================================
+// FOUNDATION UTILITY SCRIPTS
+// =============================================================================================
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.core.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.box.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.keyboard.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.motion.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.nest.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.timerAndImageLoader.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.touch.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.triggers.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.zf.responsiveAccordionTabs.js'
+
+
+// =============================================================================================
+// FOUNDATION PLUGINS
+// =============================================================================================
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.abide.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.accordion.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.dropdown.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.equalizer.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.interchange.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.magellan.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.offcanvas.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.reveal.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.tabs.js'
 // @codekit-prepend '../bower_components/motion-ui/motion-ui.js'
+
+
+// =============================================================================================
+// ██████  ██      ██    ██  ██████  ██ ███    ██ ███████
+// ██   ██ ██      ██    ██ ██       ██ ████   ██ ██
+// ██████  ██      ██    ██ ██   ███ ██ ██ ██  ██ ███████
+// ██      ██      ██    ██ ██    ██ ██ ██  ██ ██      ██
+// ██      ███████  ██████   ██████  ██ ██   ████ ███████
+// =============================================================================================
+
 // @codekit-prepend '../bower_components/plyr/dist/plyr.js'
 // @codekit-prepend '../bower_components/aos/dist/aos.js'
 // @codekit-prepend '../bower_components/scrollup/dist/jquery.scrollUp.js'
