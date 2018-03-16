@@ -19,14 +19,14 @@
 // FOUNDATION UTILITY SCRIPTS
 // =============================================================================================
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.core.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.box.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.keyboard.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.motion.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.box.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.triggers.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.keyboard.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.nest.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.timerAndImageLoader.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.touch.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.triggers.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.zf.responsiveAccordionTabs.js'
 
 
@@ -35,13 +35,20 @@
 // =============================================================================================
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.abide.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.accordion.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.accordionMenu.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.drilldown.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.dropdown.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.dropdownMenu.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.equalizer.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.interchange.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.magellan.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.offcanvas.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.responsiveMenu.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.responsiveToggle.js '
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.reveal.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.sticky.js'
 // @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.tabs.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.toggler.js'
 // @codekit-prepend '../bower_components/motion-ui/motion-ui.js'
 
 
