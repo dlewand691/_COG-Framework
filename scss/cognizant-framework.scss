@@ -38,7 +38,7 @@
 @include foundation-table;
 @include foundation-tabs;
 // @include foundation-thumbnail;
-// @include foundation-title-bar;
+@include foundation-title-bar;
 @include foundation-tooltip;
 @include foundation-top-bar;
 @include foundation-visibility-classes;
@@ -4448,7 +4448,7 @@ div iframe.video {
     transition-timing-function        : cubic-bezier(0.55, 0.055, 0.675, 0.19);
     display                           : block;
     top                               : 50%;
-    margin-top                        : -0.075rem;
+    margin-top                        : -0.05rem;
 }
 
 .hamburger.hamburger--spin-r .hamburger-inner::after,
