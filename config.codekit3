@@ -7,7 +7,7 @@
 		"uuidString": "15ECD8B4-057E-422B-9F2C-F133E7A2BAF1"
 		}
 	],
-"creatorBuild": "26268",
+"creatorBuild": "26330",
 "files": {
 	"\/_IMPORTED-ASSETS\/animsition.scss": {
 		"aP": 0,
@@ -1572,7 +1572,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/foundation.js",
 		"oF": 0,
 		"sC": 3,
