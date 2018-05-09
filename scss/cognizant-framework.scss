@@ -51,23 +51,23 @@
 // FONTS
 // =============================================================================================
 @import "../fonts/ProximaNovaFonts/ProximaNova.scss";
-$icomoon-font-path: "../fonts/Cognizant-Icons-1.2.9-FONT/fonts";
-@import "../fonts/Cognizant-Icons-1.2.9-FONT/style.scss";
+$icomoon-font-path: "../fonts/Cognizant-Icons-1.3-FONT/fonts";
+@import "../fonts/Cognizant-Icons-1.3-FONT/style.scss";
 
 // =============================================================================================
 // PLUGINS
 // =============================================================================================
-@import "../bower_components/plyr/src/scss/plyr.scss";
+// @import "../bower_components/plyr/src/scss/plyr.scss";
 @import "../bower_components/slick-carousel/slick/slick-theme.scss";
 @import "../bower_components/slick-carousel/slick/slick.scss";
 @import "../bower_components/css-hamburgers/_sass/hamburgers/hamburgers.scss";
-@import "../bower_components/aos/src/sass/aos.scss";
+// @import "../bower_components/aos/src/sass/aos.scss";
 
 // =============================================================================================
 // PLUGIN STYLE OVERRIDES
 // =============================================================================================
-@import "../_IMPORTED-ASSETS/animsition.scss";
-@import "../_IMPORTED-ASSETS/select2.scss";
+// @import "../_IMPORTED-ASSETS/animsition.scss";
+// @import "../_IMPORTED-ASSETS/select2.scss";
 /* ====================================================================================================
 ██████  ███████ ██████  ██    ██  ██████   ██████  ██ ███    ██  ██████
 ██   ██ ██      ██   ██ ██    ██ ██       ██       ██ ████   ██ ██
@@ -78,6 +78,7 @@ $icomoon-font-path: "../fonts/Cognizant-Icons-1.2.9-FONT/fonts";
 * {
     // background-color: rgba(0,255,0,0.1);
 }
+
 /* ----  End of DEBUGGING  -------------------------------------------------------------------------- */
 /*=============================================================================================
 
@@ -608,103 +609,9 @@ $colors-secondary: (
     "red"      : $red
 );
 /* ----  End of COLORS  -------------------------------------------------------------------------- */
-/* ===========================================================================================================
-██████   ██████  ██████  ██████  ███████ ██████  ███████
-██   ██ ██    ██ ██   ██ ██   ██ ██      ██   ██ ██
-██████  ██    ██ ██████  ██   ██ █████   ██████  ███████
-██   ██ ██    ██ ██   ██ ██   ██ ██      ██   ██      ██
-██████   ██████  ██   ██ ██████  ███████ ██   ██ ███████
-================================================================================================== */
-$border-side: (
-    "t": top,
-    "r": right,
-    "b": bottom,
-    "l": left
-);
 
-$border-width: 5;
-@each $size in $breakpoint-classes {
-    @include breakpoint($size) {
-        @for $i from 0 through $border-width {
-            .#{$size}-bd#{$i} {
-                border: $i + px solid $gray-light2 !important;
-            }
-        }
-        @for $i from 0 through $border-width {
-            @each $side-name, $side in $border-side {
-                @each $color-name, $color in $colors-primary {
-                    .#{$size}-bd-#{$side-name}-#{$color-name}#{$i} {
-                        border-#{$side}: $i + px $color solid !important;
-                    }
-                }
-            }
-        }
-        @for $i from 0 through $border-width {
-            @each $side-name, $side in $border-side {
-                .#{$size}-bd-#{$side-name}#{$i} {
-                    border-#{$side}: $i + px $gray-light2 solid !important;
-                }
-            }
-        }
-        @for $i from 0 through $border-width {
-            @each $color-name, $color in $colors-primary {
-                .#{$size}-bd-#{$color-name}#{$i} {
-                    border: $i + px solid $color !important;
-                }
-            }
-        }
-        @each $color-name, $color in $colors-primary {
-            .#{$size}-bd-#{$color-name} {
-                border: 2px solid $color !important;
-            }
-        }
-        @for $i from 0 through $border-width {
-            .#{$size}-bd-gradient#{$i} {
-                border-width      : $i + px;
-                border-style      : solid;
-                border-image      : linear-gradient(to right, $blue 0%, $green 100%);
-                border-image-slice: 1;
-            }
-        }
-    }
-}
-$rounded-gradient-border-width: 2px;
+@import "styles/borders.scss";
 
-.rounded-gradient-border,
-.tabs.rounded-gradient-border .tabs-title.is-active a {
-    position     : relative;
-    background   : linear-gradient(to right, $blue 0%, $green 100%);
-    border-radius: 1000px !important;
-    z-index      : 1;
-
-    &:after {
-        position         : absolute;
-        display          : block;
-        top              : $rounded-gradient-border-width;
-        left             : $rounded-gradient-border-width;
-        width            : calc(100% - #{$rounded-gradient-border-width}*2);
-        height           : calc(100% - #{$rounded-gradient-border-width}*2);
-        content          : "";
-        background-color : inherit;
-        background-repeat: no-repeat;
-        background-size  : cover;
-        border-radius    : 1000px;
-        overflow         : hidden;
-        z-index          : -1;
-        transition       : $button-transition;
-    }
-}
-
-.button.rounded-gradient-border:hover {
-    &:after {
-        background: unset;
-    }
-}
-
-.tabs.rounded-gradient-border.bg-black .tabs-title.is-active a:after {
-    background: black;
-}
-/* ----  End of BORDERS  --------------------------------------------------------------------- */
 /* ====================================================================================================
 ██████   █████   ██████ ██   ██  ██████  ██████   ██████  ██    ██ ███    ██ ██████  ███████
 ██   ██ ██   ██ ██      ██  ██  ██       ██   ██ ██    ██ ██    ██ ████   ██ ██   ██ ██
@@ -756,7 +663,7 @@ $background-tints: 5;
 @for $i from 1 through $background-tints {
     @each $color-name, $color in $colors-primary {
         .bg-#{$color-name}-tint#{$i} {
-            background-color: lighten($color, percentage($i / 10)) !important;
+            background-color: lighten($color, percentage($i / 20)) !important;
         }
     }
 }
@@ -1284,7 +1191,7 @@ hr.dark {
 
 hr.gradient {
     @extend hr;
-    background: linear-gradient(90deg, $blue, $green);
+    background: linear-gradient(to right, $blue-light, $green);
     border    : none;
     height    : 2px;
 }
@@ -1369,7 +1276,7 @@ $rfs-generate-disable-classes: false;
 
 body,
 html {
-    @include responsive-font-size(20);
+    // @include responsive-font-size(20);
 }
 
 h1,
@@ -1421,6 +1328,10 @@ body {
 
 .lh0 {
     line-height: 0;
+}
+
+.lh1 {
+    line-height: 1;
 }
 
 %small,
@@ -1572,7 +1483,7 @@ blockquote cite.text-white {
 
 %text-gradient-block,
 .text-gradient-block {
-    background          : -webkit-linear-gradient(0deg, $blue-light, $green);
+    background          : linear-gradient(to right, $blue-light, $green);
     display             : inline;
     box-decoration-break: clone;
     padding             : 0.1rem 0.5rem 0;
@@ -1580,11 +1491,11 @@ blockquote cite.text-white {
 };
 
 .gradient-transparent-white-25 {
-    background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,1) 25%);
+    background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 25%);
 }
 
 .gradient-transparent-black-25 {
-    background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,1) 25%);
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 25%);
 }
 
 pre code {
@@ -1930,13 +1841,13 @@ dl dt {
     }
 
     &.gradient {
-        background: linear-gradient(90deg, $blue, $green);
+        background: linear-gradient(to right, $blue-light, $green);
     }
 
     &.gradient-border {
         border-width      : 2px;
         border-style      : solid;
-        border-image      : linear-gradient(to right, $blue 0%, $green 100%);
+        border-image      : linear-gradient(to right, $blue-light 0%, $green 100%);
         border-image-slice: 1;
     }
 }
@@ -2821,7 +2732,7 @@ $sidelines-double-line-spacing: 0.5em !default;
     background        : rgba(0,0,0,.75);
     border-width      : 4px;
     border-style      : solid;
-    border-image      : linear-gradient(to right, $blue 0, $green 100%);
+    border-image      : linear-gradient(to right, $blue-light 0, $green 100%);
     border-image-slice: 1;
 }
 /* ----  End of CALLOUTS  --------------------------------------------------------------------- */
@@ -2854,7 +2765,7 @@ $sidelines-double-line-spacing: 0.5em !default;
 .label {
     font-weight: bold;
     // text-transform: uppercase;
-    @extend %small;
+    font-size  : 15px;
     line-height: inherit;
 }
 // -----  End of LABELS  ---------------------------------------------
@@ -3518,10 +3429,11 @@ a.morelink {
 ██      ███████ ██    ██   ██
 
 ============================================================================================= */
-$plyr-color-main: $blue;
-$plyr-font-family: "Proxima Nova";
-$plyr-font-size-small: 15px;
-$plyr-font-size-base: 20px; // -----  End of PLYR  ---------------------------------------------
+// $plyr-color-main: $blue;
+// $plyr-font-family: "Proxima Nova";
+// $plyr-font-size-small: 15px;
+// $plyr-font-size-base: 20px; 
+// -----  End of PLYR  ---------------------------------------------
 /* =============================================================================================
 
 ██       █████  ████████ ███████ ███████ ████████
