@@ -27,26 +27,18 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "private": true,
-  "resolutions": {
-    "what-input": "^5.0.5",
-    "slick-carousel": "^1.8.0",
-    "css-hamburgers": "^0.9.3"
-  },
   "dependencies": {
     "foundation-sites": "6.3.1",
-    "slick-carousel": "^1.8.0",
-    "what-input": "5.0.5",
-    "select2": "^4.0.5",
-    "plyr": "^2.0.18",
-    "fancybox": "^3.2.5",
-    "lazysizes": "^4.0.1",
-    "aos": "^2.2.0",
+    "what-input": "*",
+    "lazysizes": "*",
     "jquery": "2.2.4",
-    "css-hamburgers": "0.9.3"
+    "css-hamburgers": "*",
+    "scrollup": "*",
+    "rfs": "*",
+    "motion-ui": "*",
+    "fastclick": "*"
   }
 }
