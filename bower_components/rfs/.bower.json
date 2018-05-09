@@ -22,14 +22,13 @@
     "test",
     "tests"
   ],
-  "_release": "824e59593d",
+  "_release": "852d2333a7",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "824e59593da858232f93c81f6df1445976cdc357"
+    "commit": "852d2333a7c79621122ff3053354217d796cf45d"
   },
   "_source": "https://github.com/MartijnCuppens/rfs.git",
   "_target": "*",
-  "_originalSource": "rfs",
-  "_direct": true
+  "_originalSource": "rfs"
 }

@@ -19,6 +19,6 @@
     "commit": "2167852df6d20548863a0786cb88abcff49f5261"
   },
   "_source": "https://github.com/markgoodyear/scrollup.git",
-  "_target": "^2.4.1",
+  "_target": "*",
   "_originalSource": "scrollup"
 }

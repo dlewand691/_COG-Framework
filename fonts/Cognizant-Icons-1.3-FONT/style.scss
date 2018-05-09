@@ -1,0 +1,728 @@
+@import "variables";
+
+@font-face {
+  font-family: 'Cognizant-Icons';
+  src:  url('#{$icomoon-font-path}/Cognizant-Icons.eot?166823');
+  src:  url('#{$icomoon-font-path}/Cognizant-Icons.eot?166823#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/Cognizant-Icons.ttf?166823') format('truetype'),
+    url('#{$icomoon-font-path}/Cognizant-Icons.woff?166823') format('woff'),
+    url('#{$icomoon-font-path}/Cognizant-Icons.svg?166823#Cognizant-Icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i, .icomoon-liga {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Cognizant-Icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@function unicode($str) {
+  @return unquote("\"") + $str + unquote("\"");
+}
+
+.account-group {
+  &:before {
+    content: unicode($account-group); 
+  }
+}
+.add-circle {
+  &:before {
+    content: unicode($add-circle); 
+  }
+}
+.arrow-box-up {
+  &:before {
+    content: unicode($arrow-box-up); 
+  }
+}
+.arrow-down {
+  &:before {
+    content: unicode($arrow-down); 
+  }
+}
+.arrow-down-solid {
+  &:before {
+    content: unicode($arrow-down-solid); 
+  }
+}
+.arrow-left {
+  &:before {
+    content: unicode($arrow-left); 
+  }
+}
+.arrow-left-solid {
+  &:before {
+    content: unicode($arrow-left-solid); 
+  }
+}
+.arrow-right {
+  &:before {
+    content: unicode($arrow-right); 
+  }
+}
+.arrow-solid-right {
+  &:before {
+    content: unicode($arrow-solid-right); 
+  }
+}
+.arrow-up {
+  &:before {
+    content: unicode($arrow-up); 
+  }
+}
+.arrow-up-solid {
+  &:before {
+    content: unicode($arrow-up-solid); 
+  }
+}
+.bank-notes {
+  &:before {
+    content: unicode($bank-notes); 
+  }
+}
+.barcode-scan {
+  &:before {
+    content: unicode($barcode-scan); 
+  }
+}
+.bin {
+  &:before {
+    content: unicode($bin); 
+  }
+}
+.bluetooth {
+  &:before {
+    content: unicode($bluetooth); 
+  }
+}
+.book-open {
+  &:before {
+    content: unicode($book-open); 
+  }
+}
+.bookmark {
+  &:before {
+    content: unicode($bookmark); 
+  }
+}
+.box {
+  &:before {
+    content: unicode($box); 
+  }
+}
+.bubble-chat-typing {
+  &:before {
+    content: unicode($bubble-chat-typing); 
+  }
+}
+.calendar {
+  &:before {
+    content: unicode($calendar); 
+  }
+}
+.camera {
+  &:before {
+    content: unicode($camera); 
+  }
+}
+.check-box {
+  &:before {
+    content: unicode($check-box); 
+  }
+}
+.check-circle {
+  &:before {
+    content: unicode($check-circle); 
+  }
+}
+.check-circle-2 {
+  &:before {
+    content: unicode($check-circle-2); 
+  }
+}
+.clock {
+  &:before {
+    content: unicode($clock); 
+  }
+}
+.clock-2 {
+  &:before {
+    content: unicode($clock-2); 
+  }
+}
+.close {
+  &:before {
+    content: unicode($close); 
+  }
+}
+.cloud {
+  &:before {
+    content: unicode($cloud); 
+  }
+}
+.cog {
+  &:before {
+    content: unicode($cog); 
+  }
+}
+.computer-bug {
+  &:before {
+    content: unicode($computer-bug); 
+  }
+}
+.computer-screen {
+  &:before {
+    content: unicode($computer-screen); 
+  }
+}
+.credit-card {
+  &:before {
+    content: unicode($credit-card); 
+  }
+}
+.download {
+  &:before {
+    content: unicode($download); 
+  }
+}
+.email {
+  &:before {
+    content: unicode($email); 
+  }
+}
+.expand {
+  &:before {
+    content: unicode($expand); 
+  }
+}
+.file-acrobat {
+  &:before {
+    content: unicode($file-acrobat); 
+  }
+}
+.file-favorite-star {
+  &:before {
+    content: unicode($file-favorite-star); 
+  }
+}
+.file-new {
+  &:before {
+    content: unicode($file-new); 
+  }
+}
+.file-view {
+  &:before {
+    content: unicode($file-view); 
+  }
+}
+.file-word {
+  &:before {
+    content: unicode($file-word); 
+  }
+}
+.filter {
+  &:before {
+    content: unicode($filter); 
+  }
+}
+.folder {
+  &:before {
+    content: unicode($folder); 
+  }
+}
+.folder-add {
+  &:before {
+    content: unicode($folder-add); 
+  }
+}
+.folder-view {
+  &:before {
+    content: unicode($folder-view); 
+  }
+}
+.gauge {
+  &:before {
+    content: unicode($gauge); 
+  }
+}
+.globe {
+  &:before {
+    content: unicode($globe); 
+  }
+}
+.graph-bar {
+  &:before {
+    content: unicode($graph-bar); 
+  }
+}
+.graph-pie {
+  &:before {
+    content: unicode($graph-pie); 
+  }
+}
+.group-add {
+  &:before {
+    content: unicode($group-add); 
+  }
+}
+.headphone {
+  &:before {
+    content: unicode($headphone); 
+  }
+}
+.help-circle {
+  &:before {
+    content: unicode($help-circle); 
+  }
+}
+.hierarchy {
+  &:before {
+    content: unicode($hierarchy); 
+  }
+}
+.home {
+  &:before {
+    content: unicode($home); 
+  }
+}
+.launch {
+  &:before {
+    content: unicode($launch); 
+  }
+}
+.layers {
+  &:before {
+    content: unicode($layers); 
+  }
+}
+.leaf {
+  &:before {
+    content: unicode($leaf); 
+  }
+}
+.lightbulb {
+  &:before {
+    content: unicode($lightbulb); 
+  }
+}
+.link {
+  &:before {
+    content: unicode($link); 
+  }
+}
+.location-pin {
+  &:before {
+    content: unicode($location-pin); 
+  }
+}
+.location-pin-solid {
+  &:before {
+    content: unicode($location-pin-solid); 
+  }
+}
+.lock-close {
+  &:before {
+    content: unicode($lock-close); 
+  }
+}
+.lock-open {
+  &:before {
+    content: unicode($lock-open); 
+  }
+}
+.logo-facebook {
+  &:before {
+    content: unicode($logo-facebook); 
+  }
+}
+.logo-linkedin {
+  &:before {
+    content: unicode($logo-linkedin); 
+  }
+}
+.logo-twitter-bird {
+  &:before {
+    content: unicode($logo-twitter-bird); 
+  }
+}
+.logout {
+  &:before {
+    content: unicode($logout); 
+  }
+}
+.map-pin {
+  &:before {
+    content: unicode($map-pin); 
+  }
+}
+.medical-box {
+  &:before {
+    content: unicode($medical-box); 
+  }
+}
+.mobile-phone-portrait {
+  &:before {
+    content: unicode($mobile-phone-portrait); 
+  }
+}
+.navigation-drawer {
+  &:before {
+    content: unicode($navigation-drawer); 
+  }
+}
+.network-signal {
+  &:before {
+    content: unicode($network-signal); 
+  }
+}
+.network-user {
+  &:before {
+    content: unicode($network-user); 
+  }
+}
+.pencil {
+  &:before {
+    content: unicode($pencil); 
+  }
+}
+.person {
+  &:before {
+    content: unicode($person); 
+  }
+}
+.picture {
+  &:before {
+    content: unicode($picture); 
+  }
+}
+.play-button {
+  &:before {
+    content: unicode($play-button); 
+  }
+}
+.projector-screen {
+  &:before {
+    content: unicode($projector-screen); 
+  }
+}
+.qr-code {
+  &:before {
+    content: unicode($qr-code); 
+  }
+}
+.remove-circle {
+  &:before {
+    content: unicode($remove-circle); 
+  }
+}
+.remove-circle-solid {
+  &:before {
+    content: unicode($remove-circle-solid); 
+  }
+}
+.report-problem-circle {
+  &:before {
+    content: unicode($report-problem-circle); 
+  }
+}
+.report-problem-triangle {
+  &:before {
+    content: unicode($report-problem-triangle); 
+  }
+}
+.rss-feed {
+  &:before {
+    content: unicode($rss-feed); 
+  }
+}
+.search {
+  &:before {
+    content: unicode($search); 
+  }
+}
+.server {
+  &:before {
+    content: unicode($server); 
+  }
+}
+.share {
+  &:before {
+    content: unicode($share); 
+  }
+}
+.share-solid {
+  &:before {
+    content: unicode($share-solid); 
+  }
+}
+.shopping-cart {
+  &:before {
+    content: unicode($shopping-cart); 
+  }
+}
+.smartwatch {
+  &:before {
+    content: unicode($smartwatch); 
+  }
+}
+.star {
+  &:before {
+    content: unicode($star); 
+  }
+}
+.subtract-circle {
+  &:before {
+    content: unicode($subtract-circle); 
+  }
+}
+.synchronize {
+  &:before {
+    content: unicode($synchronize); 
+  }
+}
+.synchronize-2 {
+  &:before {
+    content: unicode($synchronize-2); 
+  }
+}
+.tablet-ipad {
+  &:before {
+    content: unicode($tablet-ipad); 
+  }
+}
+.toolbox {
+  &:before {
+    content: unicode($toolbox); 
+  }
+}
+.truck {
+  &:before {
+    content: unicode($truck); 
+  }
+}
+.upload {
+  &:before {
+    content: unicode($upload); 
+  }
+}
+.video-camera {
+  &:before {
+    content: unicode($video-camera); 
+  }
+}
+.view {
+  &:before {
+    content: unicode($view); 
+  }
+}
+.window-code {
+  &:before {
+    content: unicode($window-code); 
+  }
+}
+.window-search-engine {
+  &:before {
+    content: unicode($window-search-engine); 
+  }
+}
+.zoom-in {
+  &:before {
+    content: unicode($zoom-in); 
+  }
+}
+.zoom-out {
+  &:before {
+    content: unicode($zoom-out); 
+  }
+}
+.expand-diagonal {
+  &:before {
+    content: unicode($expand-diagonal); 
+  }
+}
+.control-previous {
+  &:before {
+    content: unicode($control-previous); 
+  }
+}
+.control-previous-solid {
+  &:before {
+    content: unicode($control-previous-solid); 
+  }
+}
+.control-rewind {
+  &:before {
+    content: unicode($control-rewind); 
+  }
+}
+.control-rewind-solid {
+  &:before {
+    content: unicode($control-rewind-solid); 
+  }
+}
+.control-play {
+  &:before {
+    content: unicode($control-play); 
+  }
+}
+.control-play-solid {
+  &:before {
+    content: unicode($control-play-solid); 
+  }
+}
+.control-pause {
+  &:before {
+    content: unicode($control-pause); 
+  }
+}
+.control-pause-solid {
+  &:before {
+    content: unicode($control-pause-solid); 
+  }
+}
+.control-stop {
+  &:before {
+    content: unicode($control-stop); 
+  }
+}
+.control-stop-solid {
+  &:before {
+    content: unicode($control-stop-solid); 
+  }
+}
+.control-fast-forward {
+  &:before {
+    content: unicode($control-fast-forward); 
+  }
+}
+.control-fast-forward-solid {
+  &:before {
+    content: unicode($control-fast-forward-solid); 
+  }
+}
+.control-next {
+  &:before {
+    content: unicode($control-next); 
+  }
+}
+.control-next-solid {
+  &:before {
+    content: unicode($control-next-solid); 
+  }
+}
+.control-eject {
+  &:before {
+    content: unicode($control-eject); 
+  }
+}
+.control-eject-solid {
+  &:before {
+    content: unicode($control-eject-solid); 
+  }
+}
+.volume-off {
+  &:before {
+    content: unicode($volume-off); 
+  }
+}
+.volume-off-solid {
+  &:before {
+    content: unicode($volume-off-solid); 
+  }
+}
+.volume-low {
+  &:before {
+    content: unicode($volume-low); 
+  }
+}
+.volume-low-solid {
+  &:before {
+    content: unicode($volume-low-solid); 
+  }
+}
+.volume-medium {
+  &:before {
+    content: unicode($volume-medium); 
+  }
+}
+.volume-medium-solid {
+  &:before {
+    content: unicode($volume-medium-solid); 
+  }
+}
+.volume-max {
+  &:before {
+    content: unicode($volume-max); 
+  }
+}
+.volume-max-solid {
+  &:before {
+    content: unicode($volume-max-solid); 
+  }
+}
+.newspaper {
+  &:before {
+    content: unicode($newspaper); 
+  }
+}
+.rss-feed-solid {
+  &:before {
+    content: unicode($rss-feed-solid); 
+  }
+}
+.file-text-picture {
+  &:before {
+    content: unicode($file-text-picture); 
+  }
+}
+.file-checklist-edit {
+  &:before {
+    content: unicode($file-checklist-edit); 
+  }
+}
+.logo-youtube-clip {
+  &:before {
+    content: unicode($logo-youtube-clip); 
+  }
+}
+.logo-slide-share {
+  &:before {
+    content: unicode($logo-slide-share); 
+  }
+}
+.presentation-code {
+  &:before {
+    content: unicode($presentation-code); 
+  }
+}
+.programming-website {
+  &:before {
+    content: unicode($programming-website); 
+  }
+}
+.video-meeting-square {
+  &:before {
+    content: unicode($video-meeting-square); 
+  }
+}
+

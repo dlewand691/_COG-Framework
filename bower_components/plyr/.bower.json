@@ -6,7 +6,7 @@
     "Audio",
     "Video",
     "HTML5 Audio",
-    "HTml5 Video"
+    "HTML5 Video"
   ],
   "authors": [
     "Sam Potts <sam@potts.es>"
@@ -30,14 +30,14 @@
     "url": "git://github.com/sampotts/plyr.git"
   },
   "license": "MIT",
-  "version": "2.0.18",
-  "_release": "2.0.18",
+  "version": "3.3.5",
+  "_release": "3.3.5",
   "_resolution": {
     "type": "version",
-    "tag": "v2.0.18",
-    "commit": "69f941b9cab91c53df7335fbaf6c0d521cdcb5b2"
+    "tag": "v3.3.5",
+    "commit": "165515009266a5dc0b625cef26cf6ba1a80bb12e"
   },
   "_source": "https://github.com/selz/plyr.git",
-  "_target": "^2.0.18",
-  "_originalSource": "plyr"
+  "_target": "*",
+  "_originalSource": "https://github.com/selz/plyr.git"
 }

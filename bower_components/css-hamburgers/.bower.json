@@ -48,6 +48,6 @@
     "commit": "0aedeec91c0ffc14b3c6e31b2e8fb700ea0fb3d3"
   },
   "_source": "https://github.com/jonsuh/hamburgers.git",
-  "_target": "0.9.3",
+  "_target": "*",
   "_originalSource": "css-hamburgers"
 }

@@ -44,6 +44,6 @@
     "commit": "81dc4fb0b4c168ba27bfb78b3d4077df3770caac"
   },
   "_source": "https://github.com/michalsnik/aos.git",
-  "_target": "^2.2.0",
-  "_originalSource": "aos"
+  "_target": "^2.1.1",
+  "_originalSource": "https://github.com/michalsnik/aos.git"
 }
