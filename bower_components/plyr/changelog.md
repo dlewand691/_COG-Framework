@@ -1,3 +1,15 @@
+# v3.3.7
+
+*   Poster fixes (thanks @friday)
+*   Grid tweak
+
+# v3.3.6
+
+*   Vimeo fixes for mute state
+*   Vimeo ID fix (fixes #945)
+*   Use `<div>` for poster container
+*   Tooltip fixes for unicode languages (fixes #943)
+
 # v3.3.5
 
 *   Removed `.load()` call as it breaks HLS (see #870)

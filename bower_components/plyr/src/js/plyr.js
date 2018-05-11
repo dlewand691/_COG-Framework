@@ -1,6 +1,6 @@
 // ==========================================================================
 // Plyr
-// plyr.js v3.3.5
+// plyr.js v3.3.7
 // https://github.com/sampotts/plyr
 // License: The MIT License (MIT)
 // ==========================================================================
@@ -1243,6 +1243,29 @@ class Plyr {
      */
     static loadSprite(url, id) {
         return utils.loadSprite(url, id);
+    }
+
+    /**
+     * Setup multiple instances
+     * @param {*} selector
+     * @param {object} options
+     */
+    static setup(selector, options = {}) {
+        let targets = null;
+
+        if (utils.is.string(selector)) {
+            targets = Array.from(document.querySelectorAll(selector));
+        } else if (utils.is.nodeList(selector)) {
+            targets = Array.from(selector);
+        } else if (utils.is.array(selector)) {
+            targets = selector.filter(i => utils.is.element(i));
+        }
+
+        if (utils.is.empty(targets)) {
+            return null;
+        }
+
+        return targets.map(t => new Plyr(t, options));
     }
 }
 

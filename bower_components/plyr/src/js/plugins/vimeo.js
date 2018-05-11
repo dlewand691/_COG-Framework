@@ -53,6 +53,7 @@ const vimeo = {
         const options = {
             loop: player.config.loop.active,
             autoplay: player.autoplay,
+            // muted: player.muted,
             byline: false,
             portrait: false,
             title: false,
@@ -82,7 +83,7 @@ const vimeo = {
         iframe.setAttribute('allow', 'autoplay');
 
         // Inject the package
-        const wrapper = utils.createElement('div');
+        const wrapper = utils.createElement('div', { class: player.config.classNames.embedContainer });
         wrapper.appendChild(iframe);
         player.media = utils.replaceElement(wrapper, player.media);
 
@@ -107,7 +108,10 @@ const vimeo = {
 
         // Setup instance
         // https://github.com/vimeo/player.js
-        player.embed = new window.Vimeo.Player(iframe);
+        player.embed = new window.Vimeo.Player(iframe, {
+            autopause: player.config.autopause,
+            muted: player.muted,
+        });
 
         player.media.paused = true;
         player.media.currentTime = 0;
