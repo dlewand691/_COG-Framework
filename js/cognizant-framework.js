@@ -65,6 +65,8 @@
 // @codekit-prepend '../bower_components/lazysizes/lazysizes.js'
 // @codekit-prepend '../bower_components/slick-carousel/slick/slick.min.js'
 
+Foundation.Abide.defaults.patterns['dashes_only'] = /^[0-9-+]*$/;
+
 $(document).foundation();
 
 var $sticky = $('.sticky');
