@@ -78,7 +78,6 @@ $icomoon-font-path: "../fonts/Cognizant-Icons-1.3-FONT/fonts";
 * {
     // background-color: rgba(0,255,0,0.1);
 }
-
 /* ----  End of DEBUGGING  -------------------------------------------------------------------------- */
 /*=============================================================================================
 
@@ -2072,10 +2071,10 @@ input.placeholder-white::placeholder {
 }
 
 select {
-    height         : 2.25rem;
-    padding-right  : 1em;
-    background     : url("data:image/svg+xml;charset=utf8,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs%3E%3Cpath d='M9.958 2.417L5.167 7.833c-.042.042-.084.084-.167.084s-.125-.042-.167-.084L.042 2.417C0 2.375 0 2.292 0 2.208a.23.23 0 0 1 .208-.125h9.584a.23.23 0 0 1 .208.125v.084c0 .041 0 .083-.042.125z' id='a'/%3E%3C/defs%3E%3Cg transform='translate(0 -2)' fill='none' fill-rule='evenodd'%3E%3Cmask id='b' fill='%23fff'%3E%3Cuse xlink:href='%23a'/%3E%3C/mask%3E%3Cuse fill='%23000' fill-rule='nonzero' xlink:href='%23a'/%3E%3Cg mask='url(%23b)' fill='%23999'%3E%3Cpath d='M0 0h10v10H0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat right 0.75em bottom 50%;
-    background-size: 15px;
+    height       : 2.25rem;
+    padding-right: 1em;
+    background   : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Ctitle%3Earrow-down%3C/title%3E%3Cpath d='M0 5.5v-.2c.1-.2.3-.3.5-.3h23c.2 0 .4.1.5.3 0 .2 0 .4-.1.5l-11.5 13c-.1.1-.2.2-.4.2s-.3-.1-.4-.2L.1 5.8C0 5.7 0 5.6 0 5.5zm22.4.5H1.6L12 17.7 22.4 6z' fill='%23999999' stroke='%23999999' stroke-width='1'/%3E%3C/svg%3E") no-repeat right 0.5rem bottom 45%;
+    // background-size: 15px;
 }
 
 /* ----  End of FORMS  --------------------------------------------------------------------- */
@@ -2109,7 +2108,7 @@ select {
     label {
         position  : absolute;
         left      : 0.5rem;
-        top       : -.5rem;
+        top       : 0;
         cursor    : text;
         font-size : 75%;
         opacity   : 1;
@@ -2121,7 +2120,7 @@ select {
     &::placeholder {
         opacity   : 1;
         transition: all 0.2s;
-        color     : rgba($white, .4);
+        color     : rgba($gray-dark1, .4);
     }
 
     &:placeholder-shown:not(:focus)::placeholder {
@@ -2133,6 +2132,7 @@ select {
         font-size: inherit;
         opacity  : 1;
         @content;
+        top      : 0.7rem;
     }
 }
 
@@ -2141,9 +2141,8 @@ select {
     @include float-label;
 
     select {
-        -webkit-appearance: none;
-        -moz-appearance   : none;
-        appearance        : none;
+        appearance: none;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Ctitle%3Earrow-down%3C/title%3E%3Cpath d='M0 5.5v-.2c.1-.2.3-.3.5-.3h23c.2 0 .4.1.5.3 0 .2 0 .4-.1.5l-11.5 13c-.1.1-.2.2-.4.2s-.3-.1-.4-.2L.1 5.8C0 5.7 0 5.6 0 5.5zm22.4.5H1.6L12 17.7 22.4 6z' fill='%2353565a' stroke='%2353565a' stroke-width='1'/%3E%3C/svg%3E") no-repeat right 0.5rem bottom 25% !important;
     }
 
     input,
@@ -2151,40 +2150,31 @@ select {
     textarea {
         @include float-label-input;
         font-size    : inherit;
-        padding-top  : 1em;
+        padding-top  : 1.2rem;
         border       : 0;
         border-radius: 0;
         box-shadow   : none;
+        background   : none;
+        border-bottom: 1px solid rgba($gray-dark1, .2);
         @include float-label-scaled {
-            top: 0.25em;
+            top: 0.5rem;
         }
 
         &:focus {
             outline     : none;
-            border-color: rgba($blue,.5);
-        }
-    }
-
-    &.white input,
-    &.white select,
-    &.white textarea {
-        background   : none;
-        color        : $white;
-        border-bottom: 1px solid rgba($white,.7);
-
-        &:focus {
             background  : none;
             box-shadow  : none;
-            border-width: 0 0 2px 0;
-            border-color: rgba($blue, 1);
+            border-width: 0 0 1px 0;
+            border-color: rgba($blue-light, 1);
+            box-shadow  : 0 1px 0 rgba($blue-light, 1);
         }
     }
 
-    &.white span {
-        color: $white;
+    & span {
+        // color: $white;
     }
 
-    &.white input:focus + span {
+    & input:focus + span {
         color: $blue;
     }
 
@@ -2194,6 +2184,58 @@ select {
         top      : 0;
         font-size: initial;
         color    : inherit !important;
+    }
+
+    & .is-invalid-input:not(:focus) {
+        border-color: $red;
+        color       : $red;
+    }
+}
+
+form.white {
+    select {
+        appearance: none;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Ctitle%3Earrow-down%3C/title%3E%3Cpath d='M0 5.5v-.2c.1-.2.3-.3.5-.3h23c.2 0 .4.1.5.3 0 .2 0 .4-.1.5l-11.5 13c-.1.1-.2.2-.4.2s-.3-.1-.4-.2L.1 5.8C0 5.7 0 5.6 0 5.5zm22.4.5H1.6L12 17.7 22.4 6z' fill='%23ffffff' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E") no-repeat right 0.5rem bottom 25% !important;
+    }
+
+    & input,
+    & select,
+    & textarea {
+        background   : none;
+        color        : $white;
+        border-bottom: 1px solid rgba($white,.7);
+
+        &:focus {
+            background  : none;
+            box-shadow  : none;
+            border-width: 0 0 1px 0;
+            border-color: rgba($blue-light, 1);
+            box-shadow  : 0 1px 0 rgba($blue-light, 1);
+        }
+
+        &::placeholder {
+            color: rgba($white, .4);
+        }
+    }
+
+    & span {
+        color: $white;
+    }
+
+    & input:focus + span {
+        color: $blue;
+    }
+
+    & .form-error {
+        position : relative;
+        left     : 0;
+        top      : 0;
+        font-size: initial;
+        color    : inherit !important;
+    }
+
+    & .is-invalid-label span {
+        color: $red;
     }
 
     & .is-invalid-input:not(:focus) {
