@@ -386,6 +386,26 @@ $zindexes: 11;
         .#{$size}-align-top {
             align-items: flex-start;
         }
+
+        .#{$size}-align-bottom {
+            align-items: flex-end;
+        }
+
+        .#{$size}-align-middle {
+            align-items: center;
+        }
+
+        .#{$size}-align-center {
+            justify-content: center;
+        }
+
+        .#{$size}-align-left {
+            justify-content: flex-start;
+        }
+
+        .#{$size}-align-right {
+            justify-content: flex-end;
+        }
     }
 }
 /* -----  End of FLEX GRID ADDITIONS  --------------------------------------------- */
@@ -662,7 +682,7 @@ $background-tints: 5;
 @for $i from 1 through $background-tints {
     @each $color-name, $color in $colors-primary {
         .bg-#{$color-name}-tint#{$i} {
-            background-color: lighten($color, percentage($i / 20)) !important;
+            background-color: lighten($color, percentage($i / 17.5)) !important;
         }
     }
 }
@@ -1189,7 +1209,7 @@ hr.dark {
 }
 
 hr.gradient {
-    @extend hr;
+    @extend %hr;
     background: linear-gradient(to right, $blue-light, $green);
     border    : none;
     height    : 2px;
@@ -1287,35 +1307,42 @@ h6 {
     // hyphens: auto;
 }
 
+%h1,
 h1 {
     @include responsive-font-size(84);
     font-weight: 300;
 }
 
+%h2,
 h2 {
     @include responsive-font-size(63);
     font-weight: 300;
 }
 
+%h3,
 h3 {
     @include responsive-font-size(47);
 }
 
+%h4,
 h4 {
     @include responsive-font-size(36);
     font-weight: bold;
 }
 
+%h5,
 h5 {
     @include responsive-font-size(27);
     font-weight: bold;
 }
 
+%h6,
 h6 {
     @include responsive-font-size(20);
     font-weight: bold;
 }
 
+%p,
 p {
     @include responsive-font-size(20);
 }
@@ -1665,21 +1692,23 @@ i {
 ============================================================================================= */
 blockquote {
     @extend %text-gradient;
-    @extend h5;
+    @extend %h5;
     font-style  : italic;
     border      : 1px solid $gray-light2;
     border-left : 0;
     border-right: 0;
     padding     : 3.75rem 0;
     text-align  : center;
+
+    %cite,
+    cite {
+        color                  : $gray-dark2;
+        -webkit-text-fill-color: $gray-dark2;
+        fill                   : $gray-dark2;
+        margin-top             : 1.875rem;
+    }
 }
 
-blockquote cite {
-    color                  : $gray-dark2 !important;
-    -webkit-text-fill-color: $gray-dark2;
-    fill                   : $gray-dark2;
-    margin-top             : 1.875rem;
-}
 /* -----  End of BLOCKQUOTES  --------------------------------------------- */
 /* ===========================================================================================================
 ██      ██ ███████ ████████ ███████
@@ -1930,7 +1959,7 @@ fieldset {
 }
 
 legend {
-    @extend h5;
+    @extend %h5;
     background: transparent !important;
 }
 
@@ -2423,7 +2452,7 @@ thead th {
 }
 
 .accordion-title {
-    @extend h6;
+    @extend %h6;
     text-decoration: none;
     margin         : 0;
     padding-right  : 2.5rem;
