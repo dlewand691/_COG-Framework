@@ -1,6 +1,6 @@
 {
   "name": "aos",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "homepage": "git://github.com/michalsnik/aos.git",
   "authors": [
     "Michał Sajnóg <michal.sajnog@hotmail.com>"
@@ -37,11 +37,11 @@
     "package.json"
   ],
   "dependencies": {},
-  "_release": "2.2.0",
+  "_release": "2.3.0",
   "_resolution": {
     "type": "version",
-    "tag": "v2.2.0",
-    "commit": "81dc4fb0b4c168ba27bfb78b3d4077df3770caac"
+    "tag": "v2.3.0",
+    "commit": "30a76e27fb9c1c23128dfb449e00153b80a0bdfb"
   },
   "_source": "https://github.com/michalsnik/aos.git",
   "_target": "^2.1.1",
