@@ -1262,8 +1262,8 @@ $rfs-breakpoint-unit: px;
 // Resize font-size based on screen height and width.
 $rfs-two-dimensional: false;
 
-// Generate disable classes
-$rfs-generate-disable-classes: false;
+// Generate enable or disable classes. Possibilities: false, "enable" or "disable"
+$rfs-class: "disable";
 
 @import "../bower_components/rfs/scss/_rfs.scss";
 
@@ -3946,11 +3946,13 @@ div iframe.video {
 // ██   ██ ██   ██ ██  ██ ██ ██  ██ ██ ██      ██   ██      ██
 // ██████  ██   ██ ██   ████ ██   ████ ███████ ██   ██ ███████
 // =============================================================================================
-
 .banner-header {
-    @include breakpoint(small) {
+    background-size    : cover;
+    background-position: center center;
+    @include breakpoint(small only) {
         .row {
             min-height: 350px;
+            display   : block;
         }
     };
     @include breakpoint(medium) {
@@ -3961,10 +3963,31 @@ div iframe.video {
 }
 
 .banner-logoLockup {
-    max-height: 200px;
-    background: rgba(255,255,255,.8);
+    width     : 100%;
+    max-width : 275px;
+    background: rgba(255,255,255,.9);
+    @include breakpoint(small only) {
+        width        : 150px;
+        margin-bottom: 1rem;
+    };
 }
 
+.banner-mesh {
+    background-position: bottom left;
+    background-repeat  : no-repeat;
+
+    @include breakpoint(small) {
+        background-size: contain;
+    };
+
+    @include breakpoint(medium) {
+        background-size: 75%;
+    };
+
+    @include breakpoint(large) {
+        background-size: 50%;
+    };
+}
 // -----  End of BANNERS  ---------------------------------------------
 
 /* =============================================================================================
