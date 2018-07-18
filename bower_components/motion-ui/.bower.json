@@ -1,6 +1,6 @@
 {
   "name": "motion-ui",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "authors": [
     "ZURB <foundation@zurb.com>"
   ],
@@ -26,11 +26,11 @@
     "jquery": ">=2.2.0"
   },
   "homepage": "https://github.com/zurb/motion-ui",
-  "_release": "2.0.2",
+  "_release": "2.0.3",
   "_resolution": {
     "type": "version",
-    "tag": "v2.0.2",
-    "commit": "6b4a06231d9b7fa3bb138fef0c9fc3f131d3555c"
+    "tag": "v2.0.3",
+    "commit": "4c5708f70679a79d24dc3fea2adf745d6f3f230b"
   },
   "_source": "https://github.com/zurb/motion-ui.git",
   "_target": "*",

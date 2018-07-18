@@ -32,7 +32,7 @@
   "private": true,
   "dependencies": {
     "foundation-sites": "6.3.1",
-    "what-input": "*",
+    "what-input": "^5.1.0",
     "lazysizes": "*",
     "jquery": "2.2.4",
     "css-hamburgers": "*",

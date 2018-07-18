@@ -13,50 +13,46 @@ $border-side: (
 );
 
 $border-width: 5 !default;
-@each $size in $breakpoint-classes {
-    @include breakpoint($size) {
-        @for $i from 0 through $border-width {
-            .#{$size}-bd#{$i} {
-                border: $i + px solid $gray-light2 !important;
-            }
-        }
-        @for $i from 0 through $border-width {
-            @each $side-name, $side in $border-side {
-                @each $color-name, $color in $colors-primary {
-                    .#{$size}-bd-#{$side-name}-#{$color-name}#{$i} {
-                        border-#{$side}: $i + px $color solid !important;
-                    }
-                }
-            }
-        }
-        @for $i from 0 through $border-width {
-            @each $side-name, $side in $border-side {
-                .#{$size}-bd-#{$side-name}#{$i} {
-                    border-#{$side}: $i + px $gray-light2 solid !important;
-                }
-            }
-        }
-        @for $i from 0 through $border-width {
-            @each $color-name, $color in $colors-primary {
-                .#{$size}-bd-#{$color-name}#{$i} {
-                    border: $i + px solid $color !important;
-                }
-            }
-        }
+@for $i from 0 through $border-width {
+    .bd#{$i} {
+        border: $i + px solid $gray-light2 !important;
+    }
+}
+@for $i from 0 through $border-width {
+    @each $side-name, $side in $border-side {
         @each $color-name, $color in $colors-primary {
-            .#{$size}-bd-#{$color-name} {
-                border: 2px solid $color !important;
+            .bd-#{$side-name}-#{$color-name}#{$i} {
+                border-#{$side}: $i + px $color solid !important;
             }
         }
-        @for $i from 0 through $border-width {
-            .#{$size}-bd-gradient#{$i} {
-                border-width      : $i + px;
-                border-style      : solid;
-                border-image      : linear-gradient(to right, $blue-light 0%, $green 100%);
-                border-image-slice: 1;
-                border-color      : inherit;
-            }
+    }
+}
+@for $i from 0 through $border-width {
+    @each $side-name, $side in $border-side {
+        .bd-#{$side-name}#{$i} {
+            border-#{$side}: $i + px $gray-light2 solid !important;
         }
+    }
+}
+@for $i from 0 through $border-width {
+    @each $color-name, $color in $colors-primary {
+        .bd-#{$color-name}#{$i} {
+            border: $i + px solid $color !important;
+        }
+    }
+}
+@each $color-name, $color in $colors-primary {
+    .bd-#{$color-name} {
+        border: 2px solid $color !important;
+    }
+}
+@for $i from 0 through $border-width {
+    .bd-gradient#{$i} {
+        border-width      : $i + px;
+        border-style      : solid;
+        border-image      : linear-gradient(to right, $blue-light 0%, $green 100%);
+        border-image-slice: 1;
+        border-color      : inherit;
     }
 }
 $rounded-gradient-border-width: 2px;

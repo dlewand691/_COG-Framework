@@ -1616,7 +1616,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.abide.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.abide-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1636,7 +1636,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.accordion.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.accordion-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1656,7 +1656,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.accordionMenu.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.accordionMenu-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1676,7 +1676,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.core.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.core-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1696,7 +1696,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.drilldown.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.drilldown-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1716,7 +1716,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.dropdown.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.dropdown-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1736,7 +1736,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.dropdownMenu.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.dropdownMenu-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1756,7 +1756,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.equalizer.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.equalizer-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1776,7 +1776,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.interchange.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.interchange-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1796,7 +1796,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.magellan.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.magellan-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1816,7 +1816,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.offcanvas.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.offcanvas-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1856,7 +1856,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.responsiveMenu.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.responsiveMenu-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1876,7 +1876,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.responsiveToggle.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.responsiveToggle-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1896,7 +1896,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.reveal.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.reveal-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1936,7 +1936,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.sticky.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.sticky-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1956,7 +1956,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.tabs.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.tabs-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1976,7 +1976,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.toggler.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.toggler-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2016,7 +2016,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.box.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.box-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2036,7 +2036,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.keyboard.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.keyboard-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2056,7 +2056,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.mediaQuery.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.mediaQuery-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2076,7 +2076,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.motion.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.motion-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2096,7 +2096,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.nest.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.nest-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2116,7 +2116,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.timerAndImageLoader.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.timerAndImageLoader-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2136,7 +2136,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.touch.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.touch-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2156,7 +2156,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.triggers.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.util.triggers-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -2176,7 +2176,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.zf.responsiveAccordionTabs.js",
+		"oAP": "\/bower_components\/foundation-sites\/dist\/js\/plugins\/foundation.zf.responsiveAccordionTabs-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -3461,7 +3461,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/jquery\/dist\/jquery.js",
+		"oAP": "\/bower_components\/jquery\/dist\/jquery-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -4481,7 +4481,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/lazysizes\/lazysizes.js",
+		"oAP": "\/bower_components\/lazysizes\/lazysizes-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -5001,7 +5001,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/motion-ui\/motion-ui.js",
+		"oAP": "\/bower_components\/motion-ui\/motion-ui-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -5851,6 +5851,26 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/bower_components\/plyr\/src\/js\/config\/defaults.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/config\/defaults.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/config\/types.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/config\/types.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/bower_components\/plyr\/src\/js\/console.js": {
 		"ft": 64,
 		"ma": 0,
@@ -5867,16 +5887,6 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "\/bower_components\/plyr\/src\/js\/controls.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"\/bower_components\/plyr\/src\/js\/defaults.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/bower_components\/plyr\/src\/js\/defaults.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -6011,16 +6021,6 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"\/bower_components\/plyr\/src\/js\/types.js": {
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "\/bower_components\/plyr\/src\/js\/types.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
 	"\/bower_components\/plyr\/src\/js\/ui.js": {
 		"ft": 64,
 		"ma": 0,
@@ -6031,12 +6031,142 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"\/bower_components\/plyr\/src\/js\/utils.js": {
+	"\/bower_components\/plyr\/src\/js\/utils\/animation.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/plyr\/src\/js\/utils.js",
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/animation.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/arrays.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/arrays.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/browser.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/browser.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/elements.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/elements.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/events.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/events.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/fetch.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/fetch.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/is.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/is.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/loadImage.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/loadImage.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/loadScript.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/loadScript.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/loadSprite.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/loadSprite.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/objects.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/objects.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/strings.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/strings.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/time.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/time.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/plyr\/src\/js\/utils\/urls.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/plyr\/src\/js\/utils\/urls.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -6906,7 +7036,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/scrollup\/dist\/jquery.scrollUp.js",
+		"oAP": "\/bower_components\/scrollup\/dist\/jquery.scrollUp-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -7043,7 +7173,7 @@
 		"ma": 0,
 		"mi": 1,
 		"oA": 1,
-		"oAP": "\/bower_components\/slick-carousel\/slick\/slick.min.js",
+		"oAP": "\/bower_components\/slick-carousel\/slick\/slick.min-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -7060,6 +7190,26 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
+		},
+	"\/bower_components\/succinct\/jQuery.succinct.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/succinct\/jQuery.succinct-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/bower_components\/succinct\/jQuery.succinct.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "\/bower_components\/succinct\/jQuery.succinct.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"\/bower_components\/what-input\/dist\/what-input.js": {
 		"ft": 64,
@@ -7325,6 +7475,19 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/scss\/_settings-old-brand.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/_settings-old-brand.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/scss\/_settings.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -7334,6 +7497,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/scss\/_settings.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/scss\/cognizant-framework-old-brand.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/scss\/cognizant-framework-old-brand.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

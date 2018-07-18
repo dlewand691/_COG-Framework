@@ -591,50 +591,138 @@ $padding-y: (py);
 ██      ██    ██ ██      ██    ██ ██   ██      ██
  ██████  ██████  ███████  ██████  ██   ██ ███████
 ==================================================================================================== */
-$blue: $primary-color;
-$blue-light: lighten($blue, 10%);
-$blue-dark: darken($blue, 10%);
-$green: $success-color;
-$green-dark: darken($green, 10%);
-$orange: #ff8f1c;
-$orange-dark: #f4633a;
-$gray-dark1: lighten($black, 20%);
-$gray-dark2: lighten($black, 40%);
-$gray-medium: lighten($black, 50%);
-$gray-light1: lighten($black, 60%);
-$gray-light2: lighten($black, 80%);
-$gray-light3: lighten($black, 90%);
-$purple: #5c068c;
-$purple-dark: #3c1053;
-$magenta: #c800a1;
-$magenta-dark: #840b55;
+$blue: #4298b5;
+$blue-light: #71c5e8;
+$blue-dark: #00677f;
+$green: #64a70b;
+$green-dark: #4a7729;
+$orange: #ed8b00;
+$orange-dark: #d86018;
+$gray-dark1: #2d2926;
+$gray-dark2: #53565a;
+$gray-medium: #666666;
+$gray-light1: #999999;
+$gray-light2: #c4c4c4;
+$gray-light3: #f1f1f1;
+$purple: #c800a1;
 $red: #e1523d;
 $colors-primary: (
-    "black"     : $black,
-    "white"     : $white,
-    "blue"      : $blue,
-    blue-light  : $blue-light,
-    blue-dark   : $blue-dark,
-    "green"     : $green,
-    green-dark  : $green-dark,
-    gray-dark1  : $gray-dark1,
-    gray-dark2  : $gray-dark2,
-    gray-medium : $gray-medium,
-    gray-light1 : $gray-light1,
-    gray-light2 : $gray-light2,
-    gray-light3 : $gray-light3,
-    "red"       : $red,
-    "orange"    : $orange,
-    orange-dark : $orange-dark,
-    "purple"    : $purple,
-    purple-dark : $purple,
-    "magenta"   : $magenta,
-    magenta-dark: $magenta-dark
+    "black"    : $black,
+    "white"    : $white,
+    "blue"     : $blue,
+    blue-light : $blue-light,
+    blue-dark  : $blue-dark,
+    "green"    : $green,
+    green-dark : $green-dark,
+    gray-dark1 : $gray-dark1,
+    gray-dark2 : $gray-dark2,
+    gray-medium: $gray-medium,
+    gray-light1: $gray-light1,
+    gray-light2: $gray-light2,
+    gray-light3: $gray-light3,
+    "red"      : $red
 );
-$colors-secondary: ();
+$colors-secondary: (
+    "orange"   : $orange,
+    orange-dark: $orange-dark,
+    "purple"   : $purple,
+);
 /* ----  End of COLORS  -------------------------------------------------------------------------- */
 
-@import "styles/borders.scss";
+/* ===========================================================================================================
+██████   ██████  ██████  ██████  ███████ ██████  ███████
+██   ██ ██    ██ ██   ██ ██   ██ ██      ██   ██ ██
+██████  ██    ██ ██████  ██   ██ █████   ██████  ███████
+██   ██ ██    ██ ██   ██ ██   ██ ██      ██   ██      ██
+██████   ██████  ██   ██ ██████  ███████ ██   ██ ███████
+================================================================================================== */
+$border-side: (
+    "t": top,
+    "r": right,
+    "b": bottom,
+    "l": left
+);
+
+$border-width: 5 !default;
+@for $i from 0 through $border-width {
+    .bd#{$i} {
+        border: $i + px solid $gray-light2 !important;
+    }
+}
+@for $i from 0 through $border-width {
+    @each $side-name, $side in $border-side {
+        @each $color-name, $color in $colors-primary {
+            .bd-#{$side-name}-#{$color-name}#{$i} {
+                border-#{$side}: $i + px $color solid !important;
+            }
+        }
+    }
+}
+@for $i from 0 through $border-width {
+    @each $side-name, $side in $border-side {
+        .bd-#{$side-name}#{$i} {
+            border-#{$side}: $i + px $gray-light2 solid !important;
+        }
+    }
+}
+@for $i from 0 through $border-width {
+    @each $color-name, $color in $colors-primary {
+        .bd-#{$color-name}#{$i} {
+            border: $i + px solid $color !important;
+        }
+    }
+}
+@each $color-name, $color in $colors-primary {
+    .bd-#{$color-name} {
+        border: 2px solid $color !important;
+    }
+}
+@for $i from 0 through $border-width {
+    .bd-gradient#{$i} {
+        border-width      : $i + px;
+        border-style      : solid;
+        border-image      : linear-gradient(to right, $blue-light 0%, $green 100%);
+        border-image-slice: 1;
+        border-color      : inherit;
+    }
+}
+$rounded-gradient-border-width: 2px;
+
+.rounded-gradient-border,
+.tabs.rounded-gradient-border .tabs-title.is-active a {
+    position     : relative;
+    background   : linear-gradient(to right, $blue-light 0%, $green 100%);
+    border-radius: 100%;
+    z-index      : 1;
+
+    &:after {
+        position         : absolute;
+        display          : block;
+        top              : $rounded-gradient-border-width;
+        left             : $rounded-gradient-border-width;
+        width            : calc(100% - #{$rounded-gradient-border-width}*2);
+        height           : calc(100% - #{$rounded-gradient-border-width}*2);
+        content          : "";
+        background-color : inherit;
+        background-repeat: no-repeat;
+        background-size  : cover;
+        border-radius    : 1000px;
+        overflow         : hidden;
+        z-index          : -1;
+        transition       : $button-transition;
+    }
+}
+
+.button.rounded-gradient-border:hover {
+    &:after {
+        background: unset;
+    }
+}
+
+.tabs.rounded-gradient-border.bg-black .tabs-title.is-active a:after {
+    background: black;
+}
+/* ----  End of BORDERS  --------------------------------------------------------------------- */
 
 /* ====================================================================================================
 ██████   █████   ██████ ██   ██  ██████  ██████   ██████  ██    ██ ███    ██ ██████  ███████
@@ -1353,14 +1441,12 @@ h6 {
 h1 {
     @include responsive-font-size(84);
     font-weight: 300;
-    line-height: 1.1;
 }
 
 %h2,
 h2 {
     @include responsive-font-size(63);
     font-weight: 300;
-    line-height: 1.1;
 }
 
 %h3,
@@ -1918,11 +2004,11 @@ dl dt {
 
     &.white {
         background: $white;
-        color     : $anchor-color;
+        color     : $blue;
     }
 
     &.white:after {
-        color: $anchor-color;
+        color: $blue;
     }
 
     &.white:hover {
@@ -1942,12 +2028,6 @@ dl dt {
         border-style      : solid;
         border-image      : linear-gradient(to right, $blue-light 0%, $green 100%);
         border-image-slice: 1;
-    }
-
-    .bg-blue {
-        &:hover {
-            background: scale-color($blue, $lightness: -20%) !important;
-        }
     }
 }
 /* ----  End of BUTTON  -------------------------------------------------------------------------- */
@@ -2101,8 +2181,8 @@ input[type=radio] + .form-error {
         }
 
         &:after {
-            background  : $green;
-            border-color: $green-dark;
+            background  : $blue;
+            border-color: $blue-light;
         }
     }
 
@@ -2136,7 +2216,7 @@ input[type=radio] + .form-error {
         z-index      : 1;
         width        : 10px;
         height       : 10px;
-        background   : $green;
+        background   : $blue;
         border-radius: 50%;
     }
 
@@ -2381,13 +2461,8 @@ thead th {
    ██    ██   ██ ██████  ███████
 
 ============================================================================================= */
-$tab-background: $gray-light3;
-
 .tabs {
-    border-width: 1px 0 1px 1px;
-    border-style: solid;
-    border-color: $tab-content-border transparent $tab-content-border $tab-content-border;
-    background  : $tab-background;
+    border: 0;
 }
 // ==============================  VERTICAL TAB STYLES  ==============================
 
@@ -2396,29 +2471,29 @@ $tab-background: $gray-light3;
     margin-bottom: 0;
 
     a {
-        transition: $button-transition;
-        color     : $gray-dark2;
-        background: $gray-light3;
+        border-width: 1px 1px 1px 6px;
+        border-style: solid;
+        border-color: $tab-background $tab-content-border $tab-content-border transparent;
+        transition  : $button-transition;
+        background  : $gray-light2;
 
         &:focus {
-            color     : $gray-light3;
-            background: $gray-light1;
+            background: $gray-light2;
+            color     : $gray-light1;
         }
 
         &:hover {
-            color     : $gray-dark1;
-            background: $gray-light2;
+            color     : $gray-light1;
+            background: $gray-light3;
         }
     }
 
     &.is-active a {
-        box-shadow: inset 6px 0 0 0 $blue-light;
-        background: $white;
-        color     : $blue;
-
-        &:first-of-type {}
-
-        &:last-of-type {}
+        border-width: 1px 1px 1px 6px;
+        border-style: solid;
+        border-color: $tab-content-border $white $tab-content-border $blue-light;
+        background  : $white;
+        color       : $blue-dark;
     }
 
     &[class*="bg-steps"] a {
@@ -2445,12 +2520,22 @@ $tab-background: $gray-light3;
 .tabs:not(.vertical) {
     border: 1px solid $tab-content-border;
 
+    & + .tabs-content {
+        border    : 1px solid $tab-content-border;
+        border-top: 0;
+    }
+
     .tabs-title {
+        border-color : transparent;
+        margin-bottom: -1px;
+
         a {
-            border-width: 0;
+            border-width: 6px 1px 1px 1px;
+            border-style: solid;
+            border-color: transparent $tab-background $tab-content-border transparent;
             transition  : $button-transition;
-            color       : $gray-dark2;
-            background  : $gray-light3;
+            background  : $gray-light2;
+            padding-top : calc(#{$tab-item-padding} - 6px);
 
             &:focus {
                 background: $gray-light2;
@@ -2458,15 +2543,17 @@ $tab-background: $gray-light3;
             }
 
             &:hover {
-                color     : $gray-dark1;
-                background: $gray-light2;
+                color     : $gray-light1;
+                background: $gray-light3;
             }
         }
 
         &.is-active a {
-            box-shadow: inset 0 6px 0 0 $blue-light, 0 1px 0 0 $white;
-            background: $white;
-            color     : $blue;
+            border-width: 6px 1px 1px 1px;
+            border-style: solid;
+            border-color: $blue-light $tab-content-border $white $white;
+            background  : $white;
+            color       : $blue-dark;
         }
 
         &:first-of-type.is-active {
@@ -2674,11 +2761,11 @@ $sidelines-double-line-spacing: 0.5em !default;
 }
 
 .custom {
-    @include sidelines($text-padding: 20px, $line-length: 100%, $line-color: $blue, $line-thickness: 4px, $line-style: dotted);
+    @include sidelines($text-padding: 20px, $line-length: 100%, $line-color: #2980b9, $line-thickness: 4px, $line-style: dotted);
 }
 
 .custom-2 {
-    @include sidelines($line-color: $blue, $line-thickness: 4px);
+    @include sidelines($line-color: #27ae60, $line-thickness: 4px);
 }
 // -----  End of SIDE LINES  ---------------------------------------------
 
@@ -2772,7 +2859,7 @@ $sidelines-double-line-spacing: 0.5em !default;
 // =============================================================================================
 
 .dropdown.menu.arrow-white > li.is-dropdown-submenu-parent > a::after {
-    border-top-color: $white !important;
+    border-top-color: #fff !important;
     //  background: blue;
 }
 // -----  End of DROPDOWN MENU  ---------------------------------------------
@@ -2808,7 +2895,6 @@ $sidelines-double-line-spacing: 0.5em !default;
 
         > a {
             background: none !important;
-            box-shadow: none !important;
         }
     }
 }
@@ -2819,7 +2905,6 @@ $sidelines-double-line-spacing: 0.5em !default;
 
         > a {
             background: none !important;
-            box-shadow: none !important;
         }
     }
 }
@@ -2830,7 +2915,6 @@ $sidelines-double-line-spacing: 0.5em !default;
 
         > a {
             background: none !important;
-            box-shadow: none !important;
         }
     }
 }
@@ -2918,7 +3002,7 @@ $sidelines-double-line-spacing: 0.5em !default;
     margin: 0;
 
     & .active {
-        background: $green;
+        background: $blue;
         color     : $white;
     }
 }
@@ -2972,7 +3056,7 @@ $sidelines-double-line-spacing: 0.5em !default;
 }
 
 .menu > li > a:hover {
-    background: transparentize($green, .8);
+    background: transparentize($blue, .8);
     // background: $button-background-hover;
 }
 /* -----  End of TOP BAR  --------------------------------------------- */
@@ -3306,7 +3390,7 @@ $slick-font-path: "../fonts/slick/";
     bottom             : 10px;
     right              : 10px;
     padding            : 0 0 0 1rem;
-    background         : rgba($blue,0.85);
+    background         : rgba(0,114,143,0.85);
     background-position: right center;
     color              : $white;
 }
@@ -3314,11 +3398,11 @@ $slick-font-path: "../fonts/slick/";
 #scrollUp:after {
     font-family: "Cognizant-Icons";
     content    : "\e909";
-    color      : $white;
+    color      : #fff;
     font-weight: 600;
     margin     : 0 0 0 1rem;
     padding    : 0.5rem;
-    background : $blue;
+    background : #00708c;
     display    : inline-block!important;
 }
 
@@ -3452,16 +3536,11 @@ $slick-font-path: "../fonts/slick/";
 
 .footer {
     ul li {
-        line-height: 1.3rem;
-        margin     : 0;
+        // margin-bottom: 0.5rem !important;
     }
 
-    a {
-        font-weight: normal;
-
-        &:hover {
-            color: $anchor-color !important;
-        }
+    a:hover {
+        color: $blue !important;
     }
 }
 /* -----  End of FOOTER  --------------------------------------------- */
@@ -4027,12 +4106,4 @@ div iframe.video {
 
 .hover-show:hover {
     opacity: 1;
-}
-
-.hover-green {
-    transition: $button-transition;
-
-    &:hover {
-        color: $green !important;
-    }
 }

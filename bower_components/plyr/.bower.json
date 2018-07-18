@@ -1,41 +1,12 @@
 {
   "name": "plyr",
-  "description": "A simple HTML5 media player using custom controls",
-  "homepage": "http://plyr.io",
-  "keywords": [
-    "Audio",
-    "Video",
-    "HTML5 Audio",
-    "HTML5 Video"
-  ],
-  "authors": [
-    "Sam Potts <sam@potts.es>"
-  ],
-  "dependencies": {},
-  "main": [
-    "dist/plyr.css",
-    "dist/plyr.js",
-    "dist/plyr.svg",
-    "src/less/plyr.less",
-    "src/scss/plyr.scss",
-    "src/js/plyr.js"
-  ],
-  "ignore": [
-    "node_modules",
-    "bower_components",
-    ".gitignore"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/sampotts/plyr.git"
-  },
-  "license": "MIT",
-  "version": "3.3.20",
-  "_release": "3.3.20",
+  "homepage": "https://github.com/selz/plyr",
+  "version": "3.3.21",
+  "_release": "3.3.21",
   "_resolution": {
     "type": "version",
-    "tag": "v3.3.20",
-    "commit": "ac64350a5fb658f0c9d96063a3cdb8871669cd55"
+    "tag": "v3.3.21",
+    "commit": "7de9fd1d65471d54410b6a0069893a38eb1cbb22"
   },
   "_source": "https://github.com/selz/plyr.git",
   "_target": "^3.3.7",
