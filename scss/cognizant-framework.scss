@@ -441,6 +441,66 @@ $margin-x-positive: (mx);
 $margin-y-positive: (my);
 $margin-x-negative: (mxn);
 $margin-y-negative: (myn);
+
+$padding-sides-all: (p);
+$padding-sides: (
+    pt: top,
+    pr: right,
+    pb: bottom,
+    pl: left
+);
+$padding-x: (px);
+$padding-y: (py);
+// ==============================  HALF SIZES  ==============================
+@each $size in $breakpoint-classes {
+    @include breakpoint($size) {
+        @each $side in $margin-sides-all-positive {
+            .#{$size}-#{$side}-half {
+                margin: 0.5rem !important;
+            }
+        }
+        @each $side, $sideHalf in $margin-sides-positive {
+            .#{$size}-#{$side}-half {
+                margin-#{$sideHalf}: 0.5rem !important;
+            }
+        }
+        @each $side, $sideHalf in $margin-x-positive {
+            .#{$size}-#{$side}-half {
+                margin-left : 0.5rem !important;
+                margin-right: 0.5rem !important;
+            }
+        }
+        @each $side, $sideHalf in $margin-y-positive {
+            .#{$size}-#{$side}-half {
+                margin-top   : 0.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+        }
+        @each $side in $padding-sides-all {
+            .#{$size}-#{$side}-half {
+                padding: 0.5rem !important;
+            }
+        }
+        @each $side, $sideHalf in $padding-sides {
+            .#{$size}-#{$side}-half {
+                padding-#{$sideHalf}: 0.5rem !important;
+            }
+        }
+        @each $side in $padding-x {
+            .#{$size}-#{$side}-half {
+                padding-left : 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+        }
+        @each $side in $padding-y {
+            .#{$size}-#{$side}-half {
+                padding-top   : 0.5rem !important;
+                padding-bottom: 0.5rem !important;
+            }
+        }
+    }
+}
+
 @each $size in $breakpoint-classes {
     @include breakpoint($size) {
         @for $i from 0 to $whitespace {
@@ -492,15 +552,6 @@ $margin-y-negative: (myn);
     }
 }
 /* ============================  PADDINGS  ============================== */
-$padding-sides-all: (p);
-$padding-sides: (
-    pt: top,
-    pr: right,
-    pb: bottom,
-    pl: left
-);
-$padding-x: (px);
-$padding-y: (py);
 @each $size in $breakpoint-classes {
     @include breakpoint($size) {
         @for $i from 0 to $whitespace {
@@ -530,55 +581,6 @@ $padding-y: (py);
         }
     }
 }
-// ==============================  HALF SIZES  ==============================
-@each $size in $breakpoint-classes {
-    @include breakpoint($size) {
-        @each $side in $margin-sides-all-positive {
-            .#{$size}-#{$side}-half {
-                margin: 0.5rem !important;
-            }
-        }
-        @each $side, $sideHalf in $margin-sides-positive {
-            .#{$size}-#{$side}-half {
-                margin-#{$sideHalf}: 0.5rem !important;
-            }
-        }
-        @each $side, $sideHalf in $margin-x-positive {
-            .#{$size}-#{$side}-half {
-                margin-left : 0.5rem !important;
-                margin-right: 0.5rem !important;
-            }
-        }
-        @each $side, $sideHalf in $margin-y-positive {
-            .#{$size}-#{$side}-half {
-                margin-top   : 0.5rem !important;
-                margin-bottom: 0.5rem !important;
-            }
-        }
-        @each $side in $padding-sides-all {
-            .#{$size}-#{$side}-half {
-                padding: 0.5rem !important;
-            }
-        }
-        @each $side, $sideHalf in $padding-sides {
-            .#{$size}-#{$side}-half {
-                padding-#{$sideHalf}: 0.5rem !important;
-            }
-        }
-        @each $side in $padding-x {
-            .#{$size}-#{$side}-half {
-                padding-left : 0.5rem !important;
-                padding-right: 0.5rem !important;
-            }
-        }
-        @each $side in $padding-y {
-            .#{$size}-#{$side}-half {
-                padding-top   : 0.5rem !important;
-                padding-bottom: 0.5rem !important;
-            }
-        }
-    }
-}
 
 .mxn1-5 {
     margin: 0 -1.5rem !important;
@@ -592,9 +594,10 @@ $padding-y: (py);
  ██████  ██████  ███████  ██████  ██   ██ ███████
 ==================================================================================================== */
 $blue: $primary-color;
-$blue-light: lighten($blue, 10%);
+$blue-light: lighten($blue, 15%);
 $blue-dark: darken($blue, 10%);
 $green: $success-color;
+$green-light: lighten($green, 10%);
 $green-dark: darken($green, 10%);
 $orange: #ff8f1c;
 $orange-dark: #f4633a;
@@ -616,6 +619,7 @@ $colors-primary: (
     blue-light  : $blue-light,
     blue-dark   : $blue-dark,
     "green"     : $green,
+    green-light : $green-light,
     green-dark  : $green-dark,
     gray-dark1  : $gray-dark1,
     gray-dark2  : $gray-dark2,
@@ -692,144 +696,7 @@ $background-tints: 5;
     }
 }
 // -----  End of BACKGROUND TINTS  ---------------------------------------------
-/*=============================================================================================
 
-██████   █████   ██████ ██   ██  ██████  ██████   ██████  ██    ██ ███    ██ ██████
-██   ██ ██   ██ ██      ██  ██  ██       ██   ██ ██    ██ ██    ██ ████   ██ ██   ██
-██████  ███████ ██      █████   ██   ███ ██████  ██    ██ ██    ██ ██ ██  ██ ██   ██
-██   ██ ██   ██ ██      ██  ██  ██    ██ ██   ██ ██    ██ ██    ██ ██  ██ ██ ██   ██
-██████  ██   ██  ██████ ██   ██  ██████  ██   ██  ██████   ██████  ██   ████ ██████
-████████ ██ ███    ██ ████████ ███████
-   ██    ██ ████   ██    ██    ██
-   ██    ██ ██ ██  ██    ██    ███████
-   ██    ██ ██  ██ ██    ██         ██
-   ██    ██ ██   ████    ██    ███████
-
-=============================================================================================*/
-$background-shades: 5;
-@for $i from 1 through $background-shades {
-    @each $color-name, $color in $colors-primary {
-        .bg-#{$color-name}-shade#{$i} {
-            background-color: darken($color, percentage($i / 20));
-        }
-    }
-}
-// -----  End of BACKGROUND SHADES  ---------------------------------------------
-/* =============================================================================================
-
-██████   █████   ██████ ██   ██  ██████  ██████   ██████  ██    ██ ███    ██ ██████
-██   ██ ██   ██ ██      ██  ██  ██       ██   ██ ██    ██ ██    ██ ████   ██ ██   ██
-██████  ███████ ██      █████   ██   ███ ██████  ██    ██ ██    ██ ██ ██  ██ ██   ██
-██   ██ ██   ██ ██      ██  ██  ██    ██ ██   ██ ██    ██ ██    ██ ██  ██ ██ ██   ██
-██████  ██   ██  ██████ ██   ██  ██████  ██   ██  ██████   ██████  ██   ████ ██████
- ██████  ██████   █████  ██████  ██ ███████ ███    ██ ████████ ███████
-██       ██   ██ ██   ██ ██   ██ ██ ██      ████   ██    ██    ██
-██   ███ ██████  ███████ ██   ██ ██ █████   ██ ██  ██    ██    ███████
-██    ██ ██   ██ ██   ██ ██   ██ ██ ██      ██  ██ ██    ██         ██
- ██████  ██   ██ ██   ██ ██████  ██ ███████ ██   ████    ██    ███████
-
-============================================================================================= */
-@each $color-name, $color in $colors-primary {
-    .bg-grd-tb-#{$color-name} {
-        background: linear-gradient(180deg, $color, darken($color, 15%));
-    }
-
-    .bg-grd-bt-#{$color-name} {
-        background: linear-gradient(0deg, $color, darken($color, 15%));
-    }
-
-    .bg-grd-lr-#{$color-name} {
-        background: linear-gradient(to right, $color, darken($color, 15%));
-    }
-
-    .bg-grd-rl-#{$color-name} {
-        background: linear-gradient(to left, $color, darken($color, 15%));
-    }
-}
-
-.bg-grd-tb-blue-green {
-    background: linear-gradient(180deg, $blue, $green);
-}
-
-.bg-grd-bt-blue-green {
-    background: linear-gradient(0deg, $blue, $green);
-}
-
-.bg-grd-lr-blue-green {
-    background: linear-gradient(to right, $blue, $green);
-}
-
-.bg-grd-rl-blue-green {
-    background: linear-gradient(to left, $blue, $green);
-}
-
-.bg-grd-tb-blue-light-green {
-    background: linear-gradient(180deg, $blue-light, $green);
-}
-
-.bg-grd-bt-blue-light-green {
-    background: linear-gradient(0deg, $blue-light, $green);
-}
-
-.bg-grd-lr-blue-light-green {
-    background: linear-gradient(to right, $blue-light, $green);
-}
-
-.bg-grd-rl-blue-light-green {
-    background: linear-gradient(to left, $blue-light, $green);
-}
-
-.bg-grd-bt-blue,
-.bg-grd-bt-blue-dark,
-.bg-grd-bt-gray-dark1,
-.bg-grd-bt-gray-dark2,
-.bg-grd-bt-gray-light1,
-.bg-grd-bt-gray-medium,
-.bg-grd-bt-green,
-.bg-grd-bt-green-dark,
-.bg-grd-bt-orange,
-.bg-grd-bt-orange-dark,
-.bg-grd-bt-purple,
-.bg-grd-bt-red,
-.bg-grd-lr-blue,
-.bg-grd-lr-blue-dark,
-.bg-grd-lr-gray-dark1,
-.bg-grd-lr-gray-dark2,
-.bg-grd-lr-gray-light1,
-.bg-grd-lr-gray-medium,
-.bg-grd-lr-green,
-.bg-grd-lr-green-dark,
-.bg-grd-lr-orange,
-.bg-grd-lr-orange-dark,
-.bg-grd-lr-purple,
-.bg-grd-lr-red,
-.bg-grd-rl-blue,
-.bg-grd-rl-blue-dark,
-.bg-grd-rl-gray-dark1,
-.bg-grd-rl-gray-dark2,
-.bg-grd-rl-gray-light1,
-.bg-grd-rl-gray-medium,
-.bg-grd-rl-green,
-.bg-grd-rl-green-dark,
-.bg-grd-rl-orange,
-.bg-grd-rl-orange-dark,
-.bg-grd-rl-purple,
-.bg-grd-rl-red,
-.bg-grd-tb-blue,
-.bg-grd-tb-blue-dark,
-.bg-grd-tb-gray-dark1,
-.bg-grd-tb-gray-dark2,
-.bg-grd-tb-gray-light1,
-.bg-grd-tb-gray-medium,
-.bg-grd-tb-green,
-.bg-grd-tb-green-dark,
-.bg-grd-tb-orange,
-.bg-grd-tb-orange-dark,
-.bg-grd-tb-purple,
-.bg-grd-tb-red {
-    color: $white !important;
-}
-/* -----  End of BACKGROUND GRADIENTS  --------------------------------------------- */
 /* =============================================================================================
 
 ██████   █████   ██████ ██   ██  ██████  ██████   ██████  ██    ██ ███    ██ ██████
@@ -961,33 +828,6 @@ $bg-size: (
     }
 }
 
-.gradient-overlay-blue-dark {
-    position: relative;
-
-    &::after {
-        background-image: linear-gradient(to bottom, rgba($blue-dark,0) 0%,rgba($blue-dark,0) 50%,rgba($blue-dark,1) 100%);
-        @include gradient-overlay-image;
-    }
-}
-
-.gradient-overlay-gray-dark1 {
-    position: relative;
-
-    &::after {
-        background-image: linear-gradient(to bottom, rgba($gray-dark1,0) 0%,rgba($gray-dark1,0) 50%,rgba($gray-dark1,1) 100%);
-        @include gradient-overlay-image;
-    }
-}
-
-.gradient-overlay-gray-dark2 {
-    position: relative;
-
-    &::after {
-        background-image: linear-gradient(to bottom, rgba($gray-dark2,0) 0%,rgba($gray-dark2,0) 50%,rgba($gray-dark2,1) 100%);
-        @include gradient-overlay-image;
-    }
-}
-
 .gradient-overlay-black {
     position: relative;
 
@@ -1015,33 +855,6 @@ $bg-size: (
     }
 }
 
-.gradient-overlay-blue-dark-full {
-    position: relative;
-
-    &::after {
-        background-image: linear-gradient(to bottom, rgba($blue-dark, 0) 20%, rgba($blue-dark, 0.9) 65%);
-        @include gradient-overlay-image-full;
-    }
-}
-
-.gradient-overlay-gray-dark1-full {
-    position: relative;
-
-    &::after {
-        background-image: linear-gradient(to bottom, rgba($gray-dark1, 0) 20%, rgba($gray-dark1, 0.9) 65%);
-        @include gradient-overlay-image-full;
-    }
-}
-
-.gradient-overlay-gray-dark2-full {
-    position: relative;
-
-    &::after {
-        background-image: linear-gradient(to bottom, rgba($gray-dark2, 0) 20%, rgba($gray-dark2, 0.9) 65%);
-        @include gradient-overlay-image-full;
-    }
-}
-
 .gradient-overlay-black-full {
     position: relative;
 
@@ -1060,23 +873,6 @@ $bg-size: (
     }
 }
 
-.gradient-overlay-blue-dark-angled {
-    position: relative;
-
-    &::after {
-        background-image: linear-gradient(135deg, rgba($blue-dark, 0) 30%, rgba($blue-dark, 0.9) 80%);
-        @include gradient-overlay-image-full;
-    }
-}
-
-.gradient-overlay-blue-dark-angled2 {
-    position: relative;
-
-    &::after {
-        background-image: linear-gradient(165deg, rgba($blue-dark, 0) 65%, rgba($blue-dark, 0.9) 90%);
-        @include gradient-overlay-image-full;
-    }
-}
 // -----  End of IMAGE GRADIENT OVERLAY  ---------------------------------------------
 /* =============================================================================================
 ███████ ██ ██      ██
@@ -1244,12 +1040,6 @@ hr.dark {
     border-color: rgba(0,0,0,.35);
 }
 
-hr.gradient {
-    @extend %hr;
-    background: linear-gradient(to right, $blue-light, $green);
-    border    : none;
-    height    : 2px;
-}
 @each $color-name, $color in $colors-primary {
     hr.#{$color-name} {
         border-bottom-color: $color;
@@ -1264,14 +1054,14 @@ hr.gradient {
     border-width      : 2px;
     border-right-width: 0;
     border-style      : solid;
-    border-image      : linear-gradient(to bottom, $blue-light, $green, rgba(0, 0, 0, 0)) 0 100%;
+    border-image      : $blue;
 }
 
 .vertical-divider-right {
     border-width     : 2px;
     border-left-width: 0;
     border-style     : solid;
-    border-image     : linear-gradient(to bottom, $blue-light, $green, rgba(0, 0, 0, 0)) 0 100%;
+    border-image     : $blue;
 }
 /* ----  End of DIVIDERS  -------------------------------------------------------------------------- */
 /* ====================================================================================================
@@ -1347,19 +1137,20 @@ h4,
 h5,
 h6 {
     // hyphens: auto;
+    // color: $blue;
 }
 
 %h1,
 h1 {
     @include responsive-font-size(84);
-    font-weight: 300;
+    // font-weight: 300;
     line-height: 1.1;
 }
 
 %h2,
 h2 {
     @include responsive-font-size(63);
-    font-weight: 300;
+    // font-weight: 300;
     line-height: 1.1;
 }
 
@@ -1371,19 +1162,19 @@ h3 {
 %h4,
 h4 {
     @include responsive-font-size(36);
-    font-weight: bold;
+    // font-weight: bold;
 }
 
 %h5,
 h5 {
     @include responsive-font-size(27);
-    font-weight: bold;
+    // font-weight: bold;
 }
 
 %h6,
 h6 {
     @include responsive-font-size(20);
-    font-weight: bold;
+    // font-weight: bold;
 }
 
 %p,
@@ -1484,6 +1275,17 @@ strong {
     }
 }
 
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white li,
+.text-white p {
+    color: $white;
+}
+
 .text-wrap {
     white-space: normal;
 }
@@ -1499,14 +1301,6 @@ strong {
 .hyphens {
     hyphens: auto;
 }
-// .text-white * {
-//     // color: $white !important;
-// }
-// .blue-bold-italic {
-//     font-weight: bold;
-//     font-style : italic !important;
-//     color      : $blue;
-// }
 
 blockquote cite.text-white {
     -webkit-text-fill-color: $white;
@@ -1516,57 +1310,6 @@ blockquote cite.text-white {
 .hanging-punctuation {
     text-indent: -0.5em;
 }
-/* Special pain is taken to make this work on ALL background colors. If you're going to use it on a white (or black) background, you can simplify the code furhter. */
-@mixin gradient-text($background, $gradient) {
-    background: white;
-    color     : black;
-    position  : relative;
-    // Hide aliased edges caused by mixing blend modes. Will appear as a faint dark outline on certain backgrounds. Tweak to improve rendering
-    // text-shadow: 1px 1px 0 $background, 1px -1px 0 $background, -1px -1px 0 $background, -1px 1px 0 $background;
-    &::after,
-    &::before {
-        position      : absolute;
-        top           : 0;
-        right         : 0;
-        bottom        : 0;
-        left          : 0;
-        // Make cursor ignore these, allowing text underneath to be clicked and selected
-        pointer-events: none;
-    }
-
-    &::before {
-        // Gradient
-        background    : $gradient;
-        content       : "";
-        display       : block;
-        mix-blend-mode: screen;
-    }
-    // Everything below can be removed when using a #fff background. Ditto when using a black background, provided the mix-blend-modes, text, background color are reversed. (Screen to multiply, white to black)
-    &::after {
-        // Duplicate gradient text. Yes, it's ugly. Change the value below without changing the HTML for fun times.
-        // content: $text;
-        background    : $background;
-        color         : white;
-        mix-blend-mode: multiply;
-    }
-}
-
-%text-gradient,
-.text-gradient {
-    background             : linear-gradient(to right, $blue-light, $green);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display                : inline-block;
-};
-
-%text-gradient-block,
-.text-gradient-block {
-    background          : linear-gradient(to right, $blue-light, $green);
-    display             : inline;
-    box-decoration-break: clone;
-    padding             : 0.1rem 0.5rem 0;
-    line-height         : 1.4;
-};
 
 .gradient-transparent-white-25 {
     background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1) 25%);
@@ -1677,6 +1420,7 @@ pre code {
 
 ==================================================================================================== */
 a {
+    color          : $green-dark;
     text-decoration: none;
     font-weight    : bold;
     // hyphens        : auto;
@@ -1686,6 +1430,14 @@ a {
     &:hover {
         transition: 0.3s ease-out;
     }
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+    color: $green;
 }
 /* ----  End of LINKS  -------------------------------------------------------------------------- */
 /* =============================================================================================
@@ -1743,9 +1495,10 @@ i {
                                              ▀▀
 ============================================================================================= */
 blockquote {
-    @extend %text-gradient;
     @extend %h5;
+    color       : $gray-light1;
     font-style  : italic;
+    font-weight : bold;
     border      : 1px solid $gray-light2;
     border-left : 0;
     border-right: 0;
@@ -1754,10 +1507,11 @@ blockquote {
 
     %cite,
     cite {
-        color                  : $gray-dark2;
-        -webkit-text-fill-color: $gray-dark2;
-        fill                   : $gray-dark2;
+        color                  : $black;
+        -webkit-text-fill-color: $black;
+        fill                   : $black;
         margin-top             : 1.875rem;
+        font-weight            : normal;
     }
 }
 
@@ -1832,6 +1586,14 @@ dl dt {
         height     : unset !important;
         margin-top : unset !important;
         background : unset !important;
+    }
+
+    &.arrow-solid-green {
+        &::after {
+            font-family: "Cognizant-Icons";
+            content    : "\e908" !important;
+            color      : $green;
+        }
     }
 }
 
@@ -1918,11 +1680,11 @@ dl dt {
 
     &.white {
         background: $white;
-        color     : $anchor-color;
+        color     : $green-dark;
     }
 
     &.white:after {
-        color: $anchor-color;
+        color: $green-dark;
     }
 
     &.white:hover {
@@ -1931,17 +1693,6 @@ dl dt {
 
     &.disabled {
         background: $gray-light1;
-    }
-
-    &.gradient {
-        background: linear-gradient(to right, $blue-light, $green);
-    }
-
-    &.gradient-border {
-        border-width      : 2px;
-        border-style      : solid;
-        border-image      : linear-gradient(to right, $blue-light 0%, $green 100%);
-        border-image-slice: 1;
     }
 
     .bg-blue {
@@ -2275,7 +2026,7 @@ select {
     }
 
     & input:focus + span {
-        color: $blue;
+        color: $blue-light;
     }
 
     & .form-error {
@@ -2309,8 +2060,8 @@ form.white {
             background  : none;
             box-shadow  : none;
             border-width: 0 0 1px 0;
-            border-color: rgba($blue-light, 1);
-            box-shadow  : 0 1px 0 rgba($blue-light, 1);
+            border-color: rgba($white, 1);
+            box-shadow  : 0 1px 0 rgba($white, 1);
         }
 
         &::placeholder {
@@ -2323,7 +2074,7 @@ form.white {
     }
 
     & input:focus + span {
-        color: $blue;
+        color: $white;
     }
 
     & .form-error {
@@ -2798,24 +2549,13 @@ $sidelines-double-line-spacing: 0.5em !default;
 /* ==============================  ACCORDION BARS BACKGROUND COLORS  ============================== */
 @for $i from 0 through 100 {
     .accordion-gradient-#{$i} {
-        background: mix($green, $blue, $i);
-    }
-}
-/* ==============================  BLUE TO GREEN BACKGROUND COLOR STEPS  ============================== */
-@for $i from 0 through 100 {
-    .bg-steps-blue-green-#{$i} {
-        background: mix($blue, $green, $i);
-
-        > a {
-            background: none !important;
-            box-shadow: none !important;
-        }
+        background: mix($blue-dark, $blue, $i);
     }
 }
 /* ==============================  BLUE BACKGROUND COLOR STEPS  ============================== */
 @for $i from 0 through 100 {
     .bg-steps-blue-#{$i} {
-        background: mix($blue-dark, $blue-light, $i);
+        background: mix($blue-dark, $blue, $i);
 
         > a {
             background: none !important;
@@ -2863,15 +2603,6 @@ $sidelines-double-line-spacing: 0.5em !default;
 .callout-gray-medium,
 .callout-green-dark {
     color: $white !important;
-}
-
-.callout-gradient-black {
-    color             : $white;
-    background        : rgba(0,0,0,.75);
-    border-width      : 4px;
-    border-style      : solid;
-    border-image      : linear-gradient(to right, $blue-light 0, $green 100%);
-    border-image-slice: 1;
 }
 /* ----  End of CALLOUTS  --------------------------------------------------------------------- */
 /* =============================================================================================
@@ -2923,24 +2654,7 @@ $sidelines-double-line-spacing: 0.5em !default;
     }
 }
 /* ----  End of MENU- VERTICAL  --------------------------------------------------------------------- */
-/* ===========================================================================================================
-███████ ██    ██ ██████  ███    ██  █████  ██    ██
-██      ██    ██ ██   ██ ████   ██ ██   ██ ██    ██
-███████ ██    ██ ██████  ██ ██  ██ ███████ ██    ██
-     ██ ██    ██ ██   ██ ██  ██ ██ ██   ██  ██  ██
-███████  ██████  ██████  ██   ████ ██   ██   ████
-██████   █████  ██████
-██   ██ ██   ██ ██   ██
-██████  ███████ ██████
-██   ██ ██   ██ ██   ██
-██████  ██   ██ ██   ██
-================================================================================================== */
-#subNavBar a.active,
-#subNavBar a:hover {
-    background: $blue-dark;
-    color     : $white;
-}
-/* ----  End of SUBNAV BAR  ------------------------------------------------------------------------------------- */
+
 /* =============================================================================================
 ████████  ██████  ██████
    ██    ██    ██ ██   ██
@@ -2976,16 +2690,7 @@ $sidelines-double-line-spacing: 0.5em !default;
     // background: $button-background-hover;
 }
 /* -----  End of TOP BAR  --------------------------------------------- */
-/* =============================================================================================
 
-██████  ███████ ██    ██ ███████  █████  ██
-██   ██ ██      ██    ██ ██      ██   ██ ██
-██████  █████   ██    ██ █████   ███████ ██
-██   ██ ██       ██  ██  ██      ██   ██ ██
-██   ██ ███████   ████   ███████ ██   ██ ███████
-
-============================================================================================= */
-// -----  End of REVEAL  ---------------------------------------------
 /* =============================================================================================
 
  █████  ███    ██ ██ ███    ███  █████  ████████ ██  ██████  ███    ██
@@ -3238,6 +2943,23 @@ $slick-font-path: "../fonts/slick/";
 .blue-arrows .slick-prev:before {
     color: $blue;
 }
+/* ==============================  GREEN CONTROLS  ============================== */
+.green-dots .slick-dots li button:before {
+    background: $gray-light1;
+}
+
+.green-dots .slick-dots li.slick-active button:before {
+    background: $green;
+    opacity   : 1;
+}
+
+.green-arrows .slick-next:before {
+    color: $green;
+}
+
+.green-arrows .slick-prev:before {
+    color: $green;
+}
 // ==============================  FULL WIDTH CONTROLS  ==============================
 
 .fw-controls .slick-dots {
@@ -3260,7 +2982,7 @@ $slick-font-path: "../fonts/slick/";
 }
 
 .fw-controls .slick-dots li.slick-active button:before {
-    background: linear-gradient(to right, $blue, $green);
+    background: linear-gradient(to right, $blue, $blue-light);
     opacity   : 1;
 }
 // ==============================  INSIDE ARROWS  ==============================
@@ -3507,27 +3229,7 @@ a.morelink {
     display: none;
 }
 // -----  End of READ MORE LINK  ---------------------------------------------
-/* =============================================================================================
 
-██████  ██████  ██  ██████  ██████  ██ ████████ ██    ██
-██   ██ ██   ██ ██ ██    ██ ██   ██ ██    ██     ██  ██
-██████  ██████  ██ ██    ██ ██████  ██    ██      ████
-██      ██   ██ ██ ██    ██ ██   ██ ██    ██       ██
-██      ██   ██ ██  ██████  ██   ██ ██    ██       ██
-███    ██  █████  ██    ██
-████   ██ ██   ██ ██    ██
-██ ██  ██ ███████ ██    ██
-██  ██ ██ ██   ██  ██  ██
-██   ████ ██   ██   ████
-
-============================================================================================= */
-.priority-nav__dropdown {
-    position       : inherit;
-    background     : $blue;
-    padding        : 1rem;
-    list-style-type: none;
-}
-// -----  End of PRIORITY NAV  ---------------------------------------------
 /* =============================================================================================
 
 ██████  ██   ██    ██ ██████
@@ -3764,7 +3466,7 @@ a.morelink {
 }
 // -----  End of STICKY ANIMATION  ---------------------------------------------
 
-#navBar-gray {
+#navSubBar {
     hyphens: auto;
 }
 /* =============================================================================================
@@ -3781,22 +3483,23 @@ a.morelink {
 ██████  ███████  ██████  ███████     ██████  ██   ██ ██   ██
 
 ============================================================================================= */
-.blue-bar {
+.navBarInPage {
     & a {
         color: $white;
 
         &:hover {
             background: $white !important;
-            color     : $blue-dark;
+            color     : $blue;
         }
     }
 
     & a.active {
-        background: transparentize($white, .80) !important;
+        // background: transparentize($white, .80) !important;
+        background: $blue-light !important;
 
         &:hover {
             background: $white !important;
-            color     : $blue-dark;
+            color     : $blue;
         }
     }
 }
@@ -4034,5 +3737,15 @@ div iframe.video {
 
     &:hover {
         color: $green !important;
+    }
+}
+
+.hover-blue {
+    transition: $button-transition;
+
+    &:hover {
+        // color: $blue !important;
+        transition: $button-transition;
+        background: darken($blue, 20%);
     }
 }

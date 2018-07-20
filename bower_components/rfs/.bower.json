@@ -14,7 +14,7 @@
     "font-size",
     "typography"
   ],
-  "homepage": "https://github.com/MartijnCuppens/rfs",
+  "homepage": "https://github.com/project-rfs/rfs",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -22,11 +22,12 @@
     "test",
     "tests"
   ],
-  "_release": "852d2333a7",
+  "version": "7.1.3",
+  "_release": "7.1.3",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "852d2333a7c79621122ff3053354217d796cf45d"
+    "type": "version",
+    "tag": "v7.1.3",
+    "commit": "ac3fc6aeb7a784797324f14488e00780399e0954"
   },
   "_source": "https://github.com/MartijnCuppens/rfs.git",
   "_target": "*",

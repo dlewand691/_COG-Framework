@@ -130,8 +130,8 @@ document.addEventListener('lazybeforeunveil', function(e) {
 // GRAY AND BLUE NAV BAR STICKY SOLUTION
 // =============================================================================================
 
-$('#navBar-blue .sticky').on('sticky.zf.stuckto:top', function() {
-    console.log($(this));
+$('#navBarInPage .sticky').on('sticky.zf.stuckto:top', function() {
+    // console.log($(this));
     $(this).css({
         marginTop: $('.sticky').height()
     });

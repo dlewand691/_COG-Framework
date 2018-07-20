@@ -105,10 +105,10 @@ $block-grid-max: 12;
 // 4. Base Typography
 // ------------------
 $header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-weight: $global-weight-bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-$header-color: inherit;
+$header-color: $primary-color;
 $header-lineheight: 1.2;
 $header-margin-bottom: 1rem;
 $header-styles: (
@@ -218,7 +218,7 @@ $breadcrumbs-margin: 0 0 $global-margin 0;
 $breadcrumbs-item-font-size: rem-calc(15);
 $breadcrumbs-item-color: $success-color;
 $breadcrumbs-item-color-current: $body-font-color;
-$breadcrumbs-item-color-disabled: $medium-gray;
+$breadcrumbs-item-color-disabled: rgba($white, .5);
 $breadcrumbs-item-margin: 0.35rem;
 $breadcrumbs-item-uppercase: false;
 $breadcrumbs-item-slash: true;
