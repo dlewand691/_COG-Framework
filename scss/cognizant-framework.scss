@@ -594,16 +594,15 @@ $padding-y: (py);
  ██████  ██████  ███████  ██████  ██   ██ ███████
 ==================================================================================================== */
 $blue: $primary-color;
-$blue-light: lighten($blue, 15%);
+$blue-light: #3569d7;
 $blue-dark: darken($blue, 10%);
 $green: $success-color;
 $green-light: lighten($green, 10%);
 $green-dark: darken($green, 10%);
-$orange: #ff8f1c;
+$orange: $warning-color;
 $orange-dark: #f4633a;
 $gray-dark1: lighten($black, 20%);
 $gray-dark2: lighten($black, 40%);
-$gray-medium: lighten($black, 50%);
 $gray-light1: lighten($black, 60%);
 $gray-light2: lighten($black, 80%);
 $gray-light3: lighten($black, 90%);
@@ -623,7 +622,6 @@ $colors-primary: (
     green-dark  : $green-dark,
     gray-dark1  : $gray-dark1,
     gray-dark2  : $gray-dark2,
-    gray-medium : $gray-medium,
     gray-light1 : $gray-light1,
     gray-light2 : $gray-light2,
     gray-light3 : $gray-light3,
@@ -631,7 +629,7 @@ $colors-primary: (
     "orange"    : $orange,
     orange-dark : $orange-dark,
     "purple"    : $purple,
-    purple-dark : $purple,
+    purple-dark : $purple-dark,
     "magenta"   : $magenta,
     magenta-dark: $magenta-dark
 );
@@ -1138,6 +1136,11 @@ h5,
 h6 {
     // hyphens: auto;
     // color: $blue;
+    text-transform: lowercase !important;
+
+    &::first-letter {
+        text-transform: uppercase !important;
+    }
 }
 
 %h1,
