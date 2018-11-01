@@ -1,12 +1,12 @@
 {
   "name": "plyr",
   "homepage": "https://github.com/selz/plyr",
-  "version": "3.3.22",
-  "_release": "3.3.22",
+  "version": "3.4.6",
+  "_release": "3.4.6",
   "_resolution": {
     "type": "version",
-    "tag": "v3.3.22",
-    "commit": "e2fb922d73eb96a126501eb03b8860543a6b37e1"
+    "tag": "v3.4.6",
+    "commit": "36f6bf6ce8e9b14fb6646c11ee34e04ac8aa1e33"
   },
   "_source": "https://github.com/selz/plyr.git",
   "_target": "^3.3.7",

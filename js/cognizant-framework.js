@@ -63,6 +63,7 @@
 
 // @codekit-prepend '../bower_components/scrollup/dist/jquery.scrollUp.js'
 // @codekit-prepend '../bower_components/lazysizes/lazysizes.js'
+// @codekit-prepend '../bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js'
 // @codekit-prepend '../bower_components/slick-carousel/slick/slick.min.js'
 // @codekit-prepend '../bower_components/succinct/jQuery.succinct.js'
 

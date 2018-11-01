@@ -2,9 +2,7 @@
 // YouTube plugin
 // ==========================================================================
 
-import controls from '../controls';
 import ui from '../ui';
-import { dedupe } from '../utils/arrays';
 import { createElement, replaceElement, toggleClass } from '../utils/elements';
 import { triggerEvent } from '../utils/events';
 import fetch from '../utils/fetch';
@@ -21,37 +19,6 @@ function parseId(url) {
 
     const regex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
     return url.match(regex) ? RegExp.$2 : url;
-}
-
-// Standardise YouTube quality unit
-function mapQualityUnit(input) {
-    const qualities = {
-        hd2160: 2160,
-        hd1440: 1440,
-        hd1080: 1080,
-        hd720: 720,
-        large: 480,
-        medium: 360,
-        small: 240,
-        tiny: 144,
-    };
-
-    const entry = Object.entries(qualities).find(entry => entry.includes(input));
-
-    if (entry) {
-        // Get the match corresponding to the input
-        return entry.find(value => value !== input);
-    }
-
-    return 'default';
-}
-
-function mapQualityUnits(levels) {
-    if (is.empty(levels)) {
-        return levels;
-    }
-
-    return dedupe(levels.map(level => mapQualityUnit(level)));
 }
 
 // Set playback state and trigger change (only on actual change)
@@ -188,6 +155,7 @@ const youtube = {
             videoId,
             playerVars: {
                 autoplay: player.config.autoplay ? 1 : 0, // Autoplay
+                hl: player.config.hl, // iframe interface language
                 controls: player.supported.ui ? 0 : 1, // Only show controls if not fully supported
                 rel: 0, // No related vids
                 showinfo: 0, // Hide info
@@ -224,11 +192,6 @@ const youtube = {
                         triggerEvent.call(player, player.media, 'error');
                     }
                 },
-                onPlaybackQualityChange() {
-                    triggerEvent.call(player, player.media, 'qualitychange', false, {
-                        quality: player.media.quality,
-                    });
-                },
                 onPlaybackRateChange(event) {
                     // Get the instance
                     const instance = event.target;
@@ -239,6 +202,10 @@ const youtube = {
                     triggerEvent.call(player, player.media, 'ratechange');
                 },
                 onReady(event) {
+                    // Bail if onReady has already been called. See issue #1108
+                    if (is.function(player.media.play)) {
+                        return;
+                    }
                     // Get the instance
                     const instance = event.target;
 
@@ -291,16 +258,6 @@ const youtube = {
                         },
                         set(input) {
                             instance.setPlaybackRate(input);
-                        },
-                    });
-
-                    // Quality
-                    Object.defineProperty(player.media, 'quality', {
-                        get() {
-                            return mapQualityUnit(instance.getPlaybackQuality());
-                        },
-                        set(input) {
-                            instance.setPlaybackQuality(mapQualityUnit(input));
                         },
                     });
 
@@ -452,12 +409,6 @@ const youtube = {
                                     player.media.duration = instance.getDuration();
                                     triggerEvent.call(player, player.media, 'durationchange');
                                 }
-
-                                // Get quality
-                                controls.setQualityMenu.call(
-                                    player,
-                                    mapQualityUnits(instance.getAvailableQualityLevels()),
-                                );
                             }
 
                             break;

@@ -1,12 +1,13 @@
 // ==========================================================================
 // Plyr
-// plyr.js v3.3.22
+// plyr.js v3.4.6
 // https://github.com/sampotts/plyr
 // License: The MIT License (MIT)
 // ==========================================================================
 
 import captions from './captions';
 import defaults from './config/defaults';
+import { pip } from './config/states';
 import { getProviderByUrl, providers, types } from './config/types';
 import Console from './console';
 import controls from './controls';
@@ -75,16 +76,17 @@ class Plyr {
         // Elements cache
         this.elements = {
             container: null,
+            captions: null,
             buttons: {},
             display: {},
             progress: {},
             inputs: {},
             settings: {
+                popup: null,
                 menu: null,
-                panes: {},
-                tabs: {},
+                panels: {},
+                buttons: {},
             },
-            captions: null,
         };
 
         // Captions
@@ -171,7 +173,7 @@ class Plyr {
                     this.elements.container.className = '';
 
                     // Get attributes from URL and set config
-                    if (url.searchParams.length) {
+                    if (url.search.length) {
                         const truthy = ['1', 'true'];
 
                         if (truthy.includes(url.searchParams.get('autoplay'))) {
@@ -185,6 +187,7 @@ class Plyr {
                         // YouTube requires the playsinline in the URL
                         if (this.isYouTube) {
                             this.config.playsinline = truthy.includes(url.searchParams.get('playsinline'));
+                            this.config.hl = url.searchParams.get('hl'); // TODO: Should this be setting language?
                         } else {
                             this.config.playsinline = true;
                         }
@@ -220,7 +223,7 @@ class Plyr {
                 if (this.media.hasAttribute('autoplay')) {
                     this.config.autoplay = true;
                 }
-                if (this.media.hasAttribute('playsinline')) {
+                if (this.media.hasAttribute('playsinline') || this.media.hasAttribute('webkit-playsinline')) {
                     this.config.playsinline = true;
                 }
                 if (this.media.hasAttribute('muted')) {
@@ -292,12 +295,17 @@ class Plyr {
         this.fullscreen = new Fullscreen(this);
 
         // Setup ads if provided
-        this.ads = new Ads(this);
+        if (this.config.ads.enabled) {
+            this.ads = new Ads(this);
+        }
 
         // Autoplay if required
         if (this.config.autoplay) {
             this.play();
         }
+
+        // Seek time will be recorded (in listeners.js) so we can prevent hiding controls for a few seconds after seek
+        this.lastSeekTime = 0;
     }
 
     // ---------------------------------------
@@ -688,20 +696,27 @@ class Plyr {
             config.default,
         ].find(is.number);
 
+        let updateStorage = true;
+
         if (!options.includes(quality)) {
             const value = closest(options, quality);
             this.debug.warn(`Unsupported quality option: ${quality}, using ${value} instead`);
             quality = value;
-        }
 
-        // Trigger request event
-        triggerEvent.call(this, this.media, 'qualityrequested', false, { quality });
+            // Don't update storage if quality is not supported
+            updateStorage = false;
+        }
 
         // Update config
         config.selected = quality;
 
         // Set quality
         this.media.quality = quality;
+
+        // Save to storage
+        if (updateStorage) {
+            this.storage.set({ quality });
+        }
     }
 
     /**
@@ -785,6 +800,15 @@ class Plyr {
      */
     get source() {
         return this.media.currentSrc;
+    }
+
+    /**
+     * Get a download URL (either source or custom)
+     */
+    get download() {
+        const { download } = this.config.urls;
+
+        return is.url(download) ? download : this.source;
     }
 
     /**
@@ -873,21 +897,28 @@ class Plyr {
      * TODO: detect outside changes
      */
     set pip(input) {
-        const states = {
-            pip: 'picture-in-picture',
-            inline: 'inline',
-        };
-
         // Bail if no support
         if (!support.pip) {
             return;
         }
 
         // Toggle based on current state if not passed
-        const toggle = is.boolean(input) ? input : this.pip === states.inline;
+        const toggle = is.boolean(input) ? input : !this.pip;
 
         // Toggle based on current state
-        this.media.webkitSetPresentationMode(toggle ? states.pip : states.inline);
+        // Safari
+        if (is.function(this.media.webkitSetPresentationMode)) {
+            this.media.webkitSetPresentationMode(toggle ? pip.active : pip.inactive);
+        }
+
+        // Chrome
+        if (is.function(this.media.requestPictureInPicture)) {
+            if (!this.pip && toggle) {
+                this.media.requestPictureInPicture();
+            } else if (this.pip && !toggle) {
+                document.exitPictureInPicture();
+            }
+        }
     }
 
     /**
@@ -898,7 +929,13 @@ class Plyr {
             return null;
         }
 
-        return this.media.webkitPresentationMode;
+        // Safari
+        if (!is.empty(this.media.webkitPresentationMode)) {
+            return this.media.webkitPresentationMode === pip.active;
+        }
+
+        // Chrome
+        return this.media === document.pictureInPictureElement;
     }
 
     /**
@@ -932,13 +969,16 @@ class Plyr {
             if (hiding && this.config.controls.includes('settings') && !is.empty(this.config.settings)) {
                 controls.toggleMenu.call(this, false);
             }
+
             // Trigger event on change
             if (hiding !== isHidden) {
                 const eventName = hiding ? 'controlshidden' : 'controlsshown';
                 triggerEvent.call(this, this.media, eventName);
             }
+
             return !hiding;
         }
+
         return false;
     }
 
