@@ -1,4 +1,4 @@
-// @codekit-prepend '../bower_components/jquery/dist/jquery.js'
+// @codekit-prepend '../bower_components/jquery/dist/jquery.min.js'
 
 
 // =============================================================================================
@@ -18,39 +18,40 @@
 // =============================================================================================
 // FOUNDATION UTILITY SCRIPTS
 // =============================================================================================
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.core.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.motion.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.box.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.triggers.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.keyboard.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.nest.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.timerAndImageLoader.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.touch.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.zf.responsiveAccordionTabs.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.core.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.mediaQuery.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.motion.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.box.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.keyboard.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.nest.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.imageLoader.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.timer.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.touch.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.triggers.min.js'
 
 
 // =============================================================================================
 // FOUNDATION PLUGINS
 // =============================================================================================
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.abide.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.accordion.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.accordionMenu.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.drilldown.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.dropdown.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.dropdownMenu.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.equalizer.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.interchange.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.magellan.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.offcanvas.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.responsiveMenu.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.responsiveToggle.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.reveal.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.sticky.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.tabs.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.toggler.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.zf.responsiveAccordionTabs.js'
-// @codekit-prepend '../bower_components/motion-ui/motion-ui.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.abide.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.accordion.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.accordionMenu.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.drilldown.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.dropdown.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.dropdownMenu.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.equalizer.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.interchange.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.magellan.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.offcanvas.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.responsiveMenu.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.responsiveToggle.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.reveal.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.sticky.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.tabs.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.toggler.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.tooltip.min.js'
+// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.responsiveAccordionTabs.min.js'
+// @codekit-prepend '../bower_components/motion-ui/dist/motion-ui.min.js'
 
 
 // =============================================================================================
@@ -187,7 +188,7 @@ $(document).ready(function() {
 // -----  End of ACCORDION BACKGROUND COLORS  --------------------------------------------------------------------
 
 // =============================================================================================
-// BACKGROUND GRADIENT STEPS
+// TABS GRADIENT STEPS
 // =============================================================================================
 
 $(".tabs.bg-steps-blue-green").each(function() {
@@ -214,7 +215,31 @@ $(".tabs.bg-steps-green").each(function() {
     });
 });
 
-// -----  End of BACKGROUND GRADIENT STEPS  ---------------------------------------------
+// -----  End of TABS GRADIENT STEPS  ---------------------------------------------
+
+
+// =============================================================================================
+// GRADIENT STEPS BACKGROUND
+// =============================================================================================
+
+$(".bg-steps-blue").each(function() {
+    var length = $(this).children().length;
+    $(this).find(".row").each(function(index) {
+        var colorClass = "bg-steps-blue-" + Math.round((index / (length - 1)) * 100);
+        $(this).addClass(colorClass);
+    });
+});
+
+$(".bg-steps-green").each(function() {
+    var length = $(this).children().length;
+    $(this).find(".row").each(function(index) {
+        var colorClass = "bg-steps-green-" + Math.round((index / (length - 1)) * 100);
+        $(this).addClass(colorClass);
+    });
+});
+
+// -----  End of GRADIENT STEPS BACKGROUND  ---------------------------------------------
+
 
 // ===========================================================================================
 // =            ACCORDION SCROLL TO TOP            =
@@ -343,6 +368,9 @@ $(document).ready(function() {
 $(function() {
     $('.truncate-40').succinct({
         size: 40
+    });
+    $('.truncate-45').succinct({
+        size: 45
     });
     $('.truncate-50').succinct({
         size: 50

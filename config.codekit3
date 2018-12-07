@@ -9,45 +9,6 @@
 	],
 "creatorBuild": "28905",
 "files": {
-	"/_PLUGIN-STYLES/animsition.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_PLUGIN-STYLES/animsition.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/_PLUGIN-STYLES/plyr.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_PLUGIN-STYLES/plyr.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/_PLUGIN-STYLES/select2.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/_PLUGIN-STYLES/select2.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/bower_components/adaptive-placeholders/_adaptive-placeholders.scss": {
 		"aP": 0,
 		"bl": 0,
