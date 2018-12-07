@@ -1,6 +1,6 @@
 {
   "name": "foundation-sites",
-  "version": "6.5.0",
+  "version": "6.5.1",
   "description": "The most advanced responsive front-end framework in the world.",
   "homepage": "http://foundation.zurb.com/sites",
   "license": "MIT",
@@ -70,14 +70,14 @@
     "script",
     "test"
   ],
-  "_release": "6.5.0",
+  "_release": "6.5.1",
   "_resolution": {
     "type": "version",
-    "tag": "v6.5.0",
-    "commit": "9a322a26ae1f1af5bed0bb47d35edb2c16c215ad"
+    "tag": "v6.5.1",
+    "commit": "cc49c02498a3a04b2dc00e51763d9c37ced90331"
   },
   "_source": "https://github.com/zurb/foundation-sites.git",
-  "_target": "^6.5.0",
+  "_target": "^6.5.1",
   "_originalSource": "foundation-sites",
   "_direct": true
 }

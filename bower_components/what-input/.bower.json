@@ -9,6 +9,6 @@
     "commit": "c8676a596d9f3f834ea168cfd242add573829ceb"
   },
   "_source": "https://github.com/ten1seven/what-input.git",
-  "_target": ">=4.1.0",
+  "_target": "^5.1.0",
   "_originalSource": "what-input"
 }

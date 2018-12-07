@@ -22,12 +22,12 @@
     "test",
     "tests"
   ],
-  "version": "7.1.3",
-  "_release": "7.1.3",
+  "version": "7.1.8",
+  "_release": "7.1.8",
   "_resolution": {
     "type": "version",
-    "tag": "v7.1.3",
-    "commit": "ac3fc6aeb7a784797324f14488e00780399e0954"
+    "tag": "v7.1.8",
+    "commit": "98a90b3f7ad5ca9510bd7f22b8e69985b00c9dce"
   },
   "_source": "https://github.com/MartijnCuppens/rfs.git",
   "_target": "*",
