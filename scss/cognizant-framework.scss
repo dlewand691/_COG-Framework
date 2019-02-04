@@ -1,12 +1,12 @@
 @charset 'utf-8';
 @import 'settings';
 @import '../bower_components/foundation-sites/scss/foundation.scss';
-@import '../bower_components/motion-ui/motion-ui.scss';
+// @import '../bower_components/motion-ui/motion-ui.scss';
 
 @include foundation-global-styles;
 // @include foundation-grid;
 @include foundation-flex-grid;
-@include foundation-xy-grid-classes;
+// @include foundation-xy-grid-classes;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -42,20 +42,20 @@
 @include foundation-tooltip;
 // @include foundation-top-bar;
 @include foundation-visibility-classes;
-// @include foundation-float-classes;
+@include foundation-float-classes;
 @include foundation-flex-classes;
 
 // @include foundation-prototype-classes;
 
-@include motion-ui-transitions;
-@include motion-ui-animations;
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
 
 // =============================================================================================
 // FONTS
 // =============================================================================================
 @import "../fonts/ProximaNovaFonts/ProximaNova.scss";
-$icomoon-font-path: "../fonts/Cognizant-Icons-1.4-FONT/fonts";
-@import "../fonts/Cognizant-Icons-1.4-FONT/style.scss";
+$icomoon-font-path: "../fonts/Cognizant-Icons-FONT/fonts";
+@import "../fonts/Cognizant-Icons-FONT/style.scss";
 
 // =============================================================================================
 // PLUGINS
@@ -63,7 +63,6 @@ $icomoon-font-path: "../fonts/Cognizant-Icons-1.4-FONT/fonts";
 @import "../bower_components/slick-carousel/slick/slick-theme.scss";
 @import "../bower_components/slick-carousel/slick/slick.scss";
 @import "../bower_components/css-hamburgers/_sass/hamburgers/hamburgers.scss";
-@import "../bower_components/aos/dist/aos";
 
 /* ====================================================================================================
 ██████  ███████ ██████  ██    ██  ██████   ██████  ██ ███    ██  ██████
@@ -250,6 +249,10 @@ $widths: 20;
 .w100px {
     width: 100px;
 }
+
+.w100vw {
+    width: 100vw;
+}
 /* ----  End of WIDTH OVERRIDES  --------------------------------------------------------------------- */
 /* ===========================================================================================================
 ██   ██ ███████ ██  ██████  ██   ██ ████████
@@ -272,7 +275,7 @@ $heights: 20;
 @for $i from 1 through $heights {
     .h#{$i*5}vh {
         height: $i*5 + vh !important;
-    }
+    };
 }
 @each $size in $breakpoint-classes {
     @include breakpoint($size) {
@@ -281,7 +284,7 @@ $heights: 20;
         }
 
         .#{$size}-h33 {
-            height: 33%;
+            height: 33.3333%;
         }
 
         .#{$size}-h50 {
@@ -289,7 +292,7 @@ $heights: 20;
         }
 
         .#{$size}-h66 {
-            height: 66%;
+            height: 66.6666%;
         }
 
         .#{$size}-h75 {
@@ -310,6 +313,10 @@ $heights: 20;
 
 .h300px {
     height: 300px;
+}
+
+.h100vh {
+    height: 100vh;
 }
 /* ----  End of HEIGHT OVERRIDES  --------------------------------------------------------------------- */
 /* =============================================================================================
@@ -598,6 +605,30 @@ $padding-y: (py);
 .mxn1-5 {
     margin: 0 -1.5rem !important;
 }
+
+.pt25 {
+    padding-top: 25%;
+}
+
+.pt33 {
+    padding-top: 33.3333%;
+}
+
+.pt50 {
+    padding-top: 50%;
+}
+
+.pt66 {
+    padding-top: 66.6666%;
+}
+
+.pt75 {
+    padding-top: 75%;
+}
+
+.pt100 {
+    padding-top: 100%;
+}
 /* ----  End of WHITESPACES  -------------------------------------------------------------------------- */
 /* ====================================================================================================
  ██████  ██████  ██       ██████  ██████  ███████
@@ -607,7 +638,7 @@ $padding-y: (py);
  ██████  ██████  ███████  ██████  ██   ██ ███████
 ==================================================================================================== */
 $blue: $primary-color;
-$blue-light: #3569d7;
+$blue-light: #0499EE;
 $blue-dark: darken($blue, 10%);
 $green: $success-color;
 $green-light: lighten($green, 10%);
@@ -1805,6 +1836,7 @@ dl dt {
         right      : 0;
     }
 }
+
 /* ----  End of LINK LISTS  --------------------------------------------------------------------- */
 /* ====================================================================================================
 ██████  ██    ██ ████████ ████████  ██████  ███    ██ ███████
@@ -3246,7 +3278,7 @@ $slick-font-path: "../fonts/slick/";
     // bottom    : 1rem;
     // right     : 1rem;
     position       : fixed;
-    @include mui-fade(in);
+    // @include mui-fade(in);
     display        : flex;
     flex-direction : column;
     justify-content: space-between;
@@ -3481,6 +3513,7 @@ a.morelink {
     object-fit: cover;
     width     : 100%;
     height    : 100%;
+    // position  : absolute;
 }
 
 .object-fit-contain {
@@ -3539,60 +3572,60 @@ a.morelink {
 ██   ██ ███████ ██   ██ ██████  ███████ ██   ██     ██      ██ ███████ ██   ████  ██████
 
 ============================================================================================= */
-@keyframes fadeInRotate {
-    0% {
-        transform: translateY(-100px);
-        opacity  : 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity  : 1;
-    }
-}
-
-.header-menu {
-    // background         : url("../content/dam/cognizant_foundation/images/gradient-top.png") no-repeat;
-    background-size    : 100% 100%;
-    background-position: center top;
-    z-index            : 2;
-
-    & .button {
-        &::after {
-            font-family: "Cognizant-Ions";
-            content    : "\e903";
-            font-weight: bold;
-            font-size  : $small-font-size;
-            margin-left: 0.5rem;
-            margin-top : 2px;
-        }
-
-        &:hover {
-            background: rgba(39,51,56,.99) !important;
-        }
-
-        &.hover {
-            background: rgba(39,51,56,.99) !important;
-
-            &::after {
-                content  : "\e91a" !important;
-                animation: fadeInRotate 0.5s;
-            }
-        }
-    }
-
-    & .dropdown-pane {
-        // background         : rgba(39,51,56,.99) url("../images/nav-mesh.svg") no-repeat;
-        background-size    : contain;
-        background-position: center bottom;
-        left               : 0 !important;
-        width              : 100% !important;
-
-        & .is-open {
-            // transition: visibility 0s !important;
-        }
-    }
-}
+// @keyframes fadeInRotate {
+//     0% {
+//         transform: translateY(-100px);
+//         opacity  : 0;
+//     }
+// 
+//     100% {
+//         transform: translateY(0);
+//         opacity  : 1;
+//     }
+// }
+// 
+// .header-menu {
+//     // background         : url("../content/dam/cognizant_foundation/images/gradient-top.png") no-repeat;
+//     background-size    : 100% 100%;
+//     background-position: center top;
+//     z-index            : 2;
+// 
+//     & .button {
+//         &::after {
+//             font-family: "Cognizant-Ions";
+//             content    : "\e903";
+//             font-weight: bold;
+//             font-size  : $small-font-size;
+//             margin-left: 0.5rem;
+//             margin-top : 2px;
+//         }
+// 
+//         &:hover {
+//             background: rgba(39,51,56,.99) !important;
+//         }
+// 
+//         &.hover {
+//             background: rgba(39,51,56,.99) !important;
+// 
+//             &::after {
+//                 content  : "\e91a" !important;
+//                 animation: fadeInRotate 0.5s;
+//             }
+//         }
+//     }
+// 
+//     & .dropdown-pane {
+//         // background         : rgba(39,51,56,.99) url("../images/nav-mesh.svg") no-repeat;
+//         background-size    : contain;
+//         background-position: center bottom;
+//         left               : 0 !important;
+//         width              : 100% !important;
+// 
+//         & .is-open {
+//             // transition: visibility 0s !important;
+//         }
+//     }
+// }
 // -----  End of HEADER MENU  ---------------------------------------------
 // 
 /* =============================================================================================
@@ -3760,12 +3793,115 @@ div iframe.video {
 ██      ██ ███████ ██   ████  ██████
 
 ============================================================================================= */
-#language-menu li > a {
-    display       : table;
-    vertical-align: middle;
-    width         : 100%;
+#language-menu {
+    img {
+        margin-right: 0.5rem;
+    }
+
+    a {
+        font-weight: normal;
+        color      : black;
+        display    : inline;
+
+        &:hover {
+            color: $green;
+        }
+    }
 }
 // -----  End of WORLDWIDE MENU  ---------------------------------------------
+
+// =============================================================================================
+// ██████  ██████  ██ ███    ███  █████  ██████  ██    ██     ███    ██  █████  ██    ██
+// ██   ██ ██   ██ ██ ████  ████ ██   ██ ██   ██  ██  ██      ████   ██ ██   ██ ██    ██
+// ██████  ██████  ██ ██ ████ ██ ███████ ██████    ████       ██ ██  ██ ███████ ██    ██
+// ██      ██   ██ ██ ██  ██  ██ ██   ██ ██   ██    ██        ██  ██ ██ ██   ██  ██  ██
+// ██      ██   ██ ██ ██      ██ ██   ██ ██   ██    ██        ██   ████ ██   ██   ████
+// =============================================================================================
+
+%nav-primaryArrowEnd {
+    font-family: "Cognizant-Icons";
+    content    : "\e908";
+    font-size  : $small-font-size;
+    position   : absolute;
+    top        : calc(50% - .5rem);
+    right      : 0;
+    color      : $green;
+}
+
+.header-menu {
+    a {
+        font-weight: normal;
+    }
+
+    .nav-primaryLink {
+        color     : $black;
+        display   : inline-block;
+        position  : relative;
+        // margin-left: 0.5rem;
+        padding   : 1rem;
+        transition: all 0.5s ease;
+
+        &:hover {
+            color     : $white;
+            background: $blue;
+        }
+
+        &.arrow-end {
+            padding: 1rem 2rem 1rem 1rem;
+
+            &::after {
+                font-family: "Cognizant-Icons";
+                font-weight: 600;
+                content    : "\e903";
+                position   : absolute;
+                top        : calc(50% - .65rem);
+                right      : 0.75rem;
+                color      : $green;
+            }
+
+            &.nav-primaryLink-close::after {
+                content: "\e91a";
+            }
+        }
+    }
+
+    .dropdown-pane {
+        left  : 0 !important;
+        width : 100vw;
+        height: 100vh;
+
+        div {
+            max-width: 1200px;
+        }
+
+        li {
+            transition   : all 0.5s ease;
+            margin-bottom: 0;
+
+            &:hover {
+                background: darken($blue, 5%);
+            }
+        }
+
+        a {
+            font-weight: normal;
+            color      : white;
+            display    : inline-block;
+            padding    : 0.5rem 1rem 0.5rem 0.5rem;
+
+            &::after {
+                @extend %nav-primaryArrowEnd;
+            }
+
+            &.no-arrow:after {
+                content: '';
+            }
+        }
+    }
+}
+
+// -----  End of PRIMARY NAV  ---------------------------------------------
+
 /* =============================================================================================
 
  ██████ ██       ██████  ███████ ███████     ██████  ██    ██ ████████ ████████  ██████  ███    ██

@@ -101,7 +101,7 @@
     iframe: {
       // Iframe template
       tpl:
-        '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" allowfullscreen allow="autoplay; fullscreen" src=""></iframe>',
+        '<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" allowfullscreen="allowfullscreen" allow="autoplay; fullscreen" src=""></iframe>',
 
       // Preload iframe before displaying it
       // This allows to calculate iframe content width and height
@@ -179,7 +179,7 @@
       '<div class="fancybox-toolbar">{{buttons}}</div>' +
       '<div class="fancybox-navigation">{{arrows}}</div>' +
       '<div class="fancybox-stage"></div>' +
-      '<div class="fancybox-caption"></div>' +
+      '<div class="fancybox-caption"><div class="fancybox-caption__body"></div></div>' +
       "</div>" +
       "</div>",
 
@@ -384,17 +384,17 @@
         ZOOM: "Zoom"
       },
       de: {
-        CLOSE: "Schliessen",
+        CLOSE: "Schlie&szlig;en",
         NEXT: "Weiter",
-        PREV: "Zurück",
-        ERROR: "Die angeforderten Daten konnten nicht geladen werden. <br/> Bitte versuchen Sie es später nochmal.",
+        PREV: "Zur&uuml;ck",
+        ERROR: "Die angeforderten Daten konnten nicht geladen werden. <br/> Bitte versuchen Sie es sp&auml;ter nochmal.",
         PLAY_START: "Diaschau starten",
         PLAY_STOP: "Diaschau beenden",
         FULL_SCREEN: "Vollbild",
         THUMBS: "Vorschaubilder",
         DOWNLOAD: "Herunterladen",
         SHARE: "Teilen",
-        ZOOM: "Maßstab"
+        ZOOM: "Vergr&ouml;&szlig;ern"
       }
     }
   };
@@ -635,13 +635,7 @@
       var arr = obj.opts.i18n[obj.opts.lang] || obj.opts.i18n.en;
 
       return str.replace(/\{\{(\w+)\}\}/g, function(match, n) {
-        var value = arr[n];
-
-        if (value === undefined) {
-          return match;
-        }
-
-        return value;
+        return arr[n] === undefined ? match : arr[n];
       });
     },
 
@@ -912,11 +906,14 @@
             self.$refs.stage.hide();
           }
 
-          setTimeout(function() {
-            self.$refs.stage.show();
+          setTimeout(
+            function() {
+              self.$refs.stage.show();
 
-            self.update(e);
-          }, $.fancybox.isMobile ? 600 : 250);
+              self.update(e);
+            },
+            $.fancybox.isMobile ? 600 : 250
+          );
         }
       });
 
@@ -939,7 +936,7 @@
         // Enable keyboard navigation
         // ==========================
 
-        if (!current.opts.keyboard || e.ctrlKey || e.altKey || e.shiftKey || $(e.target).is("input") || $(e.target).is("textarea")) {
+        if (!current.opts.keyboard || e.ctrlKey || e.altKey || e.shiftKey || $(e.target).is("input,textarea,video,audio")) {
           return;
         }
 
@@ -1315,7 +1312,7 @@
           scaleX: scaleX,
           scaleY: scaleY
         },
-        duration || 330,
+        duration || 366,
         function() {
           self.isAnimating = false;
         }
@@ -1356,7 +1353,7 @@
           scaleX: end.width / $content.width(),
           scaleY: end.height / $content.height()
         },
-        duration || 330,
+        duration || 366,
         function() {
           self.isAnimating = false;
         }
@@ -1976,11 +1973,6 @@
         $slide = slide.$slide,
         $iframe;
 
-      // Fix responsive iframes on iOS (along with `position:absolute;` for iframe element)
-      if ($.fancybox.isMobile) {
-        opts.css.overflow = "scroll";
-      }
-
       slide.$content = $('<div class="fancybox-content' + (opts.preload ? " fancybox-is-hidden" : "") + '"></div>')
         .css(opts.css)
         .appendTo($slide);
@@ -2024,7 +2016,7 @@
             $body = $contents.find("body");
           } catch (ignore) {}
 
-          // Calculate contnet dimensions if it is accessible
+          // Calculate content dimensions, if it is accessible
           if ($body && $body.length && $body.children().length) {
             // Avoid scrolling to top (if multiple instances)
             $slide.css("overflow", "visible");
@@ -2301,21 +2293,26 @@
       var self = this,
         current = slide || self.current,
         caption = current.opts.caption,
+        preventOverlap = current.opts.preventCaptionOverlap,
         $caption = self.$refs.caption,
+        $clone,
         captionH = false;
 
-      if (current.opts.preventCaptionOverlap && caption && caption.length) {
+      $caption.toggleClass("fancybox-caption--separate", preventOverlap);
+
+      if (preventOverlap && caption && caption.length) {
         if (current.pos !== self.currPos) {
-          $caption = $caption
-            .clone()
+          $clone = $caption.clone().appendTo($caption.parent());
+
+          $clone
+            .children()
+            .eq(0)
             .empty()
-            .appendTo($caption.parent());
+            .html(caption);
 
-          $caption.html(caption);
+          captionH = $clone.outerHeight(true);
 
-          captionH = $caption.outerHeight(true);
-
-          $caption.empty().remove();
+          $clone.empty().remove();
         } else if (self.$caption) {
           captionH = self.$caption.outerHeight(true);
         }
@@ -2639,6 +2636,8 @@
           "iframe",
           "object",
           "embed",
+          "video",
+          "audio",
           "[contenteditable]",
           '[tabindex]:not([tabindex^="-"])'
         ].join(","),
@@ -2948,7 +2947,17 @@
       // Recalculate content dimensions
       current.$slide.trigger("refresh");
 
-      self.$caption = caption && caption.length ? $caption.html(caption) : null;
+      // Set caption
+      if (caption && caption.length) {
+        self.$caption = $caption;
+
+        $caption
+          .children()
+          .eq(0)
+          .html(caption);
+      } else {
+        self.$caption = null;
+      }
 
       if (!self.hasHiddenControls && !self.isIdle) {
         self.showControls();

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Cognizant-Icons';
-  src:  url('fonts/Cognizant-Icons.eot?mmkpgd');
-  src:  url('fonts/Cognizant-Icons.eot?mmkpgd#iefix') format('embedded-opentype'),
-    url('fonts/Cognizant-Icons.ttf?mmkpgd') format('truetype'),
-    url('fonts/Cognizant-Icons.woff?mmkpgd') format('woff'),
-    url('fonts/Cognizant-Icons.svg?mmkpgd#Cognizant-Icons') format('svg');
+  src:  url('fonts/Cognizant-Icons.eot?sj1j3e');
+  src:  url('fonts/Cognizant-Icons.eot?sj1j3e#iefix') format('embedded-opentype'),
+    url('fonts/Cognizant-Icons.ttf?sj1j3e') format('truetype'),
+    url('fonts/Cognizant-Icons.woff?sj1j3e') format('woff'),
+    url('fonts/Cognizant-Icons.svg?sj1j3e#Cognizant-Icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -447,4 +447,13 @@ i, .icomoon-liga {
 }
 .podcast:before {
   content: "\e989";
+}
+.logo-instagram:before {
+  content: "\e98a";
+}
+.arrow-right-tail:before {
+  content: "\e98b";
+}
+.print:before {
+  content: "\e98c";
 }

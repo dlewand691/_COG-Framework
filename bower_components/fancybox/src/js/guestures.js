@@ -243,7 +243,7 @@
         e.preventDefault();
       }
 
-      if (!($.fancybox.isMobile && $target.hasClass("fancybox-caption"))) {
+      if (!($.fancybox.isMobile && $target.parents(".fancybox-caption").length)) {
         return;
       }
     }
@@ -737,7 +737,7 @@
     newPos.width = self.contentStartPos.width;
     newPos.height = self.contentStartPos.height;
 
-    $.fancybox.animate(self.$content, newPos, 330);
+    $.fancybox.animate(self.$content, newPos, 366);
   };
 
   Guestures.prototype.endZooming = function() {

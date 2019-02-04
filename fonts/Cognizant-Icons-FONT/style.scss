@@ -1,19 +1,19 @@
 @import "variables";
 
 @font-face {
-  font-family: 'Cognizant-Icons';
-  src:  url('#{$icomoon-font-path}/Cognizant-Icons.eot?mmkpgd');
-  src:  url('#{$icomoon-font-path}/Cognizant-Icons.eot?mmkpgd#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/Cognizant-Icons.ttf?mmkpgd') format('truetype'),
-    url('#{$icomoon-font-path}/Cognizant-Icons.woff?mmkpgd') format('woff'),
-    url('#{$icomoon-font-path}/Cognizant-Icons.svg?mmkpgd#Cognizant-Icons') format('svg');
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?sj1j3e');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?sj1j3e#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?sj1j3e') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?sj1j3e') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?sj1j3e##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 i, .icomoon-liga {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'Cognizant-Icons' !important;
+  font-family: '#{$icomoon-font-family}' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -724,6 +724,21 @@ i, .icomoon-liga {
 .podcast {
   &:before {
     content: $podcast; 
+  }
+}
+.logo-instagram {
+  &:before {
+    content: $logo-instagram; 
+  }
+}
+.arrow-right-tail {
+  &:before {
+    content: $arrow-right-tail; 
+  }
+}
+.print {
+  &:before {
+    content: $print; 
   }
 }
 

@@ -163,6 +163,9 @@
             'programming-website': '&#xe987;',
             'video-meeting-square': '&#xe988;',
             'podcast': '&#xe989;',
+            'logo-instagram': '&#xe98a;',
+            'arrow-right-tail': '&#xe98b;',
+            'print': '&#xe98c;',
           '0': 0
         };
         delete icons['0'];
