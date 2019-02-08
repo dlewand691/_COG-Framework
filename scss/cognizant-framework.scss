@@ -1,52 +1,67 @@
 @charset 'utf-8';
-@import 'settings';
-@import '../bower_components/foundation-sites/scss/foundation.scss';
-// @import '../bower_components/motion-ui/motion-ui.scss';
 
+@import 'settings';
+@import '../node_modules/foundation-sites/scss/foundation.scss';
+@import '../node_modules/motion-ui/src/motion-ui.scss';
+
+// GLOBAL STYLES
 @include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
+
+// GRIDS (choose one)
+// @include foundation-xy-grid-classes;
 // @include foundation-grid;
 @include foundation-flex-grid;
-// @include foundation-xy-grid-classes;
-@include foundation-typography;
+
+// GENERIC COMPONENTS
 @include foundation-button;
-@include foundation-forms;
-// @include foundation-range-input;
-@include foundation-accordion;
-@include foundation-accordion-menu;
-// @include foundation-badge;
-@include foundation-breadcrumbs;
 // @include foundation-button-group;
-@include foundation-callout;
-@include foundation-card;
 @include foundation-close-button;
-@include foundation-menu;
-// @include foundation-menu-icon;
-// @include foundation-drilldown-menu;
-@include foundation-dropdown;
-@include foundation-dropdown-menu;
-@include foundation-responsive-embed;
 @include foundation-label;
-@include foundation-media-object;
-@include foundation-off-canvas;
-// @include foundation-orbit;
-@include foundation-pagination;
 // @include foundation-progress-bar;
 // @include foundation-slider;
-@include foundation-sticky;
-@include foundation-reveal;
 @include foundation-switch;
 @include foundation-table;
+
+// BASIC COMPONENTS
+// @include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-dropdown;
+@include foundation-pagination;
+@include foundation-tooltip;
+
+// CONTAINERS
+@include foundation-accordion;
+@include foundation-media-object;
+// @include foundation-orbit;
+@include foundation-responsive-embed;
 @include foundation-tabs;
 // @include foundation-thumbnail;
+
+// MENU-BASED CONTAINERS
+@include foundation-menu;
+// @include foundation-menu-icon;
+@include foundation-accordion-menu;
+// @include foundation-drilldown-menu;
+@include foundation-dropdown-menu;
+
+// LAYOUT COMPONENTS
+@include foundation-off-canvas;
+@include foundation-reveal;
+@include foundation-sticky;
 @include foundation-title-bar;
-@include foundation-tooltip;
 // @include foundation-top-bar;
-@include foundation-visibility-classes;
+
+// HELPERS
 @include foundation-float-classes;
 @include foundation-flex-classes;
-
+@include foundation-visibility-classes;
 // @include foundation-prototype-classes;
 
+// MOTION UI
 // @include motion-ui-transitions;
 // @include motion-ui-animations;
 
@@ -60,9 +75,10 @@ $icomoon-font-path: "../fonts/Cognizant-Icons-FONT/fonts";
 // ====================================================================================
 // PLUGINS
 // ====================================================================================
-@import "../bower_components/slick-carousel/slick/slick-theme.scss";
-@import "../bower_components/slick-carousel/slick/slick.scss";
-@import "../bower_components/css-hamburgers/_sass/hamburgers/hamburgers.scss";
+@import "../node_modules/aos/src/sass/aos.scss";
+@import "../node_modules/slick-carousel/slick/slick-theme.scss";
+@import "../node_modules/slick-carousel/slick/slick.scss";
+@import "../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 
 /* ===========================================================================================
 ██████  ███████ ██████  ██    ██  ██████   ██████  ██ ███    ██  ██████
@@ -303,8 +319,8 @@ $heights: 20;
 }
 
 .h100 {
-    height    : 100%;
-    min-height: 100%;
+    height: 100%;
+    // min-height: 100%;
 }
 
 .h500px {
@@ -392,6 +408,7 @@ $zindexes: 11;
 
         .#{$size}-shrink {
             flex     : 0 0 auto;
+
             max-width: 100%;
         }
 
@@ -486,8 +503,8 @@ $padding-y: (py);
         }
         @each $side, $sideHalf in $margin-x-positive {
             .#{$size}-#{$side}-half {
-                margin-left : 0.5rem !important;
                 margin-right: 0.5rem !important;
+                margin-left : 0.5rem !important;
             }
         }
         @each $side, $sideHalf in $margin-y-positive {
@@ -508,8 +525,8 @@ $padding-y: (py);
         }
         @each $side in $padding-x {
             .#{$size}-#{$side}-half {
-                padding-left : 0.5rem !important;
                 padding-right: 0.5rem !important;
+                padding-left : 0.5rem !important;
             }
         }
         @each $side in $padding-y {
@@ -546,14 +563,14 @@ $padding-y: (py);
             }
             @each $side in $margin-x-positive {
                 .#{$size}-#{$side}#{$i} {
-                    margin-left : #{$i}rem !important;
                     margin-right: #{$i}rem !important;
+                    margin-left : #{$i}rem !important;
                 }
             }
             @each $side in $margin-x-negative {
                 .#{$size}-#{$side}#{$i} {
-                    margin-left : -#{$i}rem !important;
                     margin-right: -#{$i}rem !important;
+                    margin-left : -#{$i}rem !important;
                 }
             }
             @each $side in $margin-y-positive {
@@ -588,8 +605,8 @@ $padding-y: (py);
             }
             @each $side in $padding-x {
                 .#{$size}-#{$side}#{$i} {
-                    padding-left : #{$i}rem !important;
                     padding-right: #{$i}rem !important;
+                    padding-left : #{$i}rem !important;
                 }
             }
             @each $side in $padding-y {
@@ -1016,33 +1033,45 @@ $bg-size: (
 
 ==================================================================================== */
 @mixin gradient-overlay-image {
-    display        : block;
     position       : absolute;
-    background-size: cover;
-    height         : 75%;
-    width          : 100%;
-    content        : "";
     bottom         : 0;
+
+    display        : block;
+
+    width          : 100%;
+    height         : 75%;
+
+    content        : "";
+
+    background-size: cover;
 
 }
 @mixin gradient-overlay-image-full {
-    display        : block;
     position       : absolute;
-    background-size: cover;
-    height         : 100%;
-    width          : 100%;
-    content        : "";
     bottom         : 0;
+
+    display        : block;
+
+    width          : 100%;
+    height         : 100%;
+
+    content        : "";
+
+    background-size: cover;
 
 }
 @mixin gradient-overlay-image-angled {
-    display        : block;
     position       : absolute;
-    background-size: cover;
-    height         : 100%;
-    width          : 100%;
-    content        : "";
     bottom         : 0;
+
+    display        : block;
+
+    width          : 100%;
+    height         : 100%;
+
+    content        : "";
+
+    background-size: cover;
 
 }
 
@@ -1051,6 +1080,7 @@ $bg-size: (
 
     &::after {
         background-image: linear-gradient(to bottom, rgba($white,0) 0%,rgba($white,0) 50%,rgba($white,1) 100%);
+
         @include gradient-overlay-image;
     }
 }
@@ -1060,6 +1090,7 @@ $bg-size: (
 
     &::after {
         background-image: linear-gradient(to bottom, rgba($blue,0) 0%,rgba($blue,0) 50%,rgba($blue,1) 100%);
+
         @include gradient-overlay-image;
     }
 }
@@ -1069,6 +1100,7 @@ $bg-size: (
 
     &::after {
         background-image: linear-gradient(to bottom, rgba($black, 0) 50%, rgba($black, 1) 100%);
+
         @include gradient-overlay-image;
     }
 }
@@ -1078,6 +1110,7 @@ $bg-size: (
 
     &::after {
         background-image: linear-gradient(to bottom, rgba($white, 0) 20%, rgba($white, .9) 65%);
+
         @include gradient-overlay-image-full;
     }
 }
@@ -1087,6 +1120,7 @@ $bg-size: (
 
     &::after {
         background-image: linear-gradient(to bottom, rgba($blue, 0) 20%, rgba($blue, .9) 65%);
+
         @include gradient-overlay-image-full;
     }
 }
@@ -1096,6 +1130,7 @@ $bg-size: (
 
     &::after {
         background-image: linear-gradient(to bottom, rgba($black, 0) 20%, rgba($black, .9) 65%);
+
         @include gradient-overlay-image-full;
     }
 }
@@ -1105,6 +1140,7 @@ $bg-size: (
 
     &::after {
         background-image: linear-gradient(135deg, rgba($blue, 0) 30%, rgba($blue, 0.9) 80%);
+
         @include gradient-overlay-image-full;
     }
 }
@@ -1179,12 +1215,14 @@ $bg-size: (
 
 ====================================================================================*/
 @mixin box-shadow-hover() {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
     &:hover {
-        box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.4);
         transform : scale(1.01);
+
+        box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -1203,17 +1241,22 @@ $bg-size: (
 ==================================================================================== */
 @include breakpoint(medium) {
     .hover-grow {
-        transition: all 0.3s ease;
         position  : relative;
         z-index   : 1;
-        box-shadow: 0;
+
         overflow  : visible;
+
+        transition: all 0.3s ease;
+
+        box-shadow: 0;
         // border    : 0;
         &.is-active,
         &:hover {
+            z-index         : 10;
+
             transform       : scale(1.035);
             transform-origin: left center;
-            z-index         : 10;
+
             box-shadow      : 0 5px 10px 0 rgba(0, 0, 0, 0.2);
         }
     }
@@ -1236,18 +1279,22 @@ $bg-size: (
 @keyframes reveal-content {
     0% {
         display: none;
+
         opacity: 0;
     }
 
     1% {
         display  : block;
-        opacity  : 0;
+
         transform: scale(0);
+
+        opacity  : 0;
     }
 
     100% {
-        opacity  : 1;
         transform: scale(1);
+
+        opacity  : 1;
     }
 }
 
@@ -1258,25 +1305,28 @@ $bg-size: (
     // padding: 0;
 
     .hover-reveal-middle {
+        padding   : 1.5rem;
+        // max-height: 0;
+
+        transition: all 0.5s ease;
         // position  : absolute;
         // bottom    : 0;
         transform : translateY(200%);
-        padding   : 1.5rem;
+
         opacity   : 1;
-        // max-height: 0;
-        transition: all 0.5s ease;
         // transform : scaleY(0);
         background: rgba($black, .5);
     }
 
     .hover-reveal-bottom,
     .hover-reveal-top {
+        transition: all 0.5s ease;
         // position  : absolute;
         // bottom    : 0;
         // max-height: 0;
         transform : translateY(100%);
+
         opacity   : 0;
-        transition: all 0.5s ease;
     }
 
     .hover-reveal-bottom {
@@ -1302,12 +1352,13 @@ $bg-size: (
         .hover-reveal-bottom,
         .hover-reveal-middle,
         .hover-reveal-top {
+            transition: all 0.5s ease;
             // position  : relative;
             // bottom    : 0;
             // max-height: 500px;
             transform : translateY(0);
+
             opacity   : 1;
-            transition: all 0.5s ease;
         }
 
         .hover-reveal-bottom {
@@ -1335,13 +1386,15 @@ $bg-size: (
 .hover-border-grow {
     // outline   : 0 solid transparent;
     transition: all 0.3s ease;
+
     box-shadow: 0 0 0 0 $green;
 
     &:hover {
-        // outline   : 1rem solid $green;
-        box-shadow: 0 0 0 1rem $green;
-        transition: all 0.3s ease;
         cursor    : pointer;
+        transition: all 0.3s ease;
+        // outline   : 1rem solid $green;
+
+        box-shadow: 0 0 0 1rem $green;
     }
 }
 // -----  End of HOVER BORDER GROW  ---------------------------------------------
@@ -1359,8 +1412,9 @@ $bg-size: (
 // ██   ██ ██ ██████  ███████     ██████       ███████ ██   ██  ██████   ███ ███
 // =============================================================================================
 .hover-hide-show {
-    overflow: hidden;
     position: relative;
+
+    overflow: hidden;
 
     .hide-on-hover {
         transition: all 0.35s ease-out;
@@ -1369,9 +1423,10 @@ $bg-size: (
     }
 
     .show-on-hover {
-        opacity   : 0;
         transition: all 0.35s ease-out;
         transform : translateY(100%);
+
+        opacity   : 0;
     }
 
     &:hover {
@@ -1381,9 +1436,10 @@ $bg-size: (
         }
 
         .show-on-hover {
-            opacity   : 1;
-            transform : translateY(0%);
             transition: all 0.35s ease-out;
+            transform : translateY(0%);
+
+            opacity   : 1;
         }
     }
 }
@@ -1402,28 +1458,35 @@ $bg-size: (
 // ███████ ███████ ██ ██████  ███████      ██████  ██
 // =============================================================================================
 .hover-slide-up {
-    min-height: 280px;
     position  : relative;
 
+    min-height: 280px;
+
     .slide-up-section1 {
-        transition: all 0.3s ease-out;
         position  : absolute;
         bottom    : 0;
-        background: $white;
+
         height    : 50%;
         padding   : 2rem 1rem 1rem;
+
+        transition: all 0.3s ease-out;
+
+        background: $white;
     }
 
     .slide-up-section2 {
-        transition: all 0.3s ease-out;
-        opacity   : 0;
         max-height: 0;
+
+        transition: all 0.3s ease-out;
+
+        opacity   : 0;
     }
 
     &:hover .slide-up-section1 {
-        background: $green;
         height    : 100%;
         padding   : 1rem;
+
+        background: $green;
 
         * {
             color: $white !important;
@@ -1431,8 +1494,9 @@ $bg-size: (
     }
 
     &:hover .slide-up-section2 {
-        opacity   : 1;
         max-height: 200px;
+
+        opacity   : 1;
         color     : $white !important;
     }
 }
@@ -1452,12 +1516,14 @@ $bg-size: (
 // ====================================================================================
 
 .bw-color-hover {
-    filter: grayscale(1);
     transition: all 0.5s ease;
 
+    filter: grayscale(1);
+
     &:hover {
-        filter: grayscale(0);
         transition: all 0.5s ease;
+
+        filter: grayscale(0);
     }
 }
 // -----  End of BW TO COLOR HOVER  ---------------------------------------------
@@ -1507,15 +1573,15 @@ hr.dark {
 
 .vertical-divider-left {
     border-width      : 2px;
-    border-right-width: 0;
     border-style      : solid;
+    border-right-width: 0;
     border-image      : $blue;
 }
 
 .vertical-divider-right {
     border-width     : 2px;
-    border-left-width: 0;
     border-style     : solid;
+    border-left-width: 0;
     border-image     : $blue;
 }
 /* ----  End of DIVIDERS  -------------------------------------------------------------------------- */
@@ -1523,7 +1589,7 @@ hr.dark {
 ████████ ██    ██ ██████   ██████   ██████  ██████   █████  ██████  ██   ██ ██    ██
    ██     ██  ██  ██   ██ ██    ██ ██       ██   ██ ██   ██ ██   ██ ██   ██  ██  ██
    ██      ████   ██████  ██    ██ ██   ███ ██████  ███████ ██████  ███████   ████
-   ██       ██    ██      ██    ██ ██    ██ ██   ██ █��  ██ ██      ██   ██    ██
+   ██       ██    ██      ██    ██ ██    ██ ██   ██ ███  ██ ██      ██   ██    ██
    ██       ██    ██       ██████   ██████  ██   ██ ██   ██ ██      ██   ██    ██
 =========================================================================================== */
 // RFS mixin.
@@ -1546,7 +1612,7 @@ $rfs-two-dimensional: false;
 // Generate enable or disable classes. Possibilities: false, "enable" or "disable"
 $rfs-class: "disable";
 
-@import "../bower_components/rfs/scss/_rfs.scss";
+@import "../node_modules/rfs/scss/_rfs.scss";
 
 :root *,
 _::-webkit-full-page-media,
@@ -1584,11 +1650,13 @@ _:future {
 
 @mixin lhCrop($line-height, $capital-letter: 1) {
     &::before {
-        content   : '';
         display   : block;
-        height    : 0;
+
         width     : 0;
+        height    : 0;
         margin-top: calc((#{$capital-letter} - #{$line-height}) * 0.5em);
+
+        content   : '';
     }
 }
 
@@ -1616,16 +1684,18 @@ html {
 
 %h1,
 h1 {
-    @include responsive-font-size(84);
     // font-weight: 300;
     line-height: 1.1;
+
+    @include responsive-font-size(84);
 }
 
 %h2,
 h2 {
-    @include responsive-font-size(63);
     // font-weight: 300;
     line-height: 1.1;
+
+    @include responsive-font-size(63);
 }
 
 %h3,
@@ -1803,27 +1873,34 @@ pre code {
 
 .heading-lines {
     overflow  : hidden;
+
     text-align: center;
 }
 
 .heading-lines:after,
 .heading-lines:before {
-    background-color: $gray-light2;
-    content         : "";
-    display         : inline-block;
-    height          : 1px;
     position        : relative;
-    vertical-align  : middle;
+
+    display         : inline-block;
+
     width           : 50%;
+    height          : 1px;
+
+    content         : "";
+    vertical-align  : middle;
+
+    background-color: $gray-light2;
 }
 
 .heading-lines:before {
     right      : 0.5em;
+
     margin-left: -50%;
 }
 
 .heading-lines:after {
     left        : 0.5em;
+
     margin-right: -50%;
 }
 // ====================================================================================
@@ -1836,25 +1913,33 @@ pre code {
 // ====================================================================================
 /* Begin required CSS. */
 .line-clamp {
+    position          : relative;
+
     display           : block;
     display           : -webkit-box;
-    -webkit-box-orient: vertical;
-    position          : relative;
-    line-height       : 1.3;
     overflow          : hidden;
-    text-overflow     : ellipsis;
+    -webkit-box-orient: vertical;
+
     padding           : 0 !important;
+
+    text-overflow     : ellipsis;
+
+    line-height       : 1.3;
 }
 
 .line-clamp:after {
+    position  : absolute;
+    right     : 0;
+    bottom    : 0;
+
+    display   : block;
+
+    width     : 25%;
+    height    : calc(initial * 1.3);
+
     content   : "…";
     text-align: right;
-    bottom    : 0;
-    right     : 0;
-    width     : 25%;
-    display   : block;
-    position  : absolute;
-    height    : calc(initial * 1.3);
+
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
 }
 @supports (-webkit-line-clamp: 1) {
@@ -1864,28 +1949,33 @@ pre code {
 }
 
 .line-clamp-1 {
-    -webkit-line-clamp: 1;
     height            : calc(initial * 1.3 * 1);
+
+    -webkit-line-clamp: 1;
 }
 
 .line-clamp-2 {
-    -webkit-line-clamp: 2;
     height            : calc(initial * 1.3 * 2);
+
+    -webkit-line-clamp: 2;
 }
 
 .line-clamp-3 {
-    -webkit-line-clamp: 3;
     height            : calc(initial * 1.3 * 3);
+
+    -webkit-line-clamp: 3;
 }
 
 .line-clamp-4 {
-    -webkit-line-clamp: 4;
     height            : calc(initial * 1.3 * 4);
+
+    -webkit-line-clamp: 4;
 }
 
 .line-clamp-5 {
-    -webkit-line-clamp: 5;
     height            : calc(initial * 1.3 * 5);
+
+    -webkit-line-clamp: 5;
 }
 /* ----  End of TYPOGRAPHY;  -------------------------------------------------------------------------- */
 /* ===========================================================================================
@@ -1898,12 +1988,15 @@ pre code {
 
 =========================================================================================== */
 a {
-    color          : $green-dark;
     text-decoration: none;
+    word-wrap      : break-word;
+
+    color          : $green-dark;
+
     font-weight    : bold;
     // hyphens        : auto;
+
     overflow-wrap  : break-word;
-    word-wrap      : break-word;
 
     &:hover {
         transition: 0.3s ease-out;
@@ -1954,13 +2047,15 @@ i {
 
 ==================================================================================== */
 .icon-left svg {
-    margin-right: 0.7em;
     float       : left;
+
+    margin-right: 0.7em;
 }
 
 .icon-right svg {
-    margin-left: 0.85em;
     float      : right;
+
+    margin-left: 0.85em;
 }
 /* -----  End of ICONS  --------------------------------------------- */
 /* ====================================================================================
@@ -1973,23 +2068,30 @@ i {
                                              ▀▀
 ==================================================================================== */
 blockquote {
-    @extend %h5;
-    color       : $gray-light1;
-    font-style  : italic;
-    font-weight : bold;
-    border      : 1px solid $gray-light2;
-    border-left : 0;
-    border-right: 0;
     padding     : 3.75rem 0;
+
     text-align  : center;
+
+    color       : $gray-light1;
+    border      : 1px solid $gray-light2;
+    border-right: 0;
+    border-left : 0;
+
+    font-weight : bold;
+    font-style  : italic;
+
+    @extend %h5;
 
     %cite,
     cite {
+        margin-top             : 1.875rem;
+
         color                  : $black;
+
+        font-weight            : normal;
+
         -webkit-text-fill-color: $black;
         fill                   : $black;
-        margin-top             : 1.875rem;
-        font-weight            : normal;
     }
 }
 
@@ -2020,6 +2122,7 @@ li ul {
 @include breakpoint(medium up) {
     ul.inline-list li {
         display: inline-block;
+
         margin : 0 1rem 0 0;
     }
 }
@@ -2033,8 +2136,9 @@ ul.square {
 }
 
 dl dt {
-    font-weight: bold;
     margin-top : 1rem;
+
+    font-weight: bold;
 }
 /* ----  End of LISTS  --------------------------------------------------------------------- */
 /* =================================================================================================
@@ -2054,23 +2158,29 @@ dl dt {
     align-items: center;
 
     &::after {
-        font-family: "Cognizant-Icons";
-        content    : "\e907" !important;
-        font-weight: bold;
-        margin-left: 0.5rem;
         position   : unset !important;
         right      : unset !important;
+
         width      : unset !important;
         height     : unset !important;
         margin-top : unset !important;
+        margin-left: 0.5rem;
+
+        content    : "\e907" !important;
+
         background : unset !important;
+
+        font-family: "Cognizant-Icons";
+        font-weight: bold;
     }
 
     &.arrow-solid-green {
         &::after {
-            font-family: "Cognizant-Icons";
             content    : "\e908" !important;
+
             color      : $green;
+
+            font-family: "Cognizant-Icons";
         }
     }
 }
@@ -2079,10 +2189,12 @@ dl dt {
     position: relative;
 
     &::after {
-        font-family: "Cognizant-Icons";
-        content    : "\e907";
         position   : absolute;
         right      : 0;
+
+        content    : "\e907";
+
+        font-family: "Cognizant-Icons";
     }
 }
 
@@ -2095,10 +2207,12 @@ dl dt {
 ██████   ██████     ██       ██     ██████  ██   ████ ███████
 =========================================================================================== */
 .button {
-    text-decoration: none;
-    text-transform : uppercase;
     // margin-left    : 0.5rem;
     margin-right   : 0.5rem;
+
+    text-decoration: none;
+    text-transform : uppercase;
+
     @include responsive-font-size(20);
 
     & i {
@@ -2132,34 +2246,42 @@ dl dt {
     }
 
     &.back:after {
-        content: "";
         margin : 0;
+
+        content: "";
     }
 
     &.back:before {
         margin-right: 0.5rem;
-        font-family : "Cognizant-Icons";
+
         content     : "\e905";
+
         color       : $white;
+
+        font-family : "Cognizant-Icons";
         font-weight : 600;
     }
 
     &.download:after {
-        font-family: "Cognizant-Icons";
-        content    : "\e920" !important;
-        font-weight: bold;
-        margin-left: 0.5rem;
         position   : unset !important;
         right      : unset !important;
+
         width      : unset !important;
         height     : unset !important;
         margin-top : unset !important;
+        margin-left: 0.5rem;
+
+        content    : "\e920" !important;
+
         background : unset !important;
+
+        font-family: "Cognizant-Icons";
+        font-weight: bold;
     }
 
     &.white {
-        background: $white;
         color     : $green-dark;
+        background: $white;
     }
 
     &.white:after {
@@ -2249,19 +2371,22 @@ label {
 .fieldset,
 fieldset {
     border: none;
+
     @include callout;
 }
 @include breakpoint(medium up) {
     .fieldset,
     fieldset {
-        box-shadow: 0 0.2rem 0.3rem rgba(0,0,0,0.1);
         padding   : 2rem;
+
+        box-shadow: 0 0.2rem 0.3rem rgba(0,0,0,0.1);
     }
 }
 
 legend {
-    @extend %h5;
     background: transparent !important;
+
+    @extend %h5;
 }
 
 textarea {
@@ -2270,8 +2395,8 @@ textarea {
 
 input[type=checkbox],
 input[type=radio] {
-    margin-bottom: 0;
     margin-right : 0.5rem;
+    margin-bottom: 0;
 }
 
 input[type=radio] + .form-error {
@@ -2284,12 +2409,15 @@ input[type=radio] + .form-error {
 }
 
 .reveal-if-active {
-    opacity   : 0;
-    max-height: 0;
-    overflow  : hidden;
-    transform : scale(0.95);
-    transition: all 0.5s;
     display   : block;
+    overflow  : hidden;
+
+    max-height: 0;
+
+    transition: all 0.5s;
+    transform : scale(0.95);
+
+    opacity   : 0;
 
     input[type=text] {
         width: 100%;
@@ -2297,29 +2425,37 @@ input[type=radio] + .form-error {
 
     input[type="checkbox"]:checked ~ &,
     input[type="radio"]:checked ~ & {
-        opacity      : 1;
-        max-height   : 100000px;
-        transform    : scale(1);
         overflow     : visible;
+
+        max-height   : 100000px;
         margin-bottom: 2rem;
+
+        transform    : scale(1);
+
+        opacity      : 1;
     }
 }
 
 .checkbox {
     position: relative;
+
     margin  : 0 1rem 0 0;
+
     cursor  : pointer;
 
     &:before {
-        transition        : transform 0.4s cubic-bezier(.45,1.8,.5,.75);
-        transform         : rotate(-45deg) scale(0, 0);
-        content           : "";
         position          : absolute;
+        z-index           : 1;
         top               : 2px;
         left              : 2px;
-        z-index           : 1;
+
         width             : 12px;
         height            : 6px;
+
+        content           : "";
+        transition        : transform 0.4s cubic-bezier(.45,1.8,.5,.75);
+        transform         : rotate(-45deg) scale(0, 0);
+
         border            : 2px solid $white;
         border-top-style  : none;
         border-right-style: none;
@@ -2331,43 +2467,51 @@ input[type=radio] + .form-error {
         }
 
         &:after {
-            background  : $green;
             border-color: $green-dark;
+            background  : $green;
         }
     }
 
     &:after {
-        content   : "";
         position  : absolute;
         top       : -4px;
         left      : -2px;
+
         width     : 20px;
         height    : 20px;
-        background: #fff;
-        border    : 0.12rem solid $gray-light1;
+
+        content   : "";
         cursor    : pointer;
+
+        border    : 0.12rem solid $gray-light1;
+        background: #fff;
         box-shadow: inset 0 1px 2px rgba(51,51,51,0.1);
     }
 }
 
 .radio {
     position: relative;
+
     margin  : 0 1rem 0 0;
+
     cursor  : pointer;
 
     &:before {
-        transition   : transform 0.4s cubic-bezier(.45,1.8,.5,.75);
-        transform    : scale(0,0);
-        content      : "";
         position     : absolute;
+        z-index      : 1;
         z-index      : 1;
         top          : 3px;
         left         : 3px;
-        z-index      : 1;
+
         width        : 10px;
         height       : 10px;
-        background   : $green;
+
+        content      : "";
+        transition   : transform 0.4s cubic-bezier(.45,1.8,.5,.75);
+        transform    : scale(0,0);
+
         border-radius: 50%;
+        background   : $green;
     }
 
     &:checked {
@@ -2377,15 +2521,18 @@ input[type=radio] + .form-error {
     }
 
     &:after {
-        content      : "";
         position     : absolute;
         top          : -2px;
         left         : -2px;
+
         width        : 20px;
         height       : 20px;
-        background   : #fff;
+
+        content      : "";
+
         border       : 0.12rem solid $gray-light1;
         border-radius: 50%;
+        background   : #fff;
         box-shadow   : inset 0 1px 2px rgba(51,51,51,0.1);
         // margin-bottom: .5rem;
     }
@@ -2403,6 +2550,7 @@ input.placeholder-white::placeholder {
 select {
     height       : 2.25rem;
     padding-right: 1em;
+
     background   : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Ctitle%3Earrow-down%3C/title%3E%3Cpath d='M0 5.5v-.2c.1-.2.3-.3.5-.3h23c.2 0 .4.1.5.3 0 .2 0 .4-.1.5l-11.5 13c-.1.1-.2.2-.4.2s-.3-.1-.4-.2L.1 5.8C0 5.7 0 5.6 0 5.5zm22.4.5H1.6L12 17.7 22.4 6z' fill='%23999999' stroke='%23999999' stroke-width='1'/%3E%3C/svg%3E") no-repeat right 0.5rem bottom 45%;
     // background-size: 15px;
 }
@@ -2430,26 +2578,31 @@ select {
 // Anton Staroverov (https://tonystar.me)
 // ====================================================================================
 @mixin float-label-container {
-    display : block;
     position: relative;
+
+    display : block;
 }
 @mixin float-label {
     > span,
     label {
         position  : absolute;
-        left      : 0.5rem;
         top       : 0;
+        left      : 0.5rem;
+
         cursor    : text;
-        font-size : 75%;
-        opacity   : 1;
         transition: all 0.2s;
+
+        opacity   : 1;
+
+        font-size : 75%;
         @content;
     }
 }
 @mixin float-label-input {
     &::placeholder {
-        opacity   : 1;
         transition: all 0.2s;
+
+        opacity   : 1;
         color     : rgba($gray-dark1, .4);
     }
 
@@ -2459,10 +2612,12 @@ select {
 }
 @mixin float-label-scaled {
     &:placeholder-shown:not(:focus) + * {
-        font-size: inherit;
-        opacity  : 1;
-        @content;
         top      : 0.7rem;
+
+        opacity  : 1;
+
+        font-size: inherit;
+        @content;
     }
 }
 
@@ -2471,31 +2626,35 @@ select {
     @include float-label;
 
     select {
-        appearance: none;
         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Ctitle%3Earrow-down%3C/title%3E%3Cpath d='M0 5.5v-.2c.1-.2.3-.3.5-.3h23c.2 0 .4.1.5.3 0 .2 0 .4-.1.5l-11.5 13c-.1.1-.2.2-.4.2s-.3-.1-.4-.2L.1 5.8C0 5.7 0 5.6 0 5.5zm22.4.5H1.6L12 17.7 22.4 6z' fill='%2353565a' stroke='%2353565a' stroke-width='1'/%3E%3C/svg%3E") no-repeat right 0.5rem bottom 25% !important;
+
+        appearance: none;
     }
 
     input,
     select,
     textarea {
-        @include float-label-input;
-        font-size    : inherit;
         padding-top  : 1.2rem;
+
         border       : 0;
-        border-radius: 0;
-        box-shadow   : none;
-        background   : none;
         border-bottom: 1px solid rgba($gray-dark1, .2);
+        border-radius: 0;
+        background   : none;
+        box-shadow   : none;
+
+        font-size    : inherit;
+
+        @include float-label-input;
         @include float-label-scaled {
             top: 0.5rem;
         }
 
         &:focus {
+            border-width: 0 0 1px 0;
+            border-color: rgba($blue-light, 1);
             outline     : none;
             background  : none;
             box-shadow  : none;
-            border-width: 0 0 1px 0;
-            border-color: rgba($blue-light, 1);
             box-shadow  : 0 1px 0 rgba($blue-light, 1);
         }
     }
@@ -2510,36 +2669,39 @@ select {
 
     & .form-error {
         position : relative;
-        left     : 0;
         top      : 0;
-        font-size: initial;
+        left     : 0;
+
         color    : inherit !important;
+
+        font-size: initial;
     }
 
     & .is-invalid-input:not(:focus) {
-        border-color: $red;
         color       : $red;
+        border-color: $red;
     }
 }
 
 form.white {
     select {
-        appearance: none;
         background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Ctitle%3Earrow-down%3C/title%3E%3Cpath d='M0 5.5v-.2c.1-.2.3-.3.5-.3h23c.2 0 .4.1.5.3 0 .2 0 .4-.1.5l-11.5 13c-.1.1-.2.2-.4.2s-.3-.1-.4-.2L.1 5.8C0 5.7 0 5.6 0 5.5zm22.4.5H1.6L12 17.7 22.4 6z' fill='%23ffffff' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E") no-repeat right 0.5rem bottom 25% !important;
+
+        appearance: none;
     }
 
     & input,
     & select,
     & textarea {
-        background   : none;
         color        : $white;
         border-bottom: 1px solid rgba($white,.7);
+        background   : none;
 
         &:focus {
-            background  : none;
-            box-shadow  : none;
             border-width: 0 0 1px 0;
             border-color: rgba($white, 1);
+            background  : none;
+            box-shadow  : none;
             box-shadow  : 0 1px 0 rgba($white, 1);
         }
 
@@ -2558,10 +2720,12 @@ form.white {
 
     & .form-error {
         position : relative;
-        left     : 0;
         top      : 0;
-        font-size: initial;
+        left     : 0;
+
         color    : inherit !important;
+
+        font-size: initial;
     }
 
     & .is-invalid-label span {
@@ -2569,8 +2733,8 @@ form.white {
     }
 
     & .is-invalid-input:not(:focus) {
-        border-color: $red;
         color       : $red;
+        border-color: $red;
     }
 }
 // -----  End of FLOAT LABELS  ---------------------------------------------
@@ -2623,10 +2787,12 @@ $tab-background: $gray-light3;
 
 .tabs-title {
     position     : relative;
+
     margin-bottom: 0;
 
     a {
         transition: $button-transition;
+
         color     : $gray-dark2;
         background: $gray-light3;
 
@@ -2642,9 +2808,9 @@ $tab-background: $gray-light3;
     }
 
     &.is-active a {
-        box-shadow: inset 6px 0 0 0 $green;
-        background: $white;
         color     : $green-dark;
+        background: $white;
+        box-shadow: inset 6px 0 0 0 $green;
 
         &:first-of-type {}
 
@@ -2663,6 +2829,7 @@ $tab-background: $gray-light3;
 .tabs-content {
     &.vertical {
         margin-left: -1px;
+
         border     : 1px solid $tab-content-border;
 
         & .tabs-panel {
@@ -2677,14 +2844,15 @@ $tab-background: $gray-light3;
 
     .tabs-title {
         a {
-            border-width: 0;
             transition  : $button-transition;
+
             color       : $gray-dark2;
+            border-width: 0;
             background  : $gray-light3;
 
             &:focus {
-                background: $gray-light2;
                 color     : $gray-light1;
+                background: $gray-light2;
             }
 
             &:hover {
@@ -2694,9 +2862,9 @@ $tab-background: $gray-light3;
         }
 
         &.is-active a {
-            box-shadow: inset 0 6px 0 0 $green, 0 1px 0 0 $white;
-            background: $white;
             color     : $green-dark;
+            background: $white;
+            box-shadow: inset 0 6px 0 0 $green, 0 1px 0 0 $white;
         }
 
         &:first-of-type.is-active {
@@ -2708,8 +2876,9 @@ $tab-background: $gray-light3;
 }
 @keyframes tab-panel-fade-in {
     0% {
-        opacity   : 0;
         max-height: 500px;
+
+        opacity   : 0;
     }
 
     50% {
@@ -2741,19 +2910,24 @@ $tab-background: $gray-light3;
 
 .accordion-item {
     margin-bottom: 2px;
-    background   : $blue;
+
     border-radius: 0;
+    background   : $blue;
 }
 
 .accordion-title {
-    @extend %h6;
-    text-decoration: none;
     margin         : 0;
     padding-right  : 2.5rem;
+
+    text-decoration: none;
+
     border         : none !important;
+
+    @extend %h6;
 
     &:before {
         margin-top: -0.75rem;
+
         font-size : 1.5rem;
     }
 }
@@ -2770,35 +2944,41 @@ a.accordion-title:hover {
 }
 
 .accordion-arrow .accordion-title::before {
-    font-family: "Cognizant-Icons";
-    content    : "\e907";
-    transform  : rotate(90deg);
-    font-weight: 600;
-    font-size  : inherit;
     margin     : 0;
     padding    : 0;
-    line-height: 0;
+
+    content    : "\e907";
+    transform  : rotate(90deg);
+
     color      : $white !important;
+
+    font-family: "Cognizant-Icons";
+    font-size  : inherit;
+    font-weight: 600;
+    line-height: 0;
 }
 
 .accordion-arrow .is-active .accordion-title::before {
-    font-family: "Cognizant-Icons";
-    content    : "\e907";
-    transform  : rotate(-90deg);
-    font-weight: 600;
-    font-size  : inherit;
     margin     : 0;
     padding    : 0;
-    line-height: 0;
+
+    content    : "\e907";
+    transform  : rotate(-90deg);
+
     color      : $white !important;
+
+    font-family: "Cognizant-Icons";
+    font-size  : inherit;
+    font-weight: 600;
+    line-height: 0;
 }
 /* ==============================  ACCORDION MINIMAL DIVIDER  ============================== */
 .accordion-line {
     padding: 0;
 
     & .accordion-item {
-        background: transparent;
         color     : $blue;
+        background: transparent;
     }
 
     & .accordion-title {
@@ -2811,27 +2991,32 @@ a.accordion-title:hover {
 
     & .accordion-title:before,
     .accordion-title:after {
-        content   : "";
         position  : absolute;
-        border-top: 1px solid $gray-light2;
-        width     : 100%;
-        transform : none;
         top       : 50%;
+
+        width     : 100%;
+
+        content   : "";
+        transform : none;
+
+        border-top: 1px solid $gray-light2;
     }
 
     & .accordion-title:before {
         right       : 100%;
+
         margin-right: 1rem;
     }
 
     & .accordion-title:after {
         left       : 100%;
+
         margin-left: 1rem;
     }
 
     & .accordion-title:focus {
-        background: transparent;
         color     : $blue;
+        background: transparent;
     }
 }
 /* ----  End of ACCORDION  -------------------------------------------------------------------------- */
@@ -2851,34 +3036,41 @@ $sidelines-double-line: false !default;
 $sidelines-double-line-spacing: 0.5em !default;
 @mixin sidelines($text-padding: $sidelines-text-padding, $line-thickness: $sidelines-line-thickness, $line-length: $sidelines-line-length, $line-color: $sidelines-line-color, $line-style: $sidelines-line-style, $double-line: $sidelines-double-line, $double-line-spacing: $sidelines-double-line-spacing) {
     display    : block;
-    text-align : center;
     overflow   : hidden;
+
+    text-align : center;
     white-space: nowrap;
 
     span {
-        display      : inline-block;
         position     : relative;
-        padding-left : $text-padding;
+
+        display      : inline-block;
+
         padding-right: $text-padding;
+        padding-left : $text-padding;
 
         &:after,
         &:before {
-            content         : '';
             position        : absolute;
-            height          : 100%;
-            width           : $line-length;
             top             : 50%;
-            border-top-style: $line-style;
+
+            width           : $line-length;
+            height          : 100%;
+
+            content         : '';
+
             border-top-width: $line-thickness;
+            border-top-style: $line-style;
             @if $line-color != null {
                 border-top-color: $line-color;
             }
             @if $double-line {
-                border-bottom-style: $line-style;
-                border-bottom-width: $line-thickness;
-                border-bottom-color: $line-color;
                 height             : $double-line-spacing;
                 margin-top         : -($double-line-spacing/2);
+
+                border-bottom-width: $line-thickness;
+                border-bottom-style: $line-style;
+                border-bottom-color: $line-color;
             } @else 
             if $line-thickness > 1 {
                 margin-top: -(floor($line-thickness/2));
@@ -2951,10 +3143,11 @@ $sidelines-double-line-spacing: 0.5em !default;
     box-sizing   : border-box;
     max-width    : 100%;
     height       : 1.5em;
-    line-height  : 1.5em;
 
     white-space  : nowrap;
     text-overflow: ellipsis;
+
+    line-height  : 1.5em;
 }
 
 .overflower-long {
@@ -2974,8 +3167,8 @@ $sidelines-double-line-spacing: 0.5em !default;
     .overflower-short {
         display      : block;
         overflow     : hidden;
-
         flex-grow    : 1;
+
         width        : 0;
 
         text-overflow: ellipsis;
@@ -3055,7 +3248,7 @@ $sidelines-double-line-spacing: 0.5em !default;
 }
 // -----  End of BACKGROUND GRADIENT STEPS  ---------------------------------------------
 /* =============================================================================================
- ██████  █████  ██      ██       ██████  ██    ██ ███��██████ ███████
+ ██████  █████  ██      ██       ██████  ██    ██ ███████████ ███████
 ██      ██   ██ ██      ██      ██    ██ ██    ██    ██    ██
 ██      ███████ ██      ██      ██    ██ ██    ██    ██    ███████
 ██      ██   ██ ██      ██      ██    ██ ██    ██    ██         ██
@@ -3111,9 +3304,9 @@ $sidelines-double-line-spacing: 0.5em !default;
 
 ==================================================================================== */
 .label {
-    font-weight: bold;
     // text-transform: uppercase;
     font-size  : responsive-font-size(15);
+    font-weight: bold;
     line-height: inherit;
 }
 // -----  End of LABELS  ---------------------------------------------
@@ -3128,8 +3321,8 @@ $sidelines-double-line-spacing: 0.5em !default;
     margin: 0;
 
     & .active {
-        background: $green;
         color     : $white;
+        background: $green;
     }
 }
 /* ----  End of MENU- VERTICAL  --------------------------------------------------------------------- */
@@ -3186,27 +3379,35 @@ $sidelines-double-line-spacing: 0.5em !default;
 ==================================================================================== */
 @for $index from 1 through 6 {
     h#{$index}.anim-icon {
-        margin     : 0;
         display    : inline-block;
-        line-height: 0;
-        color      : white;
-        font-weight: normal;
+
+        margin     : 0;
+
         text-align : center;
+
+        color      : white;
+
+        font-weight: normal;
+        line-height: 0;
     }
 }
 
 .anim-icon {
     & i {
-        transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
         display   : block;
 
+        transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
         & + .anim-text {
-            font-size : $small-font-size - 15;
             display   : block;
+
             transition: all, 0.3s;
-            transform : translateY(-1rem);
-            opacity   : 0;
             transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+            transform : translateY(-1rem);
+
+            opacity   : 0;
+
+            font-size : $small-font-size - 15;
             /* easeInOutQuart */
         }
     }
@@ -3216,6 +3417,7 @@ $sidelines-double-line-spacing: 0.5em !default;
 
         & + .anim-text {
             transform: translateY(0);
+
             opacity  : 1;
         }
     }
@@ -3240,9 +3442,10 @@ $sidelines-double-line-spacing: 0.5em !default;
 
     .slide-up-section1,
     .slide-up-section2 {
+        height    : 70px;
+
         transition: all 0.35s ease;
         transform : translateY(125%);
-        height    : 70px;
     }
 
     .slide-up-section2 {
@@ -3274,10 +3477,11 @@ $sidelines-double-line-spacing: 0.5em !default;
 $slick-font-path: "../fonts/slick/";
 @font-face {
     font-family: "slick";
-    src        : slick-font-url("slick.eot");
-    src        : slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"),format("truetype"), slick-font-url("slick.svg#slick") format("svg");
     font-weight: normal;
     font-style : normal;
+
+    src        : slick-font-url("slick.eot");
+    src        : slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"),format("truetype"), slick-font-url("slick.svg#slick") format("svg");
 }
 
 .slick-slide {
@@ -3292,8 +3496,10 @@ $slick-font-path: "../fonts/slick/";
 .slick-prev {
     width           : 2rem;
     height          : 2rem;
+
     transition      : all, 500ms;
     transform-origin: center 100%;
+
     transform-style : preserve-3D;
 }
 
@@ -3314,11 +3520,12 @@ $slick-font-path: "../fonts/slick/";
 
 .slick-next:before,
 .slick-prev:before {
-    color      : $black;
-    font-size  : 2rem;
-    font-family: "Cognizant-Icons";
-    font-weight: 600;
     opacity    : 1;
+    color      : $black;
+
+    font-family: "Cognizant-Icons";
+    font-size  : 2rem;
+    font-weight: 600;
 }
 @include breakpoint(small only) {
     .slick-next:before,
@@ -3336,15 +3543,17 @@ $slick-font-path: "../fonts/slick/";
 }
 
 .slick-dots li button:before {
-    border-radius: 1000px;
     content      : "";
+
+    border-radius: 1000px;
 }
 
 .square-dots .slick-dots li {
-    margin  : 0 5px;
-    height  : 5px;
-    width   : 2rem;
     overflow: hidden;
+
+    width   : 2rem;
+    height  : 5px;
+    margin  : 0 5px;
 }
 
 .square-dots .slick-dots li button {
@@ -3356,8 +3565,9 @@ $slick-font-path: "../fonts/slick/";
 }
 
 .square-dots .slick-dots li button:before {
-    font-weight: bold;
     width      : 2rem;
+
+    font-weight: bold;
 }
 
 .square-dots .slick-dots li button:before {
@@ -3377,8 +3587,8 @@ $slick-font-path: "../fonts/slick/";
 }
 
 .white-dots .slick-dots li.slick-active button:before {
-    background: $white;
     opacity   : 1;
+    background: $white;
 }
 
 .white-arrows .slick-next:before {
@@ -3394,8 +3604,8 @@ $slick-font-path: "../fonts/slick/";
 }
 
 .black-dots .slick-dots li.slick-active button:before {
-    background: $black;
     opacity   : 1;
+    background: $black;
 }
 
 .black-arrows .slick-next:before {
@@ -3411,8 +3621,8 @@ $slick-font-path: "../fonts/slick/";
 }
 
 .blue-dots .slick-dots li.slick-active button:before {
-    background: $blue;
     opacity   : 1;
+    background: $blue;
 }
 
 .blue-arrows .slick-next:before {
@@ -3428,8 +3638,8 @@ $slick-font-path: "../fonts/slick/";
 }
 
 .green-dots .slick-dots li.slick-active button:before {
-    background: $green;
     opacity   : 1;
+    background: $green;
 }
 
 .green-arrows .slick-next:before {
@@ -3447,6 +3657,7 @@ $slick-font-path: "../fonts/slick/";
 
 .fw-controls .slick-dots li {
     flex-grow: 1;
+
     width    : 100%;
 }
 
@@ -3456,20 +3667,21 @@ $slick-font-path: "../fonts/slick/";
 }
 
 .fw-controls .slick-dots li button:before {
-    background: $black;
     width     : 100%;
+
+    background: $black;
 }
 
 .fw-controls .slick-dots li.slick-active button:before {
-    background: linear-gradient(to right, $blue, $blue-light);
     opacity   : 1;
+    background: linear-gradient(to right, $blue, $blue-light);
 }
 // ==============================  INSIDE ARROWS  ==============================
 
 .inside-arrows {
     & .slick-prev {
-        left   : 0;
         z-index: 1;
+        left   : 0;
     }
 
     & .slick-next {
@@ -3503,48 +3715,54 @@ $slick-font-path: "../fonts/slick/";
 ███████  ██████ ██   ██  ██████  ███████ ███████  ██████  ██
 ================================================================================================== */
 #scrollUp {
-    font-size          : 75%;
-    bottom             : 10px;
-    right              : 10px;
-    padding            : 0 0 0 1rem;
+    position           : fixed;
+    right              : 0.5rem;
+    bottom             : 0.5rem;
+
+    display            : inline;
+
+    padding            : 0 0 0 0.75rem;
+
+    content            : "BACK TO TOP";
+    transition         : all 0.2s ease;
+    transform          : translateY(200%);
+
+    color              : $white;
     background         : rgba($blue,0.85);
     background-position: right center;
-    color              : $white;
-}
 
-#scrollUp:after {
-    font-family: "Cognizant-Icons";
-    content    : "\e909";
-    color      : $white;
-    font-weight: 600;
-    margin     : 0 0 0 1rem;
-    padding    : 0.5rem;
-    background : $blue;
-    display    : inline-block!important;
-}
+    font-size          : $small-font-size;
 
-.scrollup--show {
-    // bottom    : 1rem;
-    // right     : 1rem;
-    position       : fixed;
-    // @include mui-fade(in);
-    display        : flex;
-    flex-direction : column;
-    justify-content: space-between;
-    align-items    : flex-end;
-    z-index        : 10;
-    padding        : 5rem 1rem 1rem;
+    &:after {
+        display    : inline-block;
 
-    & .button {
-        background: transparentize($blue-dark, .15);
+        margin     : 0 0 0 0.5rem;
+        padding    : 0.5rem;
+
+        content    : "\e909";
+
+        color      : $white;
+        background : $blue;
+
+        font-family: "Cognizant-Icons";
+        font-weight: bold;
+    }
+
+    &.scrollup--show {
+        transform: translateY(0%);
+
+        & .button {
+            background: transparentize($blue-dark, .15);
+        }
     }
 }
 
 .scrollUpContactUs--show {
+    position  : fixed;
     top       : 1rem;
     right     : 1rem;
+
     background: transparentize($blue-dark, .15);
-    position  : fixed;
 }
 /* ----  End of SCROLLUP  --------------------------------------------------------------------- */
 /* ==================================================================================================
@@ -3552,17 +3770,17 @@ $slick-font-path: "../fonts/slick/";
 ██      ██      ██      ██      ██         ██             ██
 ███████ █████   ██      █████   ██         ██         █████
      ██ ██      ██      ██      ██         ██        ██
-████�����██ ███████ ███████ ███████  ██████    ██        ███████
+███████████ ███████ ███████ ███████  ██████    ██        ███████
 ========================================================================================= */
 .select2 {
     // margin-bottom: $form-spacing;
 }
 
 .select2-selection--single {
+    height : 2.25rem !important;
     // padding: 0.625rem;
     // height : 100% !important;
     padding: 0.4rem;
-    height : 2.25rem !important;
 }
 
 .select2-selection__placeholder {
@@ -3589,14 +3807,15 @@ $slick-font-path: "../fonts/slick/";
 }
 
 .select2-selection__arrow {
-    height: 100% !important;
-    right : 18px !important;
     top   : -2px !important;
+    right : 18px !important;
+
+    height: 100% !important;
 
     b {
-        border-color: $gray-light1 transparent transparent transparent !important;
-        border-style: solid;
         border-width: 9px 8px 0 8px !important;
+        border-style: solid;
+        border-color: $gray-light1 transparent transparent transparent !important;
     }
 }
 
@@ -3604,16 +3823,16 @@ $slick-font-path: "../fonts/slick/";
     .select2-selection--single {
         .select2-selection__arrow {
             b {
-                border-color: transparent transparent $gray-light1 transparent !important;
                 border-width: 0 8px 9px 8px !important;
+                border-color: transparent transparent $gray-light1 transparent !important;
             }
         }
     }
 }
 
 .select2-container--default .select2-selection--single {
-    border-radius: 0;
     border-color : $gray-light2;
+    border-radius: 0;
 }
 
 .select2-dropdown {
@@ -3622,15 +3841,15 @@ $slick-font-path: "../fonts/slick/";
 }
 
 .select2-search__field:focus {
-    border-color: $gray-light2;
     border      : $input-border-focus !important;
+    border-color: $gray-light2;
     box-shadow  : 0 2px 3px rgba($blue, .5);
 }
 
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple,
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single {
-    border-color: $gray-light2;
     border      : $input-border-focus !important;
+    border-color: $gray-light2;
     box-shadow  : 0 2px 3px rgba($blue, .5);
 }
 
@@ -3653,8 +3872,9 @@ $slick-font-path: "../fonts/slick/";
 
 .footer {
     ul li {
-        line-height: 1.3rem;
         margin     : 0;
+
+        line-height: 1.3rem;
     }
 
     a {
@@ -3687,6 +3907,7 @@ $slick-font-path: "../fonts/slick/";
 ==================================================================================== */
 .read-more {
     position     : relative;
+
     padding-right: 1rem;
 }
 
@@ -3694,12 +3915,15 @@ a.morelink {
     position   : absolute;
     top        : 0;
     right      : 0;
-    font-family: "Cognizant-Icons";
     // color      : $gray-light1;
+
     transition : all 0.25s ease-out;
+
+    font-family: "Cognizant-Icons";
 
     &.less {
         transform: rotate(135deg);
+
         color    : $blue-light;
     }
 }
@@ -3748,8 +3972,9 @@ a.morelink {
 
 ==================================================================================== */
 .lt-header-image {
-    height  : 100px;
     overflow: hidden;
+
+    height  : 100px;
 
     & img {
         // object-fit: cover !important;
@@ -3759,16 +3984,18 @@ a.morelink {
 }
 
 .object-fit-cover {
-    object-fit: cover;
     width     : 100%;
     height    : 100%;
+
+    object-fit: cover;
     // position  : absolute;
 }
 
 .object-fit-contain {
-    object-fit: contain;
     width     : 100%;
     height    : 100%;
+
+    object-fit: contain;
 }
 
 .object-position-top-left {
@@ -3887,21 +4114,28 @@ a.morelink {
 
 ==================================================================================== */
 .is-drilldown-submenu-parent > a::after {
-    font-family: "Cognizant-Icons";
-    content    : "\e907";
-    border     : none;
-    margin-top : 0;
     top        : 30%;
+
+    margin-top : 0;
+
+    content    : "\e907";
+
+    border     : none;
+
+    font-family: "Cognizant-Icons";
     font-size  : $small-font-size;
     font-weight: bold;
 }
 
 .js-drilldown-back > a::before {
-    font-family : "Cognizant-Icons";
-    content     : "\e905";
-    border      : none;
     margin-top  : 2px;
     margin-right: 1rem;
+
+    content     : "\e905";
+
+    border      : none;
+
+    font-family : "Cognizant-Icons";
     font-size   : $small-font-size;
     font-weight : bold;
 }
@@ -3916,14 +4150,15 @@ a.morelink {
  █████  ███    ██ ██ ███    ███  █████  ████████ ██  ██████  ███    ██
 ██   ██ ████   ██ ██ ████  ████ ██   ██    ██    ██ ██    ██ ████   ██
 ███████ ██ ██  ██ ██ ██ ████ ██ ███████    ██    ██ ██    ██ ██ ██  ██
-██   ██ ██  ██ ██ ██ ██  ██  ██ ██   ██    ██    ██ ██    ██ �█ ██  ██ ██
+██   ██ ██  ██ ██ ██ ██  ██  ██ ██   ██    ██    ██ ██    ██ ██ ██  ██ ██
 ██   ██ ██   ████ ██ ██      ██ ██   ██    ██    ██  ██████  ██   ████
 
 ==================================================================================== */
 @keyframes slideInDown {
     from {
-        transform : translate3d(0, -100%, 0);
         visibility: visible;
+
+        transform : translate3d(0, -100%, 0);
     }
 
     to {
@@ -3937,6 +4172,7 @@ a.morelink {
 
     to {
         visibility: hidden;
+
         transform : translate3d(0, 0%, 0);
     }
 }
@@ -3957,7 +4193,7 @@ a.morelink {
 
 ███    ██  █████  ██    ██
 ████   ██ ██   ██ ██    ██
-██ ██  ██ ██�█████ ██    ██
+██ ██  ██ ████████ ██    ██
 ██  ██ ██ ██   ██  ██  ██
 ██   ████ ██   ██   ████
 ██████  ██      ██    ██ ███████     ██████   █████  ██████
@@ -3972,8 +4208,8 @@ a.morelink {
         color: $white;
 
         &:hover {
-            background: $white !important;
             color     : $blue;
+            background: $white !important;
         }
     }
 
@@ -3982,8 +4218,8 @@ a.morelink {
         background: $blue-light !important;
 
         &:hover {
-            background: $white !important;
             color     : $blue;
+            background: $white !important;
         }
     }
 }
@@ -3994,7 +4230,7 @@ a.morelink {
 ██    ██ ██ ██   ██ ██      ██    ██
 ██    ██ ██ ██   ██ █████   ██    ██
  ██  ██  ██ ██   ██ ██      ██    ██
-  ████   ██ ▖�█ ██████  ███████  ██████
+  ████   ██ ▖██ ██████  ███████  ██████
 ██████   █████   ██████ ██   ██  ██████  ██████   ██████  ██    ██ ███    ██ ██████
 ██   ██ ██   ██ ██      ██  ██  ██       ██   ██ ██    ██ ██    ██ ████   ██ ██   ██
 ██████  ███████ ██      █████   ██   ███ ██████  ██    ██ ██    ██ ██ ██  ██ ██   ██
@@ -4004,17 +4240,21 @@ a.morelink {
 ====================================================================================*/
 .video-background {
     position: relative;
+
     overflow: hidden;
     // z-index: -1;
     video {
         position  : absolute;
-        left      : 50%;
+        z-index   : -1;
         top       : 50%;
+        left      : 50%;
+
         width     : 100%;
         min-width : 100%;
         min-height: 100%;
+
         transform : translate(-50%,-50%);
-        z-index   : -1;
+
         object-fit: cover;
     }
 }
@@ -4023,8 +4263,10 @@ div iframe.video {
     position  : absolute;
     top       : 0;
     left      : 0;
+
     width     : 100%;
     height    : 100%;
+
     object-fit: cover;
 }
 // -----  End of VIDEO BACKGROUND  ---------------------------------------------
@@ -4048,9 +4290,11 @@ div iframe.video {
     }
 
     a {
-        font-weight: normal;
-        color      : black;
         display    : inline;
+
+        color      : black;
+
+        font-weight: normal;
 
         &:hover {
             color: $green;
@@ -4068,13 +4312,16 @@ div iframe.video {
 // ====================================================================================
 
 %nav-primaryArrowEnd {
-    font-family: "Cognizant-Icons";
-    content    : "\e908";
-    font-size  : $small-font-size;
     position   : absolute;
     top        : calc(50% - .5rem);
     right      : 0;
+
+    content    : "\e908";
+
     color      : $green;
+
+    font-family: "Cognizant-Icons";
+    font-size  : $small-font-size;
 }
 
 .header-menu {
@@ -4083,12 +4330,16 @@ div iframe.video {
     }
 
     .nav-primaryLink {
-        color     : $black;
-        display   : inline-block;
         position  : relative;
+
+        display   : inline-block;
         // margin-left: 0.5rem;
+
         padding   : 1rem;
+
         transition: all 0.5s ease;
+
+        color     : $black;
 
         &:hover {
             color     : $white;
@@ -4099,13 +4350,16 @@ div iframe.video {
             padding: 1rem 2rem 1rem 1rem;
 
             &::after {
-                font-family: "Cognizant-Icons";
-                font-weight: 600;
-                content    : "\e903";
                 position   : absolute;
                 top        : calc(50% - .65rem);
                 right      : 0.75rem;
+
+                content    : "\e903";
+
                 color      : $green;
+
+                font-family: "Cognizant-Icons";
+                font-weight: 600;
             }
 
             &.nav-primaryLink-close::after {
@@ -4116,6 +4370,7 @@ div iframe.video {
 
     .dropdown-pane {
         left  : 0 !important;
+
         width : 100vw;
         height: 100vh;
 
@@ -4124,8 +4379,9 @@ div iframe.video {
         }
 
         li {
-            transition   : all 0.5s ease;
             margin-bottom: 0;
+
+            transition   : all 0.5s ease;
 
             &:hover {
                 background: darken($blue, 5%);
@@ -4133,10 +4389,13 @@ div iframe.video {
         }
 
         a {
-            font-weight: normal;
-            color      : white;
             display    : inline-block;
+
             padding    : 0.5rem 1rem 0.5rem 0.5rem;
+
+            color      : white;
+
+            font-weight: normal;
 
             &::after {
                 @extend %nav-primaryArrowEnd;
@@ -4166,15 +4425,19 @@ div iframe.video {
     .close-button.outside {
         top          : -1rem;
         right        : 0;
-        font-size    : $small-font-size;
+
         display      : flex;
         align-content: middle;
+
         margin       : 0;
+
+        font-size    : $small-font-size;
         line-height  : 0;
 
         span {
-            font-size  : 2rem;
             margin-left: 0.5rem;
+
+            font-size  : 2rem;
         }
     }
 }
@@ -4190,28 +4453,31 @@ div iframe.video {
 ==================================================================================== */
 .animsition-loading,
 .animsition-loading:after {
-    width        : 32px;
-    height       : 32px;
     position     : fixed;
+    z-index      : 100;
     top          : 50%;
     left         : 50%;
+
+    width        : 32px;
+    height       : 32px;
     margin-top   : -16px;
     margin-left  : -16px;
+
     border-radius: 50%;
-    z-index      : 100;
 }
 
 .animsition-loading {
-    background-color         : transparent;
+    transform                : translateZ(0);
+    animation-name           : animsition-loading;
+    animation-duration       : 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
     border-top               : 5px solid rgba($blue, 1);
     border-right             : 5px solid rgba($blue, 1);
     border-bottom            : 5px solid rgba($blue, 1);
     border-left              : 5px solid rgba($black, .1);
-    transform                : translateZ(0);
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-duration       : 0.8s;
-    animation-name           : animsition-loading;
+    background-color         : transparent;
 }
 // -----  End of ANIMSITION  ---------------------------------------------
 // ====================================================================================
@@ -4228,8 +4494,9 @@ div iframe.video {
 }
 
 .lazyloaded {
-    opacity   : 1;
     transition: opacity 300ms;
+
+    opacity   : 1;
 }
 // -----  End of LAZYSIZES  ---------------------------------------------
 /* ====================================================================================
@@ -4261,12 +4528,14 @@ div iframe.video {
 // ██████  ██   ██ ██   ████ ██   ████ ███████ ██   ██ ███████
 // ====================================================================================
 .banner-header {
-    background-size    : cover;
     background-position: center center;
+    background-size    : cover;
+
     @include breakpoint(small only) {
         .row {
-            min-height: 350px;
             display   : block;
+
+            min-height: 350px;
         }
     };
     @include breakpoint(medium) {
@@ -4278,6 +4547,7 @@ div iframe.video {
 
 .banner-logoLockup {
     background: rgba(255,255,255,.9);
+
     @include breakpoint(small only) {
         max-width    : 150px;
         margin-bottom: 1rem;
@@ -4285,17 +4555,15 @@ div iframe.video {
 }
 
 .banner-mesh {
-    background-position: bottom left;
     background-repeat  : no-repeat;
+    background-position: bottom left;
 
     @include breakpoint(small) {
         background-size: contain;
     };
-
     @include breakpoint(medium) {
         background-size: 75%;
     };
-
     @include breakpoint(large) {
         background-size: 50%;
     };
@@ -4311,8 +4579,9 @@ div iframe.video {
 }
 
 .hover-show {
-    opacity   : 0;
     transition: all 0.2s ease-out;
+
+    opacity   : 0;
 }
 
 .hover-show:hover {
@@ -4333,6 +4602,7 @@ div iframe.video {
     &:hover {
         // color: $blue !important;
         transition: $button-transition;
+
         background: darken($blue, 20%);
     }
 }

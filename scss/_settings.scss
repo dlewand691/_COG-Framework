@@ -60,7 +60,7 @@
 //  55. Top Bar
 //  56. Xy Grid
 
-@import '../bower_components/foundation-sites/scss/util/_util.scss';
+@import '../node_modules/foundation-sites/scss/util/_util.scss';
 
 // 1. Global
 // ---------
@@ -80,9 +80,8 @@ $white: #fff;
 $light-gray: lighten($black, 80%);
 $medium-gray: lighten($black, 60%);
 $dark-gray: lighten($black, 20%);
-$dark-gray2: lighten($black, 40%);
 $body-background: $white;
-$body-font-color: #000;
+$body-font-color: $black;
 $body-font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -101,6 +100,7 @@ $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
+$print-hrefs: true;
 
 // 2. Breakpoints
 // --------------
@@ -245,7 +245,7 @@ $badge-color-alt: $white;
 $badge-palette: $foundation-palette;
 $badge-padding: 0.3em;
 $badge-minwidth: 2.1em;
-$badge-font-size: 0.75rem;
+$badge-font-size: 0.6rem;
 
 // 10. Breadcrumbs
 // ---------------
@@ -464,7 +464,6 @@ $menu-simple-margin: 1rem;
 $menu-item-color-active: $success-color;
 $menu-item-background-active: get-color(success);
 $menu-icon-spacing: 0.25rem;
-$menu-item-background-hover: $light-gray;
 $menu-state-back-compat: true;
 $menu-centered-back-compat: true;
 $menu-icons-back-compat: true;
@@ -789,7 +788,6 @@ $tab-active-color: $success-color;
 $tab-item-font-size: rem-calc(20);
 $tab-item-background-hover: $white;
 $tab-item-padding: 1.25rem;
-$tab-expand-max: 6;
 $tab-content-background: $white;
 $tab-content-border: $light-gray;
 $tab-content-color: $body-font-color;

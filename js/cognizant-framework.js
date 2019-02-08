@@ -1,4 +1,4 @@
-// @codekit-prepend '../bower_components/jquery/dist/jquery.min.js'
+// @codekit-prepend '../node_modules/jquery/dist/jquery.min.js'
 
 
 // =============================================================================================
@@ -18,40 +18,40 @@
 // =============================================================================================
 // FOUNDATION UTILITY SCRIPTS
 // =============================================================================================
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.core.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.mediaQuery.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.motion.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.box.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.keyboard.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.nest.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.imageLoader.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.timer.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.touch.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.util.triggers.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.core.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.mediaQuery.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.motion.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.box.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.keyboard.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.nest.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.imageLoader.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.timer.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.touch.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.triggers.min.js'
 
 
 // =============================================================================================
 // FOUNDATION PLUGINS
 // =============================================================================================
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.abide.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.accordion.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.accordionMenu.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.drilldown.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.dropdown.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.dropdownMenu.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.equalizer.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.interchange.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.magellan.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.offcanvas.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.responsiveMenu.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.responsiveToggle.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.reveal.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.sticky.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.tabs.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.toggler.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.tooltip.min.js'
-// @codekit-prepend '../bower_components/foundation-sites/dist/js/plugins/foundation.responsiveAccordionTabs.min.js'
-// @codekit-prepend '../bower_components/motion-ui/dist/motion-ui.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.abide.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.accordion.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.accordionMenu.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.drilldown.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.dropdown.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.dropdownMenu.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.equalizer.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.interchange.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.magellan.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.offcanvas.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.responsiveMenu.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.responsiveToggle.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.reveal.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.sticky.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.tabs.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.toggler.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.tooltip.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.responsiveAccordionTabs.min.js'
+// @codekit-prepend '../node_modules/motion-ui/dist/motion-ui.min.js'
 
 
 // =============================================================================================
@@ -61,11 +61,10 @@
 // ██      ██      ██    ██ ██    ██ ██ ██  ██ ██      ██
 // ██      ███████  ██████   ██████  ██ ██   ████ ███████
 // =============================================================================================
-
-// @codekit-prepend '../bower_components/scrollup/dist/jquery.scrollUp.js'
-// @codekit-prepend '../bower_components/lazysizes/lazysizes.js'
-// @codekit-prepend '../bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js'
-// @codekit-prepend '../bower_components/slick-carousel/slick/slick.min.js'
+// @codekit-prepend '../node_modules/lazysizes/lazysizes.min.js'
+// @codekit-prepend '../node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js'
+// @codekit-prepend '../node_modules/slick-carousel/slick/slick.min.js'
+// @codekit-prepend '../node_modules/aos/dist/aos.js'
 
 Foundation.Abide.defaults.patterns['dashes_only'] = /^[0-9-+]*$/;
 
@@ -270,16 +269,27 @@ $('.accordion').on('mutateme.zf.trigger', function() {
 // ===========================================================================================
 // =            SCROLLUP            =
 // =============================================================================================
-$(document).ready(function() {
-    $.scrollUp({
-        scrollName: 'scrollUp', // Element ID
-        scrollDistance: 300, // Distance from top/bottom before showing element (px)
-        animation: 'slide', // Fade, slide, none
-        scrollText: 'BACK TO TOP', // Text for element, can contain HTML
-        scrollImg: false // Set true to use image
+if ($('#scrollUp').length) {
+    var scrollTrigger = 300, // px
+        backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+                $('#scrollUp').addClass('scrollup--show');
+            } else {
+                $('#scrollUp').removeClass('scrollup--show');
+            }
+        };
+    backToTop();
+    $(window).on('scroll', function () {
+        backToTop();
     });
-});
-
+    $('#scrollUp').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 750);
+    });
+}
 // -----  End of SCROLLUP  -----------------------------------------------------------------------
 
 
@@ -408,3 +418,19 @@ $(function() {
 
 
 // -----  End of SUCCINCT - LINE CLAMP/TRUNCATE  ---------------------------------------------
+
+// =============================================================================================
+//  █████   ██████  ███████
+// ██   ██ ██    ██ ██
+// ███████ ██    ██ ███████
+// ██   ██ ██    ██      ██
+// ██   ██  ██████  ███████
+// =============================================================================================
+
+$(document).ready(function() {
+  AOS.init({
+      startEvent: 'load'
+  });
+});
+
+// -----  End of AOS- ANIMATE ON SCROLL  ---------------------------------------------
