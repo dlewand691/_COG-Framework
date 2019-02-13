@@ -20,7 +20,7 @@
     "motion-ui": "^2.0.3",
     "plyr": "^3.4.8",
     "postcss": "^7.0.14",
-    "rfs": "^7.1.9",
+    "rfs": "^8.0.0",
     "slick-carousel": "^1.8.1",
     "succinct": "0.0.1",
     "what-input": "^5.1.3"
