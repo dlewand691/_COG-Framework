@@ -864,6 +864,12 @@ $border-side: (
     }
 }
 
+@each $color-name, $color in $colors-secondary {
+    .bg-#{$color-name} {
+        background-color: $color !important;
+    }
+}
+
 .bg-blue-dark,
 .bg-gray-dark1,
 .bg-gray-dark2,
@@ -1612,7 +1618,7 @@ $rfs-two-dimensional: false;
 // Generate enable or disable classes. Possibilities: false, "enable" or "disable"
 $rfs-class: "disable";
 
-@import "../node_modules/rfs/scss/_rfs.scss";
+@import "../node_modules/rfs/scss.scss";
 
 :root *,
 _::-webkit-full-page-media,
@@ -1817,7 +1823,21 @@ strong {
 %text-center {
     text-align: center;
 }
+
+
+// =============================================================================================
+// ████████ ███████ ██   ██ ████████      ██████  ██████  ██       ██████  ██████  ███████
+//    ██    ██       ██ ██     ██        ██      ██    ██ ██      ██    ██ ██   ██ ██
+//    ██    █████     ███      ██        ██      ██    ██ ██      ██    ██ ██████  ███████
+//    ██    ██       ██ ██     ██        ██      ██    ██ ██      ██    ██ ██   ██      ██
+//    ██    ███████ ██   ██    ██         ██████  ██████  ███████  ██████  ██   ██ ███████
+// =============================================================================================
 @each $color-name, $color in $colors-primary {
+    .text-#{$color-name} {
+        color: $color !important;
+    }
+}
+@each $color-name, $color in $colors-secondary {
     .text-#{$color-name} {
         color: $color !important;
     }

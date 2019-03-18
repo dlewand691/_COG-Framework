@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Cognizant-Icons';
-  src:  url('fonts/Cognizant-Icons.eot?sj1j3e');
-  src:  url('fonts/Cognizant-Icons.eot?sj1j3e#iefix') format('embedded-opentype'),
-    url('fonts/Cognizant-Icons.ttf?sj1j3e') format('truetype'),
-    url('fonts/Cognizant-Icons.woff?sj1j3e') format('woff'),
-    url('fonts/Cognizant-Icons.svg?sj1j3e#Cognizant-Icons') format('svg');
+  src:  url('fonts/Cognizant-Icons.eot?557xpm');
+  src:  url('fonts/Cognizant-Icons.eot?557xpm#iefix') format('embedded-opentype'),
+    url('fonts/Cognizant-Icons.ttf?557xpm') format('truetype'),
+    url('fonts/Cognizant-Icons.woff?557xpm') format('woff'),
+    url('fonts/Cognizant-Icons.svg?557xpm#Cognizant-Icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -456,4 +456,7 @@ i, .icomoon-liga {
 }
 .print:before {
   content: "\e98c";
+}
+.play-button-solid:before {
+  content: "\e98d";
 }

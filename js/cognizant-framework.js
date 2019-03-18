@@ -61,8 +61,8 @@
 // ██      ██      ██    ██ ██    ██ ██ ██  ██ ██      ██
 // ██      ███████  ██████   ██████  ██ ██   ████ ███████
 // =============================================================================================
-// @codekit-prepend '../node_modules/lazysizes/lazysizes.min.js'
-// @codekit-prepend '../node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js'
+// @codekit-prepend '../node_modules/lazysizes/lazysizes.js'
+// @codekit-prepend '../node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.js'
 // @codekit-prepend '../node_modules/slick-carousel/slick/slick.min.js'
 // @codekit-prepend '../node_modules/aos/dist/aos.js'
 
@@ -429,7 +429,7 @@ $(function() {
 
 $(document).ready(function() {
   AOS.init({
-      startEvent: 'load'
+      // startEvent: 'load'
   });
 });
 
