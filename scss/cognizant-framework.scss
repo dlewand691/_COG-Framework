@@ -1605,7 +1605,7 @@ hr.dark {
 // See https://github.com/MartijnCuppens/rfs.
 // See configuration for options
 // Minimum fontsize.
-$rfs-minimum-font-size: 15px;
+$rfs-base-font-size: 15px;
 $rfs-font-size-unit: px;
 
 // Breakpoint at where font-size starts decreasing if screen width is smaller.
@@ -1823,7 +1823,6 @@ strong {
 %text-center {
     text-align: center;
 }
-
 
 // =============================================================================================
 // ████████ ███████ ██   ██ ████████      ██████  ██████  ██       ██████  ██████  ███████
