@@ -62,8 +62,8 @@
 // @include foundation-prototype-classes;
 
 // MOTION UI
-// @include motion-ui-transitions;
-// @include motion-ui-animations;
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 // ====================================================================================
 // FONTS
@@ -245,8 +245,17 @@ $widths: 20;
 @for $i from 1 through $widths {
     .w#{$i*5} {
         width: $i*5%;
-        // min-width: $i*5%;
         // max-width: $i*5%;
+    }
+}
+@for $i from 1 through $widths {
+    .max-w#{$i*5} {
+        max-width: $i*5%;
+    }
+}
+@for $i from 1 through $widths {
+    .min-w#{$i*5} {
+        min-width: $i*5%;
     }
 }
 
@@ -283,11 +292,11 @@ $widths: 20;
  ██████    ████   ███████ ██   ██ ██   ██ ██ ██████  ███████ ███████
 ========================================================================================= */
 $heights: 20;
-@for $i from 1 through $heights {
-    .h#{$i} {
-        height: $i + px !important;
-    }
-}
+// @for $i from 7 through $heights {
+//     .h#{$i} {
+//         height: $i + px !important;
+//     }
+// }
 @for $i from 1 through $heights {
     .h#{$i*5}vh {
         height: $i*5 + vh !important;
@@ -408,7 +417,6 @@ $zindexes: 11;
 
         .#{$size}-shrink {
             flex     : 0 0 auto;
-
             max-width: 100%;
         }
 
@@ -673,28 +681,28 @@ $magenta: #c800a1;
 $magenta-dark: #840b55;
 $red: #e1523d;
 $colors-primary: (
-    "black"    : $black,
-    "white"    : $white,
-    "blue"     : $blue,
-    blue-light : $blue-light,
-    blue-dark  : $blue-dark,
-    "green"    : $green,
-    green-light: $green-light,
-    green-dark : $green-dark,
-    gray-dark1 : $gray-dark1,
-    gray-dark2 : $gray-dark2,
-    gray-light1: $gray-light1,
-    gray-light2: $gray-light2,
-    gray-light3: $gray-light3,
-    "red"      : $red,
-);
-$colors-secondary: (
+    "black"     : $black,
+    "white"     : $white,
+    "blue"      : $blue,
+    blue-light  : $blue-light,
+    blue-dark   : $blue-dark,
+    "green"     : $green,
+    green-light : $green-light,
+    green-dark  : $green-dark,
+    gray-dark1  : $gray-dark1,
+    gray-dark2  : $gray-dark2,
+    gray-light1 : $gray-light1,
+    gray-light2 : $gray-light2,
+    gray-light3 : $gray-light3,
     "orange"    : $orange,
     orange-dark : $orange-dark,
     "purple"    : $purple,
     purple-dark : $purple-dark,
     "magenta"   : $magenta,
     magenta-dark: $magenta-dark
+);
+$colors-secondary: (
+    "red": $red,
 );
 /* ----  End of COLORS  -------------------------------------------------------------------------- */
 
@@ -933,7 +941,7 @@ $background-tints: 5;
 @for $i from 1 through $background-tints {
     @each $color-name, $color in $colors-primary {
         .bg-#{$color-name}-tint#{$i} {
-            background-color: lighten($color, percentage($i / 17.5)) !important;
+            background-color: lighten($color, percentage($i / 12)) !important;
         }
     }
 }
@@ -1115,7 +1123,7 @@ $bg-size: (
     position: relative;
 
     &::after {
-        background-image: linear-gradient(to bottom, rgba($white, 0) 20%, rgba($white, .9) 65%);
+        background-image: linear-gradient(to bottom, rgba($white, 0) 20%, rgba($white, 0.9) 65%);
 
         @include gradient-overlay-image-full;
     }
@@ -1125,7 +1133,7 @@ $bg-size: (
     position: relative;
 
     &::after {
-        background-image: linear-gradient(to bottom, rgba($blue, 0) 20%, rgba($blue, .9) 65%);
+        background-image: linear-gradient(to bottom, rgba($blue, 0) 20%, rgba($blue, 0.7) 65%);
 
         @include gradient-overlay-image-full;
     }
@@ -1135,7 +1143,7 @@ $bg-size: (
     position: relative;
 
     &::after {
-        background-image: linear-gradient(to bottom, rgba($black, 0) 20%, rgba($black, .9) 65%);
+        background-image: linear-gradient(to bottom, rgba($black, 0) 20%, rgba($black, 0.7) 65%);
 
         @include gradient-overlay-image-full;
     }
@@ -1145,7 +1153,7 @@ $bg-size: (
     position: relative;
 
     &::after {
-        background-image: linear-gradient(135deg, rgba($blue, 0) 30%, rgba($blue, 0.9) 80%);
+        background-image: linear-gradient(135deg, rgba($blue, 0) 30%, rgba($blue, 0.7) 80%);
 
         @include gradient-overlay-image-full;
     }
@@ -1261,7 +1269,7 @@ $bg-size: (
             z-index         : 10;
 
             transform       : scale(1.035);
-            transform-origin: left center;
+            transform-origin: center;
 
             box-shadow      : 0 5px 10px 0 rgba(0, 0, 0, 0.2);
         }
@@ -3324,9 +3332,10 @@ $sidelines-double-line-spacing: 0.5em !default;
 ==================================================================================== */
 .label {
     // text-transform: uppercase;
-    font-size  : responsive-font-size(15);
-    font-weight: bold;
-    line-height: inherit;
+    font-size    : responsive-font-size(15);
+    font-weight  : bold;
+    line-height  : inherit;
+    margin-bottom: 0.5rem;
 }
 // -----  End of LABELS  ---------------------------------------------
 /* =================================================================================================
@@ -4059,6 +4068,19 @@ a.morelink {
 ==================================================================================== */
 .reveal {
     outline-width: 0;
+    height       : auto;
+
+    @include breakpoint(landscape) {
+        // -webkit-overflow-scrolling: touch;
+        // overflow-y                : auto;
+        // position                  : unset;
+    }
+
+    @include breakpoint(medium down) {
+        -webkit-overflow-scrolling: touch;
+        overflow-y                : auto;
+        position                  : fixed;
+    }
 }
 // -----  End of REVEAL  ---------------------------------------------
 /* ====================================================================================
@@ -4230,17 +4252,17 @@ a.morelink {
         color: $white;
 
         &:hover {
-            color     : $blue;
+            color     : $green;
             background: $white !important;
         }
     }
 
-    & a.active {
+    & a.is-active {
         // background: transparentize($white, .80) !important;
-        background: $blue-light !important;
+        background: $green !important;
 
         &:hover {
-            color     : $blue;
+            color     : $green;
             background: $white !important;
         }
     }

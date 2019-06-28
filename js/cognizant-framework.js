@@ -28,6 +28,7 @@
 // @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.timer.min.js'
 // @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.touch.min.js'
 // @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.util.triggers.min.js'
+// @codekit-prepend '../node_modules/foundation-sites/dist/js/plugins/foundation.smoothScroll.min.js'
 
 
 // =============================================================================================
@@ -130,12 +131,12 @@ document.addEventListener('lazybeforeunveil', function(e) {
 // GRAY AND BLUE NAV BAR STICKY SOLUTION
 // =============================================================================================
 
-$('#navBarInPage .sticky').on('sticky.zf.stuckto:top', function() {
-    // console.log($(this));
-    $(this).css({
-        marginTop: $('.sticky').height()
-    });
-});
+// $('#navBarInPage .sticky').on('sticky.zf.stuckto:top', function() {
+//     // console.log($(this));
+//     $(this).css({
+//         marginTop: $('.sticky').height()
+//     });
+// });
 
 // -----  End of GRAY AND BLUE NAV BAR STICKY SOLUTION  ---------------------------------------------
 
