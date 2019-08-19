@@ -293,7 +293,7 @@ $widths: 20;
 ========================================================================================= */
 $heights: 20;
 // @for $i from 7 through $heights {
-//     .h#{$i} {
+//     .ht#{$i} {
 //         height: $i + px !important;
 //     }
 // }
@@ -1697,6 +1697,7 @@ html {
 // }
 
 %h1,
+.h1,
 h1 {
     // font-weight: 300;
     line-height: 1.1;
@@ -1705,6 +1706,7 @@ h1 {
 }
 
 %h2,
+.h2,
 h2 {
     // font-weight: 300;
     line-height: 1.1;
@@ -1713,23 +1715,27 @@ h2 {
 }
 
 %h3,
+.h3,
 h3 {
     @include responsive-font-size(47);
 }
 
 %h4,
+.h4,
 h4 {
     @include responsive-font-size(36);
     // font-weight: bold;
 }
 
 %h5,
+.h5,
 h5 {
     @include responsive-font-size(27);
     // font-weight: bold;
 }
 
 %h6,
+.h6,
 h6 {
     @include responsive-font-size(20);
     // font-weight: bold;
