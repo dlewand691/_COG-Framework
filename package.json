@@ -20,7 +20,7 @@
     "lazysizes": "^5.1.0",
     "motion-ui": "^2.0.3",
     "plyr": "^3.5.6",
-    "postcss": "^7.0.17",
+    "postcss": "^8.2.10",
     "rfs": "^8.0.4",
     "slick-carousel": "^1.8.1",
     "succinct": "0.0.1",
